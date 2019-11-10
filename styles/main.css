@@ -673,7 +673,7 @@ nav i {
   }
 }
 
-.image-section-explore {
+.footer-to-explore {
   background: url(../assets/yoga-class-cliff.jpg);
   background-size: cover;
   background-position: center;
@@ -684,12 +684,16 @@ nav i {
 }
 
 @media (min-width: 400px) {
-  .image-section-explore {
+  .footer-to-explore {
     height: 250px;
   }
 }
 
-.image-section-explore .wrapper {
+.footer-to-explore .image-section-explore {
+  height: 100%;
+}
+
+.footer-to-explore .wrapper {
   text-align: center;
   height: 100%;
   display: -webkit-box;
@@ -704,7 +708,7 @@ nav i {
           justify-content: center;
 }
 
-.image-section-explore button {
+.footer-to-explore button {
   color: black;
   font-size: 3.5rem;
   text-decoration: none;
@@ -716,7 +720,7 @@ nav i {
   opacity: 0.6;
 }
 
-.image-section-explore button:hover {
+.footer-to-explore button:hover {
   border-radius: 5%;
   opacity: 1;
 }
@@ -1095,5 +1099,107 @@ form .submit-form button {
   background-position: center;
   width: 100%;
   height: 100vh;
+}
+
+.explore-hero-image {
+  background: url(../assets/explore-visual.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 30vh;
+  background-color: black;
+  background-blend-mode: screen;
+}
+
+@media (min-width: 400px) {
+  .explore-hero-image {
+    height: 50vh;
+  }
+}
+
+@media (min-width: 700px) {
+  .explore-hero-image {
+    height: 60vh;
+  }
+}
+
+@media (min-width: 950px) {
+  .explore-hero-image {
+    height: 70vh;
+  }
+}
+
+.explore-hero-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 60%;
+}
+
+@media (min-width: 700px) {
+  .explore-hero-text {
+    height: 70%;
+  }
+}
+
+.explore-hero-text h1 {
+  font-size: 3.5rem;
+}
+
+@media (min-width: 400px) {
+  .explore-hero-text h1 {
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .explore-hero-text h1 {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 950px) {
+  .explore-hero-text h1 {
+    font-size: 6rem;
+  }
+}
+
+.explore-section-footer {
+  background: url(../assets/footer-explore.jpg);
+  background-size: cover;
+  background-position: center;
+  background-color: black;
+  background-blend-mode: screen;
+  height: 450px;
+}
+
+@media (min-width: 400px) {
+  .explore-section-footer {
+    height: 300px;
+  }
+}
+
+@media (min-width: 400px) {
+  .explore-section-footer {
+    height: 450px;
+  }
+}
+
+@media (min-width: 950px) {
+  .explore-section-footer {
+    height: 550px;
+  }
+}
+
+.explore-section-footer button {
+  color: white;
+  opacity: 1;
 }
 /*# sourceMappingURL=main.css.map */

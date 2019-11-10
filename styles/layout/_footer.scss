@@ -1,4 +1,4 @@
-.image-section-explore {
+.footer-to-explore {
     background: url(../assets/yoga-class-cliff.jpg);
     background-size: cover;
     background-position: center;
@@ -11,7 +11,11 @@
     }
 }
 
-.image-section-explore .wrapper {
+.footer-to-explore .image-section-explore {
+    height: 100%;
+}
+
+.footer-to-explore .wrapper {
     text-align: center;
     height: 100%;
     display: flex;
@@ -20,7 +24,7 @@
 
 }
 
-.image-section-explore button {
+.footer-to-explore button {
     color: black;
     font-size: 3.5rem;
     text-decoration: none;
@@ -32,7 +36,7 @@
     opacity: 0.6;
 }
 
-.image-section-explore button:hover {
+.footer-to-explore button:hover {
     border-radius: 5%;
     opacity: 1;
 }
