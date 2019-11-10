@@ -12,18 +12,18 @@
 </head>
 
 <body>
-    <header class='guest-image'>
+    <header class='hero-image guest-hero-image'>
         <section class='wrapper'>
             <nav>
                 <ul>
-                    <li> HomeYogi </li>
+                    <li class='logo'> <a href="index.html">HomeYogi</a> </li>
                 </ul>
         
                 <ul>
-                    <li><a href="index.html">Find Classes</a></li>
-                    <li><a href="index.html">Host Classes </a></li>
-                    <li><a href="blog.html">Explore</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li class='nav-item'><a href="guest.html">Find Classes</a></li>
+                    <li class='nav-item'><a href="host.html">Host Classes </a></li>
+                    <li class='nav-item'><a href="explore.html">Explore</a></li>
+                    <li class='nav-item'><a href="contact.html">Contact</a></li>
                 </ul>
                 <button class="hamburger hamburger--vortex " type="button">
                     <span class="hamburger-box">
@@ -32,7 +32,7 @@
                 </button>
             </nav>
         
-            <section class="guest-hero-text">
+            <section class="hero-text guest-hero-text">
                 
                 <h1 class='landing-title'> Book Unique Yoga Classes!</h1>
         
@@ -41,7 +41,7 @@
     </header>
     <section class= 'form-section'>
         <div class='wrapper'>
-            <form action='guest-form'>
+            <form>
                 <section class='form-fieldset'>
                         <legend class='title'>Find a class that suits you</legend>
 
@@ -113,6 +113,10 @@
                                 <input type="checkbox" name="atmosphere" value="Outdoor" id="outdoor">
                                 <label for='atmosphere'>Outdoor</label>
                             </div>
+                        </div>
+
+                        <div class='question-form submit-form'>
+                            <button type="submit" id=""> Search Yoga Classes </button>
                         </div>
 
                     </section>

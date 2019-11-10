@@ -5,9 +5,9 @@
     background-color: rgb(104, 104, 104);
     background-blend-mode: screen;
     width: 100%;
-    height: 250px;
-    @include mq-tablet {
-        height: 100vh
+    height: 450px;
+    @include mq-large-phone {
+        height: 250px;
     }
 }
 

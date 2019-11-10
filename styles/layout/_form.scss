@@ -1,7 +1,10 @@
 .form-section { 
     background-size: cover;
     background: linear-gradient($gradient-color-one, $gradient-color-two );
-    height: 700px;
+    height: 850px;
+    @include mq-tablet {
+        height: 800px;
+    }
 }
 form legend {
     font-size: 2rem;
@@ -16,7 +19,7 @@ form .title {
     margin-top: 50px;
     width: 100%;
     text-align: left;
-}
+} 
 
 form .question-form div, form select, form input[type='date'] { 
     font-size: 1.8rem;
@@ -45,6 +48,37 @@ form .question-form {
     width: 45%;
     text-align: left;
     padding: 20px 0;
-   
     // margin: 20px 0;
+}
+
+form .submit-form { 
+    text-align: center;
+    width: 100%;
+    padding: 40px 0;
+}
+
+form .submit-form button {  
+    height: 50px;
+    width: 100%;
+    background: $light-color;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+.form-section .form-fieldset div:nth-of-type(5) {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-section  .form-fieldset div:nth-of-type(5) div {
+    width: 20%;
+    display: flex;
+}
+
+.form-section  .form-fieldset div:nth-of-type(5) div label { 
+    margin: 0px;
+    margin-left: 20px;
 }

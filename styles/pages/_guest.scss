@@ -1,51 +1,11 @@
-.guest-image {
+.guest-hero-image {
     background: url(../assets/two-yoga-water.jpg);
-    background-size: cover;
+     background-size: cover;
     background-position: center;
     width: 100%;
     height: 100vh;
 }
 
-
-
-.guest-hero-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 80%;
-}
-
-.guest-hero-text h1 {
-    font-size: 5rem;
-    color: white;
-    text-align: left;
-    // @include mq-large-phone {
-    //     font-size: 5rem; 
-    // }
-
-    @include mq-tablet {
-        font-size: 5.5rem;
-        text-align: left;
-        margin-top: 30px;
-    }
-}
-
-.form-section .form-fieldset div:nth-of-type(5) {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.form-section  .form-fieldset div:nth-of-type(5) div {
-    width: 20%;
-    display: flex;
-}
-
-.form-section  .form-fieldset div:nth-of-type(5) div label { 
-    margin: 0px;
-    margin-left: 20px;
-}
 
 
 

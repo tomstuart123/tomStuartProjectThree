@@ -289,9 +289,22 @@ p, button {
   /* added line */
 }
 
+.hero-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 80%;
+}
+
 header h1 {
   font-size: 4.5rem;
-  color: white;
 }
 
 @media (min-width: 400px) {
@@ -303,6 +316,20 @@ header h1 {
 @media (min-width: 700px) {
   header h1 {
     font-size: 5.5rem;
+  }
+}
+
+.hero-text h1 {
+  font-size: 5rem;
+  color: white;
+  text-align: left;
+}
+
+@media (min-width: 700px) {
+  .hero-text h1 {
+    font-size: 5.5rem;
+    text-align: left;
+    margin-top: 30px;
   }
 }
 
@@ -362,6 +389,7 @@ nav li {
   font-size: 2.5rem;
   line-height: 15px;
   list-style-type: none;
+  text-decoration: none;
   color: black;
 }
 
@@ -375,6 +403,7 @@ nav li {
 
 nav a {
   color: #1a315c;
+  text-decoration: none;
 }
 
 @media (min-width: 700px) {
@@ -391,11 +420,15 @@ nav a {
   }
 }
 
+nav .logo a {
+  font-size: 2.5rem;
+}
+
 nav a:hover {
   font-weight: bold;
 }
 
-nav a:hover::before {
+nav .nav-item a:hover::before {
   content: '';
   width: 90%;
   height: 10%;
@@ -498,7 +531,7 @@ nav i {
 }
 
 .dropdown a {
-  color: #5d5c61;
+  color: #667c8c;
   text-decoration: none;
   cursor: pointer;
   font-weight: bold;
@@ -647,12 +680,12 @@ nav i {
   background-color: #686868;
   background-blend-mode: screen;
   width: 100%;
-  height: 250px;
+  height: 450px;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 400px) {
   .image-section-explore {
-    height: 100vh;
+    height: 250px;
   }
 }
 
@@ -692,7 +725,13 @@ nav i {
   background-size: cover;
   background: -webkit-gradient(linear, left top, left bottom, from(#dbe6f4), to(#fcfcfc));
   background: linear-gradient(#dbe6f4, #fcfcfc);
-  height: 700px;
+  height: 850px;
+}
+
+@media (min-width: 700px) {
+  .form-section {
+    height: 800px;
+  }
 }
 
 form legend {
@@ -743,6 +782,44 @@ form .question-form {
   width: 45%;
   text-align: left;
   padding: 20px 0;
+}
+
+form .submit-form {
+  text-align: center;
+  width: 100%;
+  padding: 40px 0;
+}
+
+form .submit-form button {
+  height: 50px;
+  width: 100%;
+  background: #e2e0e4;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.form-section .form-fieldset div:nth-of-type(5) {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form-section .form-fieldset div:nth-of-type(5) div {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form-section .form-fieldset div:nth-of-type(5) div label {
+  margin: 0px;
+  margin-left: 20px;
 }
 
 .landing-image {
@@ -977,29 +1054,28 @@ form .question-form {
   font-weight: bold;
 }
 
-.guest-image {
-  background: url(../assets/guest-visual.jpg);
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 40vh;
-}
-
-@media (min-width: 700px) {
-  .guest-image {
-    height: 100vh;
-  }
-}
-
-.guest-image {
-  background: url(../assets/two-yoga-water.jpg);
+.host-hero-image {
+  background: url(../assets/host-visual-two-crop.jpg);
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 100vh;
+  background-color: #282727;
+  background-blend-mode: screen;
 }
 
-.guest-hero-text {
+@media (min-width: 400px) {
+  .host-hero-image {
+    height: 700px;
+    background: url(../assets/host-visual-two.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: #282727;
+    background-blend-mode: screen;
+  }
+}
+
+.host-hero-text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1013,41 +1089,11 @@ form .question-form {
   height: 80%;
 }
 
-.guest-hero-text h1 {
-  font-size: 5rem;
-  color: white;
-  text-align: left;
-}
-
-@media (min-width: 700px) {
-  .guest-hero-text h1 {
-    font-size: 5.5rem;
-    text-align: left;
-    margin-top: 30px;
-  }
-}
-
-.form-section .form-fieldset div:nth-of-type(5) {
+.guest-hero-image {
+  background: url(../assets/two-yoga-water.jpg);
+  background-size: cover;
+  background-position: center;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.form-section .form-fieldset div:nth-of-type(5) div {
-  width: 20%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.form-section .form-fieldset div:nth-of-type(5) div label {
-  margin: 0px;
-  margin-left: 20px;
+  height: 100vh;
 }
 /*# sourceMappingURL=main.css.map */
