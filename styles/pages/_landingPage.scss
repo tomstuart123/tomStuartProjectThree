@@ -1,0 +1,171 @@
+.landing-image {
+    background: url(../assets/landing-visual.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+     height: 650px;
+    @include mq-tablet {
+        height: 700px;
+    }
+}
+
+.landing-wrapper-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 1;
+        height: auto;
+    @include mq-large-phone {
+        width: 85%;
+    }
+    
+}
+
+
+
+.landing-wrapper {
+    width: 95%;
+    height: auto;
+}
+
+.landing-wrapper ul:nth-of-type(1) {
+    padding-left: 5%;
+}
+
+
+.landing-text-section { 
+    width: 100%;
+    text-align: center;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    @include mq-large-phone {
+        margin-top: 20px;
+    }
+}
+
+.landing-text-section h1 { 
+    width: 80%;
+    margin: 0 auto;
+    color: black;
+    @include mq-tablet {
+        text-align: left;
+        margin: 0;
+    }
+    
+}
+
+.landing-title {
+    width: 100%;
+}
+
+.guest-buttons{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    
+    @include mq-large-phone {
+        margin-top: 100px;
+        
+    }
+    
+    @include mq-tablet {
+        margin-top: 145px;
+        justify-content: space-between;
+        height: 75px;
+
+    }
+
+    @include mq-desktop {
+        margin-top: 135px;
+        justify-content: space-around;
+    }
+}
+
+.guest-buttons button {
+    width: 30%;
+    margin-top: auto 0;
+    color: white;
+    font-weight: bold;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    line-height: 30px;
+    transition: font-size 0.5s, line-height 0.5s;
+    @include mq-large-phone {
+        line-height: 40px;
+        width: 25%;
+    }
+
+     @include mq-tablet {
+        width: 40%;
+        font-size: 3.5rem;
+    }
+
+    @include mq-desktop {
+        font-size: 4rem;
+        width: 30%;
+    }
+}
+
+.guest-buttons button:hover {
+    border: white;
+    font-size: 3.7rem;
+    line-height: 45px;
+}
+
+.host-button {
+    margin-left: 40px;
+}
+
+.join-button {
+    margin-right: 20px;
+}
+
+.landing-footer {
+    background: linear-gradient($gradient-color-one, $gradient-color-two );
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    align-content: center;
+    height: 100%;
+}
+
+.landing-footer p {
+    font-size: 1.7rem;
+    width: 50%;
+    color: black;
+    padding: 5%;
+    border: black 1px solid;
+
+    @include mq-tablet {
+        padding: 7.5%;
+    }
+
+    @include mq-tablet {
+        padding: 5%;
+    }
+
+    @include mq-large-phone {
+        font-size: 2rem;
+    }
+
+    @include mq-desktop {
+        font-size: 2.5rem;
+    }
+
+}
+
+.landing-footer .footer-about {
+    width: 100%;
+    font-weight: bold;
+}

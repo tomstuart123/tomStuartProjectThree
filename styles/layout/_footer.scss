@@ -1,0 +1,38 @@
+.image-section-explore {
+    background: url(../assets/yoga-class-cliff.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(104, 104, 104);
+    background-blend-mode: screen;
+    width: 100%;
+    height: 250px;
+    @include mq-tablet {
+        height: 100vh
+    }
+}
+
+.image-section-explore .wrapper {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.image-section-explore button {
+    color: black;
+    font-size: 3.5rem;
+    text-decoration: none;
+    height: 50%;
+    font-weight: bold;
+    background: none;
+    border: none;
+    line-height: 50px;
+    opacity: 0.6;
+}
+
+.image-section-explore button:hover {
+    border-radius: 5%;
+    opacity: 1;
+}

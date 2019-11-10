@@ -1,0 +1,11 @@
+header h1 {
+    font-size: 4.5rem;
+    color: white;
+    @include mq-large-phone {
+        font-size: 4.5rem; 
+    }
+
+    @include mq-tablet {
+        font-size: 5.5rem;
+    }
+}

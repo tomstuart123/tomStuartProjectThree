@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guest Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+</head>
+
+<body>
+    <header class='guest-image'>
+        <section class='wrapper'>
+            <nav>
+                <ul>
+                    <li> HomeYogi </li>
+                </ul>
+        
+                <ul>
+                    <li><a href="index.html">Find Classes</a></li>
+                    <li><a href="index.html">Host Classes </a></li>
+                    <li><a href="blog.html">Explore</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="hamburger hamburger--vortex " type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </nav>
+        
+            <section class="guest-hero-text">
+                
+                <h1 class='landing-title'> Book Unique Yoga Classes!</h1>
+        
+            </section>
+        </section>
+    </header>
+    <section class= 'form-section'>
+        <div class='wrapper'>
+            <form action='guest-form'>
+                <section class='form-fieldset'>
+                        <legend class='title'>Find a class that suits you</legend>
+
+                        <div class='question-form'>
+                            <legend>WHICH CITY?</legend>
+                            <div>
+                                <input type="radio" name="city" value="London" id="london">
+                                <label for='city'>London</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="city" value="Toronto" id="toronto">
+                                <label for='city'>Toronto</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="city" value="New York" id="new-york">
+                                <label for='city'>New York</label>
+                            </div>
+                        </div>
+
+                        <div class='question-form'>
+                            <legend> WHICH DAY? </legend>
+                            <label for='date' class='visuallyHidden'>Date</label>
+                                <input type="date" name="date">
+                            </label>
+                        </div>
+
+                        <div class='question-form'>
+                            <legend>LEVEL OF EXPERIENCE? </legend>
+                            <div>
+                                <input type="radio" name="experience" value="Beginner" id="beginner">
+                                <label for='experience'>Beginner</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="experience" value="Intermediate" id="intermediate">
+                                <label for='experience'>Intermediate</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="experience" value="Advanced" id="advanced">
+                                <label for='experience'>Advanced</label>
+                            </div>
+                        </div>
+
+                        <div class='question-form'>
+                            <legend>WHAT TYPE OF YOGA? </legend>
+                            <select name="yoga-style" id="yoga-style" placeholder="Any" class="yoga-style">
+                                <option value="any">Any</option>
+                                <option value="vinyasa">Vinyasa</option>
+                                <option value="ashtanga">Ashtanga</option>
+                                <option value="slow flow">Slow flow</option>
+                                <option value="power flow">Power flow</option>
+                                <option value="restorative">Restorative</option>
+                                <option value="prenatal">Prenatal</option>
+                                <option value="hatha">Hatha</option>
+                                <label class="visuallyHidden" for="yoga-style">Yoga-style</label>
+                            </select>
+                        </div>
+
+                        <div class='question-form'>
+                            <legend>WHAT ATMOSPHERE? </legend> 
+                            <div>
+                                <input type="checkbox" name="atmosphere" value="Studio" id="studio">
+                                <label for='atmosphere'>Studio</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="atmosphere" value="Home" id="home">
+                                <label for='atmosphere'>Home</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="atmosphere" value="Outdoor" id="outdoor">
+                                <label for='atmosphere'>Outdoor</label>
+                            </div>
+                        </div>
+
+                    </section>
+            </form>
+        </div>
+    </section>
+    <section class='explore-section'>
+        <section class='image-section-explore'>
+            <section class='wrapper'>
+                <button href=''>... OR EXPLORE ALL THE CLASSES HERE </button>
+            </section>
+        </section>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

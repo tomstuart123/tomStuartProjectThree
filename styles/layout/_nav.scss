@@ -1,0 +1,159 @@
+@import "../abstracts/mixins";
+// nav section
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Lato, sans-serif;
+    position: relative;
+    padding: 10px 0px;
+
+    @include mq-large-phone {
+        padding: 20px 0px;
+    }
+    @include mq-desktop {
+        padding: 30px 0px;
+    }
+}
+
+nav ul:nth-of-type(1) {
+    font-family: Pacifico, cursive;
+    padding-top: 20px;
+    padding-left: 0;
+    @include mq-large-phone {
+     padding-left: 0;
+    }
+    @include mq-tablet {
+        padding-top: 0px;
+    } 
+}
+
+ul {
+    display: flex;
+}
+
+nav li {
+    font-size: 2.5rem;
+    line-height: 15px;
+    list-style-type: none;
+
+    color: black;
+
+    @include mq-desktop {
+        font-size: 3rem;
+        text-decoration: none;
+        position: relative;
+    } 
+}
+
+nav a {
+    color: rgb(26, 49, 92);
+
+    @include mq-tablet {
+        font-size: 1.8rem;
+        text-decoration: none;
+        position: relative;
+    } 
+
+    @include mq-desktop {
+        font-size: 2.2rem;
+    }
+
+}
+nav a:hover{
+    font-weight: bold;
+}
+
+nav a:hover::before {
+      content: '';
+      width: 90%;
+      height: 10%;
+      background: $mid-color;
+      position: absolute;
+      bottom: 0;
+      left: 5%;
+      transition: width 2s;
+}
+
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+nav ul:nth-of-type(2) {
+    display: none;
+
+    @include mq-tablet {
+        display: flex;
+        width: 60%;
+        justify-content: space-between;
+    } 
+
+    @include mq-desktop {
+        width: 55%;
+        justify-content: space-evenly;
+    } 
+}
+
+i.fa-bars, .section-hero button {
+    font-size: 3rem;
+    color: black;
+     @include mq-tablet {
+        display: none;
+    } 
+}
+
+nav i {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    font-size: 2rem;
+}
+
+// mobile dropdown
+
+
+.dropdown {
+    
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    display: flex;
+    height: 200px;
+    flex-direction: column;
+    background: $light-grey-color;
+    width: 50%;
+    text-align: left;
+    padding: 20px;
+    padding-left: 15px;
+    border-radius: 5%;
+    opacity: 0.9;
+
+    @include mq-tablet {
+        display: none;
+    } 
+}
+
+.dropdown-start {
+    display: none;
+}
+
+.dropdown li {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    list-style-type: none;
+
+}
+
+.dropdown a {
+    color: $dark-grey-color;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
