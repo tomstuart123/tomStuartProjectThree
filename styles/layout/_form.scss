@@ -70,7 +70,7 @@ form .submit-form button {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
 }
 
 .form-section  .form-fieldset div:nth-of-type(5) div {
@@ -80,5 +80,5 @@ form .submit-form button {
 
 .form-section  .form-fieldset div:nth-of-type(5) div label { 
     margin: 0px;
-    margin-left: 20px;
+    margin-left: 15px;
 }

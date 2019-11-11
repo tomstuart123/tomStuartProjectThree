@@ -179,7 +179,7 @@ fieldset {
   padding: 0px;
 }
 
-h1 {
+h1, h2 {
   margin: 0px;
 }
 
@@ -809,9 +809,9 @@ form .submit-form button {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 
 .form-section .form-fieldset div:nth-of-type(5) div {
@@ -823,7 +823,92 @@ form .submit-form button {
 
 .form-section .form-fieldset div:nth-of-type(5) div label {
   margin: 0px;
-  margin-left: 20px;
+  margin-left: 15px;
+}
+
+.class-section {
+  background: #e2e0e4;
+  padding: 0px;
+}
+
+.class-option-section {
+  height: auto;
+  padding: 30px 0;
+}
+
+.option-image {
+  width: 100%;
+}
+
+@media (min-width: 400px) {
+  .option-image {
+    height: 300px;
+  }
+}
+
+.option-image a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 400px) {
+  .image {
+    width: 95%;
+    height: 95%;
+    -webkit-transition: width 1s, height 1s;
+    transition: width 1s, height 1s;
+  }
+}
+
+.image:hover {
+  height: 100%;
+  width: 100%;
+}
+
+.option-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 0px 2.5%;
+  padding-bottom: 30px;
+}
+
+.option-text p {
+  width: 25%;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 400px) {
+  .option-text p {
+    font-size: 1.5rem;
+  }
+}
+
+.option-text p:nth-of-type(1), .option-text p:nth-of-type(3), .option-text p:nth-of-type(5), .option-text p:nth-of-type(7), .option-text p:nth-of-type(9), .option-text p:nth-of-type(11) {
+  font-weight: bold;
 }
 
 .landing-image {
@@ -1101,6 +1186,10 @@ form .submit-form button {
   height: 100vh;
 }
 
+.class-section {
+  padding: 40px 0;
+}
+
 .explore-hero-image {
   background: url(../assets/explore-visual.jpg);
   background-size: cover;
@@ -1169,6 +1258,11 @@ form .submit-form button {
   .explore-hero-text h1 {
     font-size: 6rem;
   }
+}
+
+.class-section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
 .explore-section-footer {

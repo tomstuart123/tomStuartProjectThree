@@ -1,3 +1,7 @@
+.class-section {
+    padding: 40px 0;
+}
+
 .explore-hero-image {
     background: url(../assets/explore-visual.jpg);
     background-size: cover;
@@ -48,6 +52,11 @@
         font-size: 6rem;
     }
 
+}
+
+.class-section h2  {
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
 .explore-section-footer {
