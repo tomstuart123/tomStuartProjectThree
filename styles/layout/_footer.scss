@@ -9,11 +9,17 @@
     @include mq-large-phone {
         height: 250px;
     }
+    @include mq-tablet {
+        height: 350px;
+    }
+    @include mq-tablet {
+        height: 400px;
+    }
 }
 
 .footer-to-explore .image-section-explore {
     height: 100%;
-}
+} 
 
 .footer-to-explore .wrapper {
     text-align: center;
@@ -34,6 +40,26 @@
     border: none;
     line-height: 50px;
     opacity: 0.6;
+    transition: font-size 0.5s;
+
+    @include mq-tablet {
+        font-size: 4.5rem;
+    }
+    @include mq-desktop {
+        font-size: 5.5rem;
+    }
+}
+
+.footer-to-explore button:hover {
+    @include mq-large-phone {
+        font-size: 4rem;
+    }
+    @include mq-tablet {
+        font-size: 5rem;
+    }
+    @include mq-desktop {
+        font-size: 6rem;
+    }
 }
 
 .footer-to-explore button:hover {

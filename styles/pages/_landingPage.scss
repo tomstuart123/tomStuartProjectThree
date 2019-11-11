@@ -21,7 +21,7 @@
         width: 85%;
     }
     
-}
+} 
 
 
 
@@ -120,6 +120,17 @@
     border: white;
     font-size: 3.7rem;
     line-height: 45px;
+    @include mq-large-phone {
+        font-size: 3.4rem;
+    }
+
+     @include mq-tablet {
+        font-size: 3.7rem;
+    }
+
+    @include mq-desktop {
+        font-size: 4.2rem;
+    }
 }
 
 .host-button {
@@ -131,7 +142,7 @@
 }
 
 .landing-footer {
-    background: linear-gradient($gradient-color-one, $gradient-color-two );
+    background: $light-color;
     height: 150px;
     display: flex;
     flex-wrap: wrap;

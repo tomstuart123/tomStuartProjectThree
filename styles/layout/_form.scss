@@ -2,8 +2,13 @@
     background-size: cover;
     background: linear-gradient($gradient-color-one, $gradient-color-two );
     height: 850px;
+
     @include mq-tablet {
-        height: 800px;
+        height: 950px;
+    }
+
+    @include mq-desktop {
+       height: 1000px;
     }
 }
 form legend {
@@ -11,6 +16,13 @@ form legend {
     font-weight: bold;
     margin: 15px 0;
     width: 100%;
+    @include mq-tablet {
+       font-size: 2.5rem;
+       margin-bottom: 30px;
+    }
+    @include mq-desktop {
+       font-size: 3rem;
+    }
 }
 
 form .title {
@@ -19,12 +31,25 @@ form .title {
     margin-top: 50px;
     width: 100%;
     text-align: left;
+
+    @include mq-tablet {
+       font-size: 3.5rem;
+    }
+    @include mq-desktop {
+       font-size: 4rem;
+    }
 } 
 
 form .question-form div, form select, form input[type='date'] { 
     font-size: 1.8rem;
     width: 100%;
     margin: 10px;
+    @include mq-tablet {
+       font-size: 2.2rem;
+    }
+    @include mq-desktop {
+       font-size: 2.5rem;
+    }
 }
 
 form .question-form label { 
@@ -63,6 +88,29 @@ form .submit-form button {
     background: $light-color;
     font-weight: bold;
     font-size: 2rem;
+    transition: font-size 0.5s;
+    @include mq-tablet {
+        height: 60px;
+        font-size: 2.2rem;
+    }
+    @include mq-desktop {
+        font-size: 2.5rem;
+        height: 75px;
+
+    }
+}
+
+form .submit-form button:hover {  
+    font-size: 2.2rem;
+    @include mq-tablet {
+        height: 60px;
+        font-size: 2.5rem;
+    }
+    @include mq-desktop {
+        font-size: 2.7rem;
+        height: 75px;
+
+    }
 }
 
 

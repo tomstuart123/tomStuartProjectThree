@@ -7,10 +7,22 @@
     padding: 30px 0;
 }
 
-.option-image {
+.option {
+    margin: 30px 0;
+}
+
+.option-image { 
     width: 100%;
     @include mq-large-phone {
         height: 300px;
+    }
+
+    @include mq-tablet {
+        height: 400px;
+    }
+
+    @include mq-desktop {
+        height: 550px;
     }
     
 }
@@ -30,8 +42,8 @@
     max-width: 100%;
     object-fit: cover;
     @include mq-large-phone {
-        width: 95%;
-        height: 95%;
+        width: 97.5%;
+        height: 97.5%;
         transition: width 1s, height 1s;
     }
 }
@@ -45,18 +57,30 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding: 0px 2.5%;
-    padding-bottom: 30px;
+    padding: 20px 2.5%;
+    
+    @include mq-large-phone {
+        padding: 20px 1.25%;
+        
+    }
 }
 
 .option-text p {
     width: 25%;
     font-size: 1.2rem;
     @include mq-large-phone {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+    }
+    @include mq-tablet {
+        font-size: 2.2rem;
+        margin: 3px 0;
+    }
+    @include mq-desktop {
+        font-size: 2.5rem;
+        margin: 5px 0;
     }
 }
 
 .option-text p:nth-of-type(1), .option-text p:nth-of-type(3), .option-text p:nth-of-type(5), .option-text p:nth-of-type(7), .option-text p:nth-of-type(9), .option-text p:nth-of-type(11) {
     font-weight: bold;
-}
+} 

@@ -6,7 +6,7 @@ nav {
     justify-content: space-between;
     font-family: Lato, sans-serif;
     position: relative;
-    padding: 10px 0px;
+    padding: 10px 0px; 
 
     @include mq-large-phone {
         padding: 20px 0px;
