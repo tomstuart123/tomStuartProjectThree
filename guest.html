@@ -41,45 +41,53 @@
     </header>
     <section class= 'form-section'>
         <div class='wrapper'>
-            <form>
+            <form class='form-guest'>
                 <section class='form-fieldset'>
                         <legend class='title'>Find a class that suits you</legend>
 
                         <div class='question-form'>
                             <legend>WHICH CITY?</legend>
                             <div>
-                                <input type="radio" name="city" value="London" id="london">
+                                <input type="checkbox" name="city" value="London" id="london">
                                 <label for='city'>London</label>
                             </div>
                             <div>
-                                <input type="radio" name="city" value="Toronto" id="toronto">
+                                <input type="checkbox" name="city" value="Toronto" id="toronto">
                                 <label for='city'>Toronto</label>
                             </div>
                             <div>
-                                <input type="radio" name="city" value="New York" id="new-york">
+                                <input type="checkbox" name="city" value="New York" id="new-york">
                                 <label for='city'>New York</label>
                             </div>
                         </div>
 
                         <div class='question-form'>
-                            <legend> WHICH DAY? </legend>
-                            <label for='date' class='visuallyHidden'>Date</label>
-                                <input type="date" name="date">
-                            </label>
+                            <legend>WHICH DAY?</legend>
+                            <select name="date" id="date" placeholder="Any" class="date">
+                                <option value="any">Any</option>
+                                <option value="monday">Monday</option>
+                                <option value="tuesday">Tuesday</option>
+                                <option value="wednesday">Wednesday</option>
+                                <option value="thursday">Thursday</option>
+                                <option value="friday">Friday</option>
+                                <option value="saturday">Saturday</option>
+                                <option value="sunday">Sunday</option>
+                                <label class="visuallyHidden" for="date">Date</label>
+                            </select>
                         </div>
 
                         <div class='question-form'>
                             <legend>LEVEL OF EXPERIENCE? </legend>
                             <div>
-                                <input type="radio" name="experience" value="Beginner" id="beginner">
+                                <input type="checkbox" name="experience" value="Beginner" id="beginner">
                                 <label for='experience'>Beginner</label>
                             </div>
                             <div>
-                                <input type="radio" name="experience" value="Intermediate" id="intermediate">
+                                <input type="checkbox" name="experience" value="Intermediate" id="intermediate">
                                 <label for='experience'>Intermediate</label>
                             </div>
                             <div>
-                                <input type="radio" name="experience" value="Advanced" id="advanced">
+                                <input type="checkbox" name="experience" value="Advanced" id="advanced">
                                 <label for='experience'>Advanced</label>
                             </div>
                         </div>
@@ -90,8 +98,8 @@
                                 <option value="any">Any</option>
                                 <option value="vinyasa">Vinyasa</option>
                                 <option value="ashtanga">Ashtanga</option>
-                                <option value="slow flow">Slow flow</option>
-                                <option value="power flow">Power flow</option>
+                                <option value="slow-flow">Slow flow</option>
+                                <option value="power-flow">Power flow</option>
                                 <option value="restorative">Restorative</option>
                                 <option value="prenatal">Prenatal</option>
                                 <option value="hatha">Hatha</option>

@@ -1095,9 +1095,10 @@ form .submit-form button:hover {
           justify-content: flex-start;
   z-index: 1;
   height: auto;
+  width: 100%;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 700px) {
   .landing-wrapper-two {
     width: 85%;
   }
@@ -1140,9 +1141,15 @@ form .submit-form button:hover {
 }
 
 .landing-text-section h1 {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   color: black;
+}
+
+@media (min-width: 400px) {
+  .landing-text-section h1 {
+    font-size: 4rem;
+  }
 }
 
 @media (min-width: 700px) {
@@ -1174,33 +1181,51 @@ form .submit-form button:hover {
 
 @media (min-width: 400px) {
   .guest-buttons {
-    margin-top: 100px;
+    margin-top: 115px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
 }
 
 @media (min-width: 700px) {
   .guest-buttons {
-    margin-top: 145px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    margin-top: 165px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     height: 75px;
   }
 }
 
 @media (min-width: 950px) {
   .guest-buttons {
-    margin-top: 135px;
+    margin-top: 145px;
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
 }
 
-.guest-buttons button {
-  width: 30%;
+.guest-buttons a {
+  width: 35%;
   margin-top: auto 0;
+}
+
+@media (min-width: 400px) {
+  .guest-buttons a {
+    width: 20%;
+  }
+}
+
+@media (min-width: 950px) {
+  .guest-buttons a {
+    width: 25%;
+  }
+}
+
+.guest-buttons button {
   color: white;
+  width: 100%;
   font-weight: bold;
+  padding: 0;
   background: none;
   border: none;
   font-size: 3rem;
@@ -1212,13 +1237,11 @@ form .submit-form button:hover {
 @media (min-width: 400px) {
   .guest-buttons button {
     line-height: 40px;
-    width: 25%;
   }
 }
 
 @media (min-width: 700px) {
   .guest-buttons button {
-    width: 40%;
     font-size: 3.5rem;
   }
 }
@@ -1226,7 +1249,6 @@ form .submit-form button:hover {
 @media (min-width: 950px) {
   .guest-buttons button {
     font-size: 4rem;
-    width: 30%;
   }
 }
 
@@ -1255,11 +1277,23 @@ form .submit-form button:hover {
 }
 
 .host-button {
-  margin-left: 40px;
+  margin-left: 20px;
+}
+
+@media (min-width: 400px) {
+  .host-button {
+    margin-left: 0px;
+  }
 }
 
 .join-button {
-  margin-right: 20px;
+  margin-right: 50px;
+}
+
+@media (min-width: 400px) {
+  .join-button {
+    margin-right: 0px;
+  }
 }
 
 .landing-footer {
