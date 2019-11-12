@@ -62,6 +62,75 @@
     // set up verification of hosts on profile creation that accepts a userName, password etc. Store this profile in a database
 
 
+// REAL CODE
+
+// create class for iteration of session to hold yoga sessions. Inside the class use a static function to allow easy creation of new session classes
+class Session {
+    constructor({ city, day, experience, yoga, atmosphere }) {
+        this.city = city;
+        this.day = day;
+        this.experience = experience;
+        this.yoga = yoga;
+        this.atmosphere = atmosphere;
+    }
+
+    static createSession({ city, day, experience, yoga, atmosphere }) {
+        return new this({ city, day, experience, yoga, atmosphere,
+        })
+    }
+}
+
+// created some dummy data that always exists ont he page and stored them in grouped sessions. 
+// Will also use this object to add future sessions based on host
+// Will also use this object to filter and pull data to put on the page
+const groupedSessions = {
+    tomsBeachYoga: Session.createSession({
+        city: 'Toronto',
+        day: 'Saturday',
+        experience: 'Intermediate',
+        yoga: 'Slow flow',
+        atmosphere: 'Outdoor',
+    }),
+
+    alexsKitchenYoga: Session.createSession({
+        city: 'London',
+        day: 'Monday',
+        experience: 'Beginner',
+        yoga: 'Power flow',
+        atmosphere: 'Outdoor',
+    }),
+
+    sofiasStudioYoga: Session.createSession({
+        city: 'London',
+        day: 'Wednesday',
+        experience: 'Advanced',
+        yoga: 'Ashtanga',
+        atmosphere: 'Studio',
+    }),
+
+    zacsHotYoga: Session.createSession({
+        city: 'New York',
+        day: 'Friday',
+        experience: 'Beginner',
+        yoga: 'Vinyasa',
+        atmosphere: 'Studio',
+    }),
+
+}
+
+const tomsBeachYoga = Session.createSession({
+    city: 'Toronto',
+    day: 'Saturday',
+    experience: 'Intermediate',
+    yoga: 'Slow flow',
+    atmosphere: 'Outdoor',
+})
+
+console.log(groupedSessions.tomsBeachYoga['atmosphere']);
+console.log(groupedSessions.zacsHotYoga['yoga']);
+console.log(groupedSessions.sofiasStudioYoga['experience']);
+console.log(groupedSessions.alexsKitchenYoga['city']);
+
 
 
 
