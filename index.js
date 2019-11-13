@@ -51,7 +51,7 @@
 
     // STRETCH GOAL 1.3 - PSEUDO-CODE 
     // filter buttons at the top of explore html that automatically re-adjusts the page 
-    // if x filter button is toggled, loop through the opjects again and re-append based on the updated results
+    
 
     // LONG-TERM GOAL 2.1 (not for this project)
     // Use firebase to link the profiles created in profile.html with the classes that the user sees
@@ -110,7 +110,7 @@ yogaApp.groupedSessions = {
         day: 'Monday',
         experience: 'Beginner',
         yoga: 'Power flow', 
-        atmosphere: 'Outdoor',
+        atmosphere: 'Indoor',
         imageURL: 'assets/option-visuals/jonathan-borba-5IjWRNGbkYI-unsplash.jpg',
         name: 'yogiAlex',
         
@@ -122,7 +122,7 @@ yogaApp.groupedSessions = {
         experience: 'Advanced',
         yoga: 'Ashtanga',
         atmosphere: 'Studio',
-        imageURL: 'assets/option-visuals/nate-johnston-2gBpsNuHcyA-unsplash.jpg',
+        imageURL: 'assets/option-visuals/patrick-kool-zTwmxau8DlQ-unsplash.jpg',
         name: 'yogiSofia',
     }),
 
@@ -131,8 +131,8 @@ yogaApp.groupedSessions = {
         day: 'Friday',
         experience: 'Beginner',
         yoga: 'Vinyasa',
-        atmosphere: 'Studio',
-        imageURL: 'assets/option-visuals/simon-raeker.jpg',
+        atmosphere: 'Outdoor',
+        imageURL: 'assets/option-visuals/rima-kruciene-Tq9Ln3gpiG4-unsplash.jpg',
         name: 'yogiZac',
     }),
 
@@ -157,8 +157,6 @@ yogaApp.groupedSessions = {
     }),
 }
 
-console.log(yogaApp.groupedSessions.yogiAlex['imageURL']);
-
 // use a function loop through each form item choice object to deliver the choices we want in an array 
 yogaApp.findChoicesItems = (choiceObj, finalArray) => {
     let newArray = [];
@@ -181,9 +179,28 @@ yogaApp.findChoicesItems = (choiceObj, finalArray) => {
 }
 
 // write a function that removes any currently appended data to the page
-yogaApp.removeCurrentData = function() {
-    $('.results').remove();
+yogaApp.removeCurrentData = function(toBeRemoved) {
+    $(toBeRemoved).remove();
 }
+
+// use if function to remove any undefined or replicated items
+// then collate the accurate items in an array
+yogaApp.cleanSimilarItems = function(incomingArray, outgoingArray) {
+    if (incomingArray[0] == null || outgoingArray.includes(incomingArray[0])) {
+        outgoingArray;
+    } else {
+        outgoingArray.push(incomingArray[0]);
+    }
+}
+
+// if no user input, then provide an error message under the button asking for input. Also add a class to style this and use removeClass to remove any background styling for any prior searches
+yogaApp.noUserInputError = function (userInputArray) {
+    if (userInputArray.length === 0) {
+        $('.title2').text('Please click a filter above or search all the options below').addClass('title3')
+        $('.reveal-data').removeClass('reveal-data-style')
+
+    } 
+} 
 
 // function:
     // run through the object and the array holdiing the user input. 
@@ -195,19 +212,21 @@ yogaApp.appendToPage = function(userInputArray) {
     let sameItems = [];
 
     // remove current appended data if exists
-    yogaApp.removeCurrentData();
+    yogaApp.removeCurrentData('.results');
 
     // loop through the object
     for (i in yogaApp.groupedSessions) {
-        
+        console.log(userInputArray)
         // loop through the array and compare array city item to object city item. Return only those that are the same
         let sameCity = userInputArray[0].filter(function (option) {
             return option === yogaApp.groupedSessions[i]['city']
         })
-        // collate similar ones in array
-        if (sameCity[0] != null) {
-            sameItems.push(sameCity[0]);
-        }
+
+        console.log(sameCity)
+        // use if function to remove any undefined or replicated items
+        // then collate the accurate items in an array
+        yogaApp.cleanSimilarItems(sameCity, sameItems)
+        console.log(sameItems)
         // grab objects with these similarities
         if (sameItems.includes(yogaApp.groupedSessions[i]['city'])) {
             // console.log(yogaApp.groupedSessions[i]['name'])
@@ -247,8 +266,11 @@ yogaApp.appendToPage = function(userInputArray) {
                 `)                
         }
 
-    }   
+    }  
     
+    // finally check that if nothing is input on the page then user gets a notification
+    yogaApp.noUserInputError(sameItems);
+
     // original test header
     // <div class='results'>
     //     <h1> ${yogaApp.groupedSessions[i]['name']} </h1>
@@ -256,11 +278,11 @@ yogaApp.appendToPage = function(userInputArray) {
 }
 
 yogaApp.appendHeader = function() {
-    $('.header-wrapper').remove();
+    yogaApp.removeCurrentData('.header-wrapper')
     $('.reveal-data').prepend(
                 `
                 <section class='wrapper header-wrapper'>
-                    <h2 class='title'> Personalised Options:</h2>
+                    <h2 class='title title2'> Personalised Options:</h2>
                 </section>`)
 }
 
@@ -303,11 +325,10 @@ yogaApp.events = function() {
         // collate into allChoices all user input including harder and easier items
         allChoices = allChoices.concat(subChoices);
 
-        console.log(allChoices);
-        
+        // console.log(allChoices);
 
         // loop through choices in the array with .filter. If true that city (example) = (example)
-        // If these choices are in the dummy data, pull that object
+        // If these choices are in the dummy data, pull that object and put its info on the page
         yogaApp.appendHeader();
         yogaApp.appendToPage(allChoices);
         

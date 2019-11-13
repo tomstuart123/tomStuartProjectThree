@@ -20,10 +20,22 @@
     }
 } 
 
-.reveal-data-style {
+.reveal-data {
     height: auto;
-    background: linear-gradient($gradient-color-one, $gradient-color-two );
+    background: $gradient-color-two;
+
+}
+
+.reveal-data-style {
     padding: 50px 0;
+    background: linear-gradient($gradient-color-one, $gradient-color-two);
+}
+
+.title3 {
+    font-size: 2rem;
+    color: $dark-color;
+    text-align: center;
+    padding-bottom: 30px;
 }
 
 
