@@ -156,12 +156,21 @@ console.log(yogaApp.groupedSessions.yogiZac['yoga']);
 console.log(yogaApp.groupedSessions.yogiSofia['experience']);
 console.log(yogaApp.groupedSessions.yogiAlex['imageURL']);
 
-// function:
-    // run through the object with a for loop
-    // for each city in the object, run .filter(array[array]) 
+// write a function that removes any currently appended data to the page
+yogaApp.removeCurrentData = function() {
+    console.log('hello')
+    $('.results').remove();
+}
+
+// function: run through the object and the array holdiing the user input. if they are the same, append the data from the object to the page with .append. Also call removeCUrrentData funciton above to remove data each time the user searches
+// for each city in the object, run .filter(array[array]) 
 yogaApp.appendToPage = function(array1) {
     // variable to collate all similar items
     let sameItems = [];
+
+    // remove current appended data if exists
+    yogaApp.removeCurrentData();
+
     // loop through the object
     for (i in yogaApp.groupedSessions) {
         
@@ -174,15 +183,46 @@ yogaApp.appendToPage = function(array1) {
             sameItems.push(sameCity[0]);
         }
         // grab objects with these similarities
-        if (array1[0].includes(yogaApp.groupedSessions[i]['city'])) {
+        if (sameItems.includes(yogaApp.groupedSessions[i]['city'])) {
             // console.log(yogaApp.groupedSessions[i]['name'])
+            
+            $('.reveal-data').addClass('reveal-data-style')
             $('.reveal-data').append(
-                `<div class='results'>
-                    <h1> ${yogaApp.groupedSessions[i]['name']} </h1>
-                </div`)
+                `
+                <section class='results'> 
+                <section class='wrapper'>
+                    <h2 class='title'> Personalised Options:</h2>
+                </section>
+                <div class='option option-one'>
+                    <section class='wrapper'>
+                        <div class='option-image'>
+                            <a href="default.asp">
+                                <img alt='yoga-class-visual' class='image' src='${yogaApp.groupedSessions[i]['imageURL']}'>
+                            </a>
+                        </div>
+                        <div class='option-text'>
+                            <p>Lead Yogi: </p>
+                            <p>${yogaApp.groupedSessions[i]['name']} </p>
+                            <p>Cost: </p>
+                            <p>$10 </p>
+                            <p>Where:</p>
+                            <p>${yogaApp.groupedSessions[i]['city']}</p>
+                            <p>Yoga Type:</p>
+                            <p>${yogaApp.groupedSessions[i]['yoga']}</p>
+                            <p>Atmosphere: </p>
+                            <p>${yogaApp.groupedSessions[i]['atmosphere']}</p>
+                            <p>Rating:</p>
+                            <p>4.8*</p>
+                        </div>
+                    </section>
+                </div>
+                </section> 
+                `)                
         } 
-        // grab objects with these similarities
     }   
+    // <div class='results'>
+    //     <h1> ${yogaApp.groupedSessions[i]['name']} </h1>
+    // </div >`)
     console.log(sameItems);  
 }
 
@@ -247,10 +287,11 @@ yogaApp.events = function() {
         allChoices = allChoices.concat(subChoices);
 
         console.log(allChoices);
-        yogaApp.appendToPage(allChoices);
+        
 
         // loop through choices in the array with .filter. If true that city (example) = (example)
         // If these choices are in the dummy data, pull that object
+        yogaApp.appendToPage(allChoices);
 
         // console.log(yogaApp.groupedSessions.tomsBeachYoga['atmosphere']);
          
