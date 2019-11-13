@@ -62,6 +62,12 @@
 
 // REAL CODE
 
+// to do - clean up to do
+    // changed grouped sessions to an array
+    // review last projects feedabck and apply
+    // change all image files to camel
+
+
 let yogaApp = {};
 
 // create class for iteration of session to hold yoga sessions. Inside the class use a static function to allow easy creation of new session classes
@@ -151,20 +157,40 @@ yogaApp.groupedSessions = {
     }),
 }
 
-console.log(yogaApp.groupedSessions.yogiTom['atmosphere']);
-console.log(yogaApp.groupedSessions.yogiZac['yoga']);
-console.log(yogaApp.groupedSessions.yogiSofia['experience']);
 console.log(yogaApp.groupedSessions.yogiAlex['imageURL']);
+
+// use a function loop through each form item choice object to deliver the choices we want in an array 
+yogaApp.findChoicesItems = (choiceObj, finalArray) => {
+    let newArray = [];
+    // push each item in the chosen object into an array
+    for (i = 0; i < 10; i++) {
+        newArray.push(choiceObj[i]);
+    };
+
+    // remove all null / undefined elements in this array in case nothing is chosen
+    const cleanedArray = newArray.filter(function (item) {
+        return item != null;
+    });
+
+    // create final array of choices
+    let finalChoiceArray = [];
+    for (i in cleanedArray) {
+        finalChoiceArray.push(cleanedArray[i].id);
+    };
+    finalArray.push(finalChoiceArray);
+}
 
 // write a function that removes any currently appended data to the page
 yogaApp.removeCurrentData = function() {
-    console.log('hello')
     $('.results').remove();
 }
 
-// function: run through the object and the array holdiing the user input. if they are the same, append the data from the object to the page with .append. Also call removeCUrrentData funciton above to remove data each time the user searches
-// for each city in the object, run .filter(array[array]) 
-yogaApp.appendToPage = function(array1) {
+// function:
+    // run through the object and the array holdiing the user input. 
+    // if they are the same, append the data from the object to the page with .append. 
+    // Also call removeCUrrentData funciton above to remove data each time the user searches
+    // for each city in the object, run .filter(array[array]) 
+yogaApp.appendToPage = function(userInputArray) {
     // variable to collate all similar items
     let sameItems = [];
 
@@ -175,7 +201,7 @@ yogaApp.appendToPage = function(array1) {
     for (i in yogaApp.groupedSessions) {
         
         // loop through the array and compare array city item to object city item. Return only those that are the same
-        let sameCity = array1[0].filter(function (option) {
+        let sameCity = userInputArray[0].filter(function (option) {
             return option === yogaApp.groupedSessions[i]['city']
         })
         // collate similar ones in array
@@ -188,11 +214,12 @@ yogaApp.appendToPage = function(array1) {
             
             $('.reveal-data').addClass('reveal-data-style')
             $('.reveal-data').append(
+                // <section class='wrapper'>
+                //     <h2 class='title'> Personalised Options:</h2>
+                // </section>
                 `
-                <section class='results'> 
-                <section class='wrapper'>
-                    <h2 class='title'> Personalised Options:</h2>
-                </section>
+                <section class='results'>
+                
                 <div class='option option-one'>
                     <section class='wrapper'>
                         <div class='option-image'>
@@ -216,19 +243,30 @@ yogaApp.appendToPage = function(array1) {
                         </div>
                     </section>
                 </div>
-                </section> 
+                </section>
                 `)                
-        } 
+        }
+
     }   
+    
+    // original test header
     // <div class='results'>
     //     <h1> ${yogaApp.groupedSessions[i]['name']} </h1>
     // </div >`)
-    console.log(sameItems);  
+}
+
+yogaApp.appendHeader = function() {
+    $('.header-wrapper').remove();
+    $('.reveal-data').prepend(
+                `
+                <section class='wrapper header-wrapper'>
+                    <h2 class='title'> Personalised Options:</h2>
+                </section>`)
 }
 
 
 
-// store guest
+// The event function that kicks off everything. This runs all the functions aboves
 yogaApp.events = function() {
     
     let $formGuest = $('.form-guest')
@@ -245,7 +283,7 @@ yogaApp.events = function() {
         const $atmosChoiceObject = $('input[name=atmosphere]:checked');
 
         
-        // for the easier to access form items, collate them into one array called subChoices
+        // // find the user input data for the easier to access form items, collate them into one array called subChoices
         let dayChoicesArray = [];
         let yogaChoicesArray = [];
         let subChoices = [];
@@ -256,34 +294,13 @@ yogaApp.events = function() {
 
         // set an object to collect all the harder form items (needed cleaning) user's answers
         let allChoices = [];
-
-        // use a function loop through each harder form item choice object to deliver the choices we want in an array 
-        const findChoicesItems = (choiceObj) => {
-            let newArray = [];
-            // push each item in the chosen object into an array
-            for (i = 0; i < 10; i++) {
-                newArray.push(choiceObj[i]);
-            };
-
-            // remove all null / undefined elements in this array in case nothing is chosen
-            const cleanedArray = newArray.filter(function (item) {
-                return item != null;
-            });
-
-            // create final array of choices
-            let finalChoiceArray = [];
-            for (i in cleanedArray) {
-                finalChoiceArray.push(cleanedArray[i].id);
-            };
-            allChoices.push(finalChoiceArray);
-
-
-        }
         
-        // collate all user choices into a final array
-        findChoicesItems($cityChoiceObject);
-        findChoicesItems($expChoiceObject);
-        findChoicesItems($atmosChoiceObject);
+        // collate all harder user choices into a final array
+        yogaApp.findChoicesItems($cityChoiceObject, allChoices);
+        yogaApp.findChoicesItems($expChoiceObject, allChoices);
+        yogaApp.findChoicesItems($atmosChoiceObject, allChoices);
+        
+        // collate into allChoices all user input including harder and easier items
         allChoices = allChoices.concat(subChoices);
 
         console.log(allChoices);
@@ -291,7 +308,10 @@ yogaApp.events = function() {
 
         // loop through choices in the array with .filter. If true that city (example) = (example)
         // If these choices are in the dummy data, pull that object
+        yogaApp.appendHeader();
         yogaApp.appendToPage(allChoices);
+        
+
 
         // console.log(yogaApp.groupedSessions.tomsBeachYoga['atmosphere']);
          
