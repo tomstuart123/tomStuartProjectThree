@@ -122,7 +122,7 @@ yogaApp.groupedSessions = {
         day: 'weekend',
         experience: 'advanced',
         yoga: 'vinyasa',
-        atmosphere: 'studio',
+        atmosphere: 'home',
         imageURL: 'assets/option-visuals/patrick-kool-zTwmxau8DlQ-unsplash.jpg',
         name: 'yogiSofia',
     }),
@@ -130,7 +130,7 @@ yogaApp.groupedSessions = {
     yogiZac: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'evening',
-        experience: 'beginner',
+        experience: 'intermediate',
         yoga: 'restorative',
         atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/rima-kruciene-Tq9Ln3gpiG4-unsplash.jpg',
@@ -173,7 +173,7 @@ yogaApp.groupedSessions = {
         day: 'morning',
         experience: 'intermediate',
         yoga: 'ashtanga',
-        atmosphere: 'home',
+        atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/ruslan-zh-i_DN1jo1iTU-unsplash.jpg',
         name: 'yogiSam',
 
@@ -273,13 +273,193 @@ yogaApp.groupedSessions = {
 
     yogiSarah: yogaApp.Session.createSession({
         city: 'toronto',
-        day: 'evening',
+        day: 'weekend',
         experience: 'advanced',
         yoga: 'vinyasa',
         atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/mark-zamora-Y9jpiiiAAOQ-unsplash.jpg',
         name: 'yogiSarah',
     }),
+
+    yogiJack: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'evening',
+        experience: 'advanced',
+        yoga: 'restorative',
+        atmosphere: 'studio',
+        imageURL: 'assets/option-visuals/carl-newton-iX7WedkjpUY-unsplash.jpg',
+        name: 'yogiJack',
+
+    }),
+
+    yogiGeorgia: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'evening',
+        experience: 'beginner',
+        yoga: 'ashtanga',
+        atmosphere: 'home',
+        imageURL: 'assets/option-visuals/farsai-chaikulngamdee-L2wq7Y3h7ag-unsplash.jpg',
+        name: 'yogiGeorgia',
+
+    }),
+
+    yogiSally: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'evening',
+        experience: 'intermediate',
+        yoga: 'vinyasa',
+        atmosphere: 'home',
+        imageURL: 'assets/option-visuals/max-rovensky-fGUmhLROnPc-unsplash.jpg',
+        name: 'yogiSally',
+    }),
+
+    yogiRussell: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'morning',
+        experience: 'intermediate',
+        yoga: 'restorative',
+        atmosphere: 'studio',
+        imageURL: 'assets/option-visuals/chris-ensey-16QrjudiZnE-unsplash.jpg',
+        name: 'yogiRussell',
+
+    }),
+
+    yogiJanet: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'morning',
+        experience: 'advanced',
+        yoga: 'ashtanga',
+        atmosphere: 'outdoor',
+        imageURL: 'assets/option-visuals/alexander-mils-bpoSU5kmUfo-unsplash.jpg',
+        name: 'yogiJanet',
+
+    }),
+
+    yogiTara: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'morning',
+        experience: 'beginner',
+        yoga: 'vinyasa',
+        atmosphere: 'studio',
+        imageURL: 'assets/option-visuals/william-farlow-IevaZPwq0mw-unsplash.jpg',
+        name: 'yogiTara',
+    }),
+
+    yogiTim: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'weekend',
+        experience: 'intermediate',
+        yoga: 'restorative',
+        atmosphere: 'studio',
+        imageURL: 'assets/option-visuals/fabian-moller-gI7zgb80QWY-unsplash.jpg',
+        name: 'yogiTim',
+
+    }),
+
+    yogiPaula: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'weekend',
+        experience: 'beginner',
+        yoga: 'ashtanga',
+        atmosphere: 'home',
+        imageURL: 'assets/option-visuals/steve-halama-tyCVZ1Aaqxo-unsplash.jpg',
+        name: 'yogiPaula',
+
+    }),
+
+    yogiBonnie: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'weekend',
+        experience: 'beginner',
+        yoga: 'vinyasa',
+        atmosphere: 'studio',
+        imageURL: 'assets/option-visuals/bekir-donmez-eofm5R5f9Kw-unsplash.jpg',
+        name: 'yogiBonnie',
+    }),
+
+    yogiIdris: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'evening',
+        experience: 'beginner',
+        yoga: 'restorative',
+        atmosphere: 'studio',
+        imageURL: 'assets/option-visuals/patrick-malleret-p-v1DBkTrgo-unsplash.jpg',
+        name: 'yogiIdris',
+
+    }),
+
+    yogiHarry: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'evening',
+        experience: 'intermediate',
+        yoga: 'ashtanga',
+        atmosphere: 'studio',
+        imageURL: 'assets/option-visuals/mark-adriane-muS2RraYRuQ-unsplash(1).jpg',
+        name: 'yogiHarry',
+
+    }),
+
+    yogiHolly: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'evening',
+        experience: 'advanced',
+        yoga: 'vinyasa',
+        atmosphere: 'home',
+        imageURL: 'assets/option-visuals/annie-spratt-8mqOw4DBBSg-unsplash.jpg',
+        name: 'yogiHolly',
+    }),
+
+    yogiStar: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'morning',
+        experience: 'beginner',
+        yoga: 'vinyasa',
+        atmosphere: 'outdoor',
+        imageURL: 'assets/option-visuals/wesley-tingey-dlxNvA7pVwU-unsplash.jpg',
+        name: 'yogiStar',
+    }),
+
+    yogiJosh: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'morning',
+        experience: 'beginner',
+        yoga: 'vinyasa',
+        atmosphere: 'home',
+        imageURL: 'assets/option-visuals/ksenia-makagonova-V-TIPBoC_2M-unsplash.jpg',
+        name: 'yogiJosh',
+    }),
+
+    yogiCharlotte: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'morning',
+        experience: 'advanced',
+        yoga: 'vinyasa',
+        atmosphere: 'home',
+        imageURL: 'assets/option-visuals/bruce-mars-pFyKRmDiWEA-unsplash(1).jpg',
+        name: 'yogiCharlotte',
+    }),
+
+    yogiCres: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'weekend',
+        experience: 'intermediate',
+        yoga: 'vinyasa',
+        atmosphere: 'outdoor',
+        imageURL: 'assets/option-visuals/natalie-grainger-8uB5kFKWWkk-unsplash.jpg',
+        name: 'yogiCres',
+    }),
+
+    yogiChris: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'evening',
+        experience: 'advanced',
+        yoga: 'vinyasa',
+        atmosphere: 'outdoor',
+        imageURL: 'assets/option-visuals/jay-castor-7AcMUSYRZpU-unsplash.jpg',
+        name: 'yogiChris',
+    }),
+
+    
 
     
 }
@@ -328,28 +508,48 @@ yogaApp.checkForAnyDay = function (incomingArray, outgoingArray) {
     }
 }
 
+
+
 // if no user input, then provide an error message under the button asking for input. Also add a class to style this and use removeClass to remove any background styling for any prior searches
 // yogaApp.noUserInputError = function (userInputArray) {
 //     if (userInputArray.length === 0) {
 //         $('.title4').toggleClass('hide')
 //     } 
 // } 
+yogaApp.counter = 0;
+yogaApp.saveToLocalStorage = function(userInputArrays) {
+    // currently we have an array holding multiple arrays for each user input (array[0] holds all cities clicked /  array[1] holds all levels clicked)
+    // convert these to local storage key value pairs
+        // for each item in array[0], localStorage.setItem('city', array[0)[i]
+        // if counter at 0 , put city, if counter +1 do x, etc
+        
+        
+        console.log(userInputArrays)
+        let counter = 0;
 
-// yogaApp.saveToLocalStorage = function(userInputArrays) {
-//     // currently we have an array holding multiple arrays for each user input (array[0] holds all cities clicked /  array[1] holds all levels clicked)
-//     // convert these to local storage key value pairs
-//         // for each item in array[0], localStorage.setItem('city', array[0)[i]
-//     userInputArrays.forEach(function (userInputArray) {
-//         let tempKey;
-//         let counter;
-//         // if counter at 0 , put city, if counter +1 do x, etc 
-//         userInputArray.forEach(function (choice) {
-//             console.log(choice)
-//         })
-//     })
-//         // for each item in array[1], localStorage.setItem('city', array[0)[i]
-//     // before this run data to delete all localStorage.clear    
-// }
+        userInputArrays.forEach(function (choice) {
+            counter = counter + 1;
+
+            if (counter === 1) {
+                localStorage.setItem('city', `${choice}`)
+                console.log(choice)
+            } else if (counter === 2){
+                localStorage.setItem('experience', `${choice}`)
+                console.log(choice)
+            } else if (counter === 3) {
+                localStorage.setItem('atmosphere', `${choice}`)
+                console.log(choice)
+            } else if (counter === 4) {
+                localStorage.setItem('day', `${choice}`)
+                console.log(choice)
+            }
+            console.log(localStorage)
+
+            
+        })
+        // for each item in array[1], localStorage.setItem('city', array[0)[i]
+    // before this run data to delete all localStorage.clear    
+}
 
 
 // function:
@@ -401,7 +601,7 @@ yogaApp.appendToPage = function(userInputArrays) {
         yogaApp.cleanSimilarItems(sameDay, sameItems)
         yogaApp.checkForAnyDay(sameAnyDay, sameItems)
 
-        console.log(sameItems)
+        // console.log(sameItems)
 
         // grab objects with these similarities
         if (sameItems.includes(yogaApp.groupedSessions[i]['city']) && sameItems.includes(yogaApp.groupedSessions[i]['atmosphere']) && sameItems.includes(yogaApp.groupedSessions[i]['experience']) && sameItems.includes(yogaApp.groupedSessions[i]['day']) || sameItems.includes(yogaApp.groupedSessions[i]['any'])) {
@@ -440,7 +640,6 @@ yogaApp.appendToPage = function(userInputArrays) {
         } 
 
     }  
-    console.log(checker);
     if (checker === undefined) {
         $('.reveal-data').toggleClass('reveal-data-style2')
         $('.header-wrapper').toggleClass('hide')
@@ -512,7 +711,7 @@ yogaApp.events = function() {
         // loop through choices in the array with .filter. If true that city (example) = (example)
         // If these choices are in the dummy data, pull that object and put its info on the page
         
-        // yogaApp.saveToLocalStorage(allChoices);
+        yogaApp.saveToLocalStorage(allChoices);
 
         // append to page using functions above
         yogaApp.appendHeader();
