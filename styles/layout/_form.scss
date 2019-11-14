@@ -1,14 +1,17 @@
 .form-section { 
     background-size: cover;
     background: linear-gradient($gradient-color-one, $gradient-color-two );
-    height: 850px;
+    height: 775px;
 
+    @include mq-large-phone {
+        height: 775px;
+    }
     @include mq-tablet {
-        height: 950px;
+        height: 800px;
     }
 
     @include mq-desktop {
-       height: 1000px;
+       height: 875px;
     }
 }
 form legend {
@@ -74,6 +77,16 @@ form .question-form {
     text-align: left;
     padding: 20px 0;
     // margin: 20px 0;
+}
+
+form .small-font{ 
+    font-size: 1rem;
+    @include mq-tablet {
+       font-size: 1.2rem;
+    }
+    @include mq-desktop {
+       font-size: 1.5rem;
+    }
 }
 
 form .submit-form { 

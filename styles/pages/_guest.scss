@@ -27,18 +27,34 @@
 }
 
 .reveal-data-style {
-    padding: 50px 0;
-    background: linear-gradient($gradient-color-one, $gradient-color-two);
+    padding-top: 50px;
+    background: $gradient-color-one;
 }
 
-.title3 {
+.no-input, .no-data {
+    width: 100%;
+}
+
+.title3, .title4, .title5 {
     font-size: 2rem;
     color: $dark-color;
     text-align: center;
     padding-bottom: 30px;
+    @include mq-tablet {
+        font-size: 2.5rem;
+    }
+    @include mq-desktop {
+        font-size: 3rem;
+    }
 }
 
+.title4, .title5 {
+    display: block;
+}
 
+.hide {
+    display:none;
+}
 
 
 

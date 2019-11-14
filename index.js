@@ -64,6 +64,7 @@
 
 // to do - clean up to do
     // changed grouped sessions to an array
+    // store all jquery as variables
     // review last projects feedabck and apply
     // change all image files to camel
 
@@ -96,64 +97,156 @@ yogaApp.Session = class Session {
 yogaApp.groupedSessions = {
     yogiTom: yogaApp.Session.createSession({
         city: 'toronto',
-        day: 'Saturday',
-        experience: 'Intermediate',
-        yoga: 'Slow flow',
-        atmosphere: 'Outdoor',
+        day: 'evening',
+        experience: 'beginner',
+        yoga: 'restorative',
+        atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/artem-beliaikin-nKCtkaW4JU4-unsplash.jpg',
         name: 'yogiTom',
 
     }),
 
     yogiAlex: yogaApp.Session.createSession({
-        city: 'new-york',
-        day: 'Monday',
-        experience: 'Beginner',
-        yoga: 'Power flow', 
-        atmosphere: 'Indoor',
+        city: 'toronto',
+        day: 'morning',
+        experience: 'intermediate',
+        yoga: 'ashtanga', 
+        atmosphere: 'home',
         imageURL: 'assets/option-visuals/jonathan-borba-5IjWRNGbkYI-unsplash.jpg',
         name: 'yogiAlex',
         
     }),
 
     yogiSofia: yogaApp.Session.createSession({
-        city: 'london',
-        day: 'Wednesday',
-        experience: 'Advanced',
-        yoga: 'Ashtanga',
-        atmosphere: 'Studio',
+        city: 'toronto',
+        day: 'weekend',
+        experience: 'advanced',
+        yoga: 'vinyasa',
+        atmosphere: 'studio',
         imageURL: 'assets/option-visuals/patrick-kool-zTwmxau8DlQ-unsplash.jpg',
         name: 'yogiSofia',
     }),
 
     yogiZac: yogaApp.Session.createSession({
-        city: 'new-york',
-        day: 'Friday',
-        experience: 'Beginner',
-        yoga: 'Vinyasa',
-        atmosphere: 'Outdoor',
+        city: 'toronto',
+        day: 'evening',
+        experience: 'beginner',
+        yoga: 'restorative',
+        atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/rima-kruciene-Tq9Ln3gpiG4-unsplash.jpg',
         name: 'yogiZac',
     }),
 
     yogiSandy: yogaApp.Session.createSession({
         city: 'toronto',
-        day: 'Thursday',
-        experience: 'Intermediate',
-        yoga: 'Ashtanga',
-        atmosphere: 'Studio',
+        day: 'morning',
+        experience: 'intermediate',
+        yoga: 'ashtanga',
+        atmosphere: 'home',
         imageURL: 'assets/option-visuals/nate-johnston-2gBpsNuHcyA-unsplash.jpg',
         name: 'yogiSandy',
     }),
 
     yogiJames: yogaApp.Session.createSession({
         city: 'toronto',
-        day: 'Saturday',
-        experience: 'Advanced',
-        yoga: 'Slow flow',
-        atmosphere: 'Outdoor',
+        day: 'weekend',
+        experience: 'advanced',
+        yoga: 'vinyasa',
+        atmosphere: 'studio',
         imageURL: 'assets/option-visuals/simon-raeker.jpg',
         name: 'yogiJames',
+    }),
+
+    yogiJohn: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'evening',
+        experience: 'beginner',
+        yoga: 'restorative',
+        atmosphere: 'outdoor',
+        imageURL: 'assets/option-visuals/scott-broome-cuOHHP5tx5g-unsplash.jpg',
+        name: 'yogiJohn',
+
+    }),
+
+    yogiSam: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'morning',
+        experience: 'intermediate',
+        yoga: 'ashtanga',
+        atmosphere: 'home',
+        imageURL: 'assets/option-visuals/ruslan-zh-i_DN1jo1iTU-unsplash.jpg',
+        name: 'yogiSam',
+
+    }),
+
+    yogiElise: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'weekend',
+        experience: 'advanced',
+        yoga: 'vinyasa',
+        atmosphere: 'studio',
+        imageURL: 'assets/option-visuals/kike-vega-F2qh3yjz6Jk-unsplash.jpg',
+        name: 'yogiElise',
+    }),
+
+    yogiBella: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'evening',
+        experience: 'beginner',
+        yoga: 'restorative',
+        atmosphere: 'outdoor',
+        imageURL: 'assets/option-visuals/dane-wetton-t1NEMSm1rgI-unsplash.jpg',
+        name: 'yogiBella',
+    }),
+
+    yogiSean: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'morning',
+        experience: 'intermediate',
+        yoga: 'ashtanga',
+        atmosphere: 'home',
+        imageURL: 'assets/option-visuals/ashes-sitoula--8ZESyFapTk-unsplash.jpg',
+        name: 'yogiSean',
+    }),
+
+    yogiRachita: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'weekend',
+        experience: 'advanced',
+        yoga: 'vinyasa',
+        atmosphere: 'studio',
+        imageURL: 'assets/option-visuals/dane-wetton-t1NEMSm1rgI-unsplash.jpg',
+        name: 'yogiRachita',
+    }),
+
+    yogiPaul: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'evening',
+        experience: 'beginner',
+        yoga: 'restorative',
+        atmosphere: 'outdoor',
+        imageURL: 'assets/option-visuals/isabell-winter-lzYZEDJ8fbo-unsplash.jpg',
+        name: 'yogiPaul',
+    }),
+
+    yogiCatri: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'morning',
+        experience: 'intermediate',
+        yoga: 'ashtanga',
+        atmosphere: 'home',
+        imageURL: 'assets/option-visuals/form-w0YIvob3LlI-unsplash.jpg',
+        name: 'yogiCatri',
+    }),
+
+    yogiLucy: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'weekend',
+        experience: 'advanced',
+        yoga: 'vinyasa',
+        atmosphere: 'studio',
+        imageURL: 'assets/option-visuals/wesley-tingey-57wo9F-r2-A-unsplash.jpg',
+        name: 'yogiLucy',
     }),
 }
 
@@ -193,12 +286,18 @@ yogaApp.cleanSimilarItems = function(incomingArray, outgoingArray) {
     }
 }
 
+yogaApp.checkForAnyDay = function (incomingArray, outgoingArray) {
+    if (incomingArray.length > 0) {
+        outgoingArray.push('morning');
+        outgoingArray.push('evening');
+        outgoingArray.push('weekend');
+    }
+}
+
 // if no user input, then provide an error message under the button asking for input. Also add a class to style this and use removeClass to remove any background styling for any prior searches
 yogaApp.noUserInputError = function (userInputArray) {
     if (userInputArray.length === 0) {
-        $('.title2').text('Please click a filter above or search all the options below').addClass('title3')
-        $('.reveal-data').removeClass('reveal-data-style')
-
+        $('.title4').toggleClass('hide')
     } 
 } 
 
@@ -207,35 +306,59 @@ yogaApp.noUserInputError = function (userInputArray) {
     // if they are the same, append the data from the object to the page with .append. 
     // Also call removeCUrrentData funciton above to remove data each time the user searches
     // for each city in the object, run .filter(array[array]) 
-yogaApp.appendToPage = function(userInputArray) {
+yogaApp.appendToPage = function(userInputArrays) {
     // variable to collate all similar items
     let sameItems = [];
 
     // remove current appended data if exists
     yogaApp.removeCurrentData('.results');
-
     // loop through the object
-    for (i in yogaApp.groupedSessions) {
-        console.log(userInputArray)
+    for (i in yogaApp.groupedSessions) {        
         // loop through the array and compare array city item to object city item. Return only those that are the same
-        let sameCity = userInputArray[0].filter(function (option) {
-            return option === yogaApp.groupedSessions[i]['city']
+        let sameCity
+        let sameExperience
+        sameCity = userInputArrays[0].filter(function (option) {
+            return option === yogaApp.groupedSessions[i]['city'];
         })
 
-        console.log(sameCity)
-        // use if function to remove any undefined or replicated items
-        // then collate the accurate items in an array
+        sameExperience = userInputArrays[1].filter(function (option) {
+                return option === yogaApp.groupedSessions[i]['experience'];
+        })
+
+        sameAtmosphere = userInputArrays[2].filter(function (option) {
+            return option === yogaApp.groupedSessions[i]['atmosphere'];
+        })
+
+        sameDay = userInputArrays[4].filter(function (option) {
+            return option === yogaApp.groupedSessions[i]['day'];
+        })
+        // console.log(sameDay)
+        
+
+        sameAnyDay = userInputArrays[4].filter(function (option) {
+                return option === 'any';
+        })
+
+        // use if function to remove any undefined or replicated items of each user input (city, experience and atmosphere)
+        // then collate the accurate items into one single array called sameItems
         yogaApp.cleanSimilarItems(sameCity, sameItems)
+        yogaApp.cleanSimilarItems(sameExperience, sameItems)
+        yogaApp.cleanSimilarItems(sameAtmosphere, sameItems)
+        yogaApp.cleanSimilarItems(sameDay, sameItems)
+        yogaApp.checkForAnyDay(sameAnyDay, sameItems)
+
         console.log(sameItems)
+
         // grab objects with these similarities
-        if (sameItems.includes(yogaApp.groupedSessions[i]['city'])) {
-            // console.log(yogaApp.groupedSessions[i]['name'])
+        if (sameItems.includes(yogaApp.groupedSessions[i]['city']) && sameItems.includes(yogaApp.groupedSessions[i]['atmosphere']) && sameItems.includes(yogaApp.groupedSessions[i]['experience']) && sameItems.includes(yogaApp.groupedSessions[i]['day']) || sameItems.includes(yogaApp.groupedSessions[i]['any'])) {
             
-            $('.reveal-data').addClass('reveal-data-style')
+            $('html, body').animate({
+                scrollTop: $(".reveal-data").offset().top
+            });
+            
+            $('.reveal-data').addClass('reveal-data-style');
             $('.reveal-data').append(
-                // <section class='wrapper'>
-                //     <h2 class='title'> Personalised Options:</h2>
-                // </section>
+                
                 `
                 <section class='results'>
                 
@@ -264,13 +387,17 @@ yogaApp.appendToPage = function(userInputArray) {
                 </div>
                 </section>
                 `)                
-        }
+        } 
+        else {
+            $('.reveal-data').removeClass('reveal-data-style2')
+            $('.header-wrapper').toggleClass('hide')
+            $('.title5').toggleClass('hide')
 
+        }
     }  
     
     // finally check that if nothing is input on the page then user gets a notification
-    yogaApp.noUserInputError(sameItems);
-
+    // yogaApp.noUserInputError(sameItems);
     // original test header
     // <div class='results'>
     //     <h1> ${yogaApp.groupedSessions[i]['name']} </h1>
@@ -279,14 +406,16 @@ yogaApp.appendToPage = function(userInputArray) {
 
 yogaApp.appendHeader = function() {
     yogaApp.removeCurrentData('.header-wrapper')
+    if ($('.title5').hasClass('hide') === false) {
+        $('.title5').addClass('hide')
+    }
     $('.reveal-data').prepend(
                 `
                 <section class='wrapper header-wrapper'>
                     <h2 class='title title2'> Personalised Options:</h2>
                 </section>`)
+    
 }
-
-
 
 // The event function that kicks off everything. This runs all the functions aboves
 yogaApp.events = function() {
@@ -329,10 +458,10 @@ yogaApp.events = function() {
 
         // loop through choices in the array with .filter. If true that city (example) = (example)
         // If these choices are in the dummy data, pull that object and put its info on the page
-        yogaApp.appendHeader();
-        yogaApp.appendToPage(allChoices);
         
-
+        yogaApp.appendHeader();
+        
+        yogaApp.appendToPage(allChoices);
 
         // console.log(yogaApp.groupedSessions.tomsBeachYoga['atmosphere']);
          

@@ -43,13 +43,13 @@
         <div class='wrapper'>
             <form class='form-guest'>
                 <section class='form-fieldset'>
-                        <legend class='title'>Find a class that suits you</legend>
+                        <legend class='title'>Find a class in Toronto that suits you</legend>
 
                         <div class='question-form'>
                             <legend>WHICH CITY?</legend>
                             <div>
                                 <input type="checkbox" name="city" value="London" id="london">
-                                <label for='city'>London</label>
+                                <label for='city'>London <span class='small-font'>(coming soon)</span></label>
                             </div>
                             <div>
                                 <input type="checkbox" name="city" value="Toronto" id="toronto">
@@ -57,27 +57,23 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="city" value="New York" id="new-york">
-                                <label for='city'>New York</label>
+                                <label for='city'>New York <span class='small-font'>(coming soon)</span></label>
                             </div>
                         </div>
 
                         <div class='question-form'>
-                            <legend>WHICH DAY?</legend>
+                            <legend>WHICH TIME OF DAY?</legend>
                             <select name="date" id="date" placeholder="Any" class="date">
                                 <option value="any">Any</option>
-                                <option value="monday">Monday</option>
-                                <option value="tuesday">Tuesday</option>
-                                <option value="wednesday">Wednesday</option>
-                                <option value="thursday">Thursday</option>
-                                <option value="friday">Friday</option>
-                                <option value="saturday">Saturday</option>
-                                <option value="sunday">Sunday</option>
+                                <option value="evening">Evening</option>
+                                <option value="morning">Early Morning</option>
+                                <option value="weekend">Weekend</option>
                                 <label class="visuallyHidden" for="date">Date</label>
                             </select>
                         </div>
 
                         <div class='question-form'>
-                            <legend>LEVEL OF EXPERIENCE? </legend>
+                            <legend>EXPERIENCE LEVEL? </legend>
                             <div>
                                 <input type="checkbox" name="experience" value="Beginner" id="beginner">
                                 <label for='experience'>Beginner</label>
@@ -92,20 +88,16 @@
                             </div>
                         </div>
 
-                        <div class='question-form'>
+                        <!-- <div class='question-form'>
                             <legend>WHAT TYPE OF YOGA? </legend>
                             <select name="yoga-style" id="yoga-style" placeholder="Any" class="yoga-style">
                                 <option value="any">Any</option>
                                 <option value="vinyasa">Vinyasa</option>
+                                <option value="restorative">Restorative (slow flow)</option>
                                 <option value="ashtanga">Ashtanga</option>
-                                <option value="slow-flow">Slow flow</option>
-                                <option value="power-flow">Power flow</option>
-                                <option value="restorative">Restorative</option>
-                                <option value="prenatal">Prenatal</option>
-                                <option value="hatha">Hatha</option>
                                 <label class="visuallyHidden" for="yoga-style">Yoga-style</label>
                             </select>
-                        </div>
+                        </div> -->
 
                         <div class='question-form'>
                             <legend>WHAT ATMOSPHERE? </legend> 
@@ -126,7 +118,12 @@
                         <div class='question-form submit-form'>
                              <button type="submit" id=""> Search Yoga Classes </button>
                         </div>
-
+                        <div class='no-input'>
+                            <h2 class='title4 hide'>Please try one of the options above</h2>
+                        </div>
+                        <div class='no-data'>
+                            <h2 class='title5 hide'>No options available. Please try different filters</h2>
+                        </div>
                     </section>
             </form>
         </div>
