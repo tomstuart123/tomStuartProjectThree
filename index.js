@@ -516,15 +516,13 @@ yogaApp.checkForAnyDay = function (incomingArray, outgoingArray) {
 //         $('.title4').toggleClass('hide')
 //     } 
 // } 
-yogaApp.counter = 0;
-yogaApp.saveToLocalStorage = function(userInputArrays) {
+yogaApp.saveUserToLocalStorage = function(userInputArrays) {
     // currently we have an array holding multiple arrays for each user input (array[0] holds all cities clicked /  array[1] holds all levels clicked)
     // convert these to local storage key value pairs
         // for each item in array[0], localStorage.setItem('city', array[0)[i]
         // if counter at 0 , put city, if counter +1 do x, etc
+        localStorage.clear()
         
-        
-        console.log(userInputArrays)
         let counter = 0;
 
         userInputArrays.forEach(function (choice) {
@@ -532,18 +530,15 @@ yogaApp.saveToLocalStorage = function(userInputArrays) {
 
             if (counter === 1) {
                 localStorage.setItem('city', `${choice}`)
-                console.log(choice)
-            } else if (counter === 2){
+            } 
+            else if (counter === 2){
                 localStorage.setItem('experience', `${choice}`)
-                console.log(choice)
-            } else if (counter === 3) {
+            } 
+            else if (counter === 3) {
                 localStorage.setItem('atmosphere', `${choice}`)
-                console.log(choice)
             } else if (counter === 4) {
                 localStorage.setItem('day', `${choice}`)
-                console.log(choice)
             }
-            console.log(localStorage)
 
             
         })
@@ -551,12 +546,155 @@ yogaApp.saveToLocalStorage = function(userInputArrays) {
     // before this run data to delete all localStorage.clear    
 }
 
+yogaApp.saveObjToLocalStorage = function(object) {
+    localStorage.setItem('groupedSessions', JSON.stringify(object))
+}
+
+yogaApp.pullAndConvertFromLocalStorage = function () {
+    let postStorageArrays = [];
+    // console.log(localStorage)
+    // readd to an array so appendToPage can run on it. Make sure it is using the right order using splice, unshift and push
+    for (i in localStorage) {
+  
+        if (i === 'city') {
+            let miniArray = [];
+            miniArray.push(localStorage[i])
+            let cleanMiniArray = miniArray[0].split(',');
+            postStorageArrays.unshift(cleanMiniArray)
+        } else if (i === 'experience') {            
+            let miniArray = [];
+            miniArray.push(localStorage[i])
+            let cleanMiniArray = miniArray[0].split(',');
+            postStorageArrays.splice(1, 0, cleanMiniArray)
+        } else if (i === 'atmosphere') {
+            let miniArray = [];
+            miniArray.push(localStorage[i])
+            let cleanMiniArray = miniArray[0].split(',');
+            postStorageArrays.splice(2, 1, cleanMiniArray)
+        } 
+        else if (i === 'day') {
+            let miniArray = [];
+            miniArray.push(localStorage[i])
+            let cleanMiniArray = miniArray[0].split(',');
+
+            postStorageArrays[3] = cleanMiniArray;
+
+        }
+    }
+    return postStorageArrays;
+}
+
+yogaApp.pullAndConvertFromLocalStorageObj = function () {
+    return JSON.parse(localStorage.getItem('groupedSessions'));
+}
+
 
 // function:
     // run through the object and the array holdiing the user input. 
     // if they are the same, append the data from the object to the page with .append. 
     // Also call removeCurrentData funciton above to remove data each time the user searches
-    // for each city in the object, run .filter(array[array]) 
+    // for each city in the object, run .filter(array[array])
+
+// yogaApp.appendToPage = function (userInputArrays) {
+//     // variable to collate all similar items
+//     let sameItems = [];
+//     // set a checker if some is appended to page or not (if not, we'll ask for them to input more filter)
+//     let checker;
+//     // remove current appended data if exists
+//     yogaApp.removeCurrentData('.results');
+
+//     // loop through the object
+//     for (i in yogaApp.groupedSessions) {
+//         // loop through the array and compare array city item to object city item. Return only those that are the same
+//         let sameCity
+
+//         let sameExperience
+//         sameCity = userInputArrays[0].filter(function (option) {
+//             return option === yogaApp.groupedSessions[i]['city'];
+//         })
+
+//         sameExperience = userInputArrays[1].filter(function (option) {
+//             return option === yogaApp.groupedSessions[i]['experience'];
+//         })
+
+//         sameAtmosphere = userInputArrays[2].filter(function (option) {
+//             return option === yogaApp.groupedSessions[i]['atmosphere'];
+//         })
+
+//         sameDay = userInputArrays[3].filter(function (option) {
+//             return option === yogaApp.groupedSessions[i]['day'];
+//         })
+//         // console.log(sameDay)
+
+
+//         sameAnyDay = userInputArrays[3].filter(function (option) {
+//             return option === 'any';
+//         })
+
+//         // use if function to remove any undefined or replicated items of each user input (city, experience and atmosphere)
+//         // then collate the accurate items into one single array called sameItems
+//         yogaApp.cleanSimilarItems(sameCity, sameItems)
+//         yogaApp.cleanSimilarItems(sameExperience, sameItems)
+//         yogaApp.cleanSimilarItems(sameAtmosphere, sameItems)
+//         yogaApp.cleanSimilarItems(sameDay, sameItems)
+//         yogaApp.checkForAnyDay(sameAnyDay, sameItems)
+
+//         // console.log(sameItems)
+
+//         // grab objects with these similarities
+//         if (sameItems.includes(yogaApp.groupedSessions[i]['city']) && sameItems.includes(yogaApp.groupedSessions[i]['atmosphere']) && sameItems.includes(yogaApp.groupedSessions[i]['experience']) && sameItems.includes(yogaApp.groupedSessions[i]['day']) || sameItems.includes(yogaApp.groupedSessions[i]['any'])) {
+//             checker = checker + 1
+//             $('.reveal-data-explore-page').addClass('reveal-data-style');
+//             $('.reveal-data-explore-page').append(
+
+//                 `
+//                 <section class='results'>
+                
+//                 <div class='option option-one'>
+//                     <section class='wrapper'>
+//                         <div class='option-image'>
+//                             <a href="default.asp">
+//                                 <img alt='yoga-class-visual' class='image' src='${yogaApp.groupedSessions[i]['imageURL']}'>
+//                             </a>
+//                         </div>
+//                         <div class='option-text'>
+//                             <p>Lead Yogi: </p>
+//                             <p>${yogaApp.groupedSessions[i]['name']} </p>
+//                             <p>Cost: </p>
+//                             <p>$10 </p>
+//                             <p>Where:</p>
+//                             <p>${yogaApp.groupedSessions[i]['city']}</p>
+//                             <p>Yoga Type:</p>
+//                             <p>${yogaApp.groupedSessions[i]['yoga']}</p>
+//                             <p>Atmosphere: </p>
+//                             <p>${yogaApp.groupedSessions[i]['atmosphere']}</p>
+//                             <p>Rating:</p>
+//                             <p>4.8*</p>
+//                         </div>
+//                     </section>
+//                 </div>
+//                 </section>
+//                 `)
+//         }
+
+//     }
+//     if (checker === undefined) {
+//         $('.reveal-data').toggleClass('reveal-data-style2')
+//         $('.header-wrapper').toggleClass('hide')
+//         $('.title5').toggleClass('hide')
+//     }
+//     // finally, outside of the for loop, scroll down to the content
+//     $('html, body').animate({
+//         scrollTop: $(".reveal-data").offset().top
+//     });
+//     // finally check that if nothing is input on the page then user gets a notification
+//     // yogaApp.noUserInputError(sameItems);
+//     // original test header
+//     // <div class='results'>
+//     //     <h1> ${yogaApp.groupedSessions[i]['name']} </h1>
+//     // </div >`)
+// }
+    
 yogaApp.appendToPage = function(userInputArrays) {
     // variable to collate all similar items
     let sameItems = [];
@@ -711,9 +849,11 @@ yogaApp.events = function() {
         // loop through choices in the array with .filter. If true that city (example) = (example)
         // If these choices are in the dummy data, pull that object and put its info on the page
         
-        yogaApp.saveToLocalStorage(allChoices);
-
+        yogaApp.saveUserToLocalStorage(allChoices);
+        yogaApp.saveObjToLocalStorage(yogaApp.groupedSessions);
+        yogaApp.pullAndConvertFromLocalStorage();
         // append to page using functions above
+        yogaApp.pullAndConvertFromLocalStorageObj();
         yogaApp.appendHeader();
         yogaApp.appendToPage(allChoices);
 
