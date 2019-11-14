@@ -195,7 +195,7 @@ yogaApp.groupedSessions = {
         experience: 'beginner',
         yoga: 'restorative',
         atmosphere: 'outdoor',
-        imageURL: 'assets/option-visuals/dane-wetton-t1NEMSm1rgI-unsplash.jpg',
+        imageURL: 'assets/option-visuals/mark-zamora-7fcSXSU-zhY-unsplash.jpg',
         name: 'yogiBella',
     }),
 
@@ -248,6 +248,40 @@ yogaApp.groupedSessions = {
         imageURL: 'assets/option-visuals/wesley-tingey-57wo9F-r2-A-unsplash.jpg',
         name: 'yogiLucy',
     }),
+
+    yogiDom: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'weekend',
+        experience: 'beginner',
+        yoga: 'restorative',
+        atmosphere: 'outdoor',
+        imageURL: 'assets/option-visuals/samuel-austin-0tTA6cewPr8-unsplash.jpg',
+        name: 'yogiDom',
+
+    }),
+
+    yogiGenene: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'weekend',
+        experience: 'intermediate',
+        yoga: 'ashtanga',
+        atmosphere: 'home',
+        imageURL: 'assets/option-visuals/zoltan-tasi-vHnVtLK8rCc-unsplash.jpg',
+        name: 'yogiGenene',
+
+    }),
+
+    yogiSarah: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'evening',
+        experience: 'advanced',
+        yoga: 'vinyasa',
+        atmosphere: 'outdoor',
+        imageURL: 'assets/option-visuals/mark-zamora-Y9jpiiiAAOQ-unsplash.jpg',
+        name: 'yogiSarah',
+    }),
+
+    
 }
 
 // use a function loop through each form item choice object to deliver the choices we want in an array 
@@ -295,27 +329,47 @@ yogaApp.checkForAnyDay = function (incomingArray, outgoingArray) {
 }
 
 // if no user input, then provide an error message under the button asking for input. Also add a class to style this and use removeClass to remove any background styling for any prior searches
-yogaApp.noUserInputError = function (userInputArray) {
-    if (userInputArray.length === 0) {
-        $('.title4').toggleClass('hide')
-    } 
-} 
+// yogaApp.noUserInputError = function (userInputArray) {
+//     if (userInputArray.length === 0) {
+//         $('.title4').toggleClass('hide')
+//     } 
+// } 
+
+// yogaApp.saveToLocalStorage = function(userInputArrays) {
+//     // currently we have an array holding multiple arrays for each user input (array[0] holds all cities clicked /  array[1] holds all levels clicked)
+//     // convert these to local storage key value pairs
+//         // for each item in array[0], localStorage.setItem('city', array[0)[i]
+//     userInputArrays.forEach(function (userInputArray) {
+//         let tempKey;
+//         let counter;
+//         // if counter at 0 , put city, if counter +1 do x, etc 
+//         userInputArray.forEach(function (choice) {
+//             console.log(choice)
+//         })
+//     })
+//         // for each item in array[1], localStorage.setItem('city', array[0)[i]
+//     // before this run data to delete all localStorage.clear    
+// }
+
 
 // function:
     // run through the object and the array holdiing the user input. 
     // if they are the same, append the data from the object to the page with .append. 
-    // Also call removeCUrrentData funciton above to remove data each time the user searches
+    // Also call removeCurrentData funciton above to remove data each time the user searches
     // for each city in the object, run .filter(array[array]) 
 yogaApp.appendToPage = function(userInputArrays) {
     // variable to collate all similar items
     let sameItems = [];
-
+    // set a checker if some is appended to page or not (if not, we'll ask for them to input more filter)
+    let checker;
     // remove current appended data if exists
     yogaApp.removeCurrentData('.results');
+
     // loop through the object
     for (i in yogaApp.groupedSessions) {        
         // loop through the array and compare array city item to object city item. Return only those that are the same
         let sameCity
+        
         let sameExperience
         sameCity = userInputArrays[0].filter(function (option) {
             return option === yogaApp.groupedSessions[i]['city'];
@@ -329,13 +383,13 @@ yogaApp.appendToPage = function(userInputArrays) {
             return option === yogaApp.groupedSessions[i]['atmosphere'];
         })
 
-        sameDay = userInputArrays[4].filter(function (option) {
+        sameDay = userInputArrays[3].filter(function (option) {
             return option === yogaApp.groupedSessions[i]['day'];
         })
         // console.log(sameDay)
         
 
-        sameAnyDay = userInputArrays[4].filter(function (option) {
+        sameAnyDay = userInputArrays[3].filter(function (option) {
                 return option === 'any';
         })
 
@@ -351,11 +405,7 @@ yogaApp.appendToPage = function(userInputArrays) {
 
         // grab objects with these similarities
         if (sameItems.includes(yogaApp.groupedSessions[i]['city']) && sameItems.includes(yogaApp.groupedSessions[i]['atmosphere']) && sameItems.includes(yogaApp.groupedSessions[i]['experience']) && sameItems.includes(yogaApp.groupedSessions[i]['day']) || sameItems.includes(yogaApp.groupedSessions[i]['any'])) {
-            
-            $('html, body').animate({
-                scrollTop: $(".reveal-data").offset().top
-            });
-            
+            checker = checker + 1
             $('.reveal-data').addClass('reveal-data-style');
             $('.reveal-data').append(
                 
@@ -388,14 +438,18 @@ yogaApp.appendToPage = function(userInputArrays) {
                 </section>
                 `)                
         } 
-        else {
-            $('.reveal-data').removeClass('reveal-data-style2')
-            $('.header-wrapper').toggleClass('hide')
-            $('.title5').toggleClass('hide')
 
-        }
     }  
-    
+    console.log(checker);
+    if (checker === undefined) {
+        $('.reveal-data').toggleClass('reveal-data-style2')
+        $('.header-wrapper').toggleClass('hide')
+        $('.title5').toggleClass('hide')
+    }
+    // finally, outside of the for loop, scroll down to the content
+    $('html, body').animate({
+        scrollTop: $(".reveal-data").offset().top
+    });
     // finally check that if nothing is input on the page then user gets a notification
     // yogaApp.noUserInputError(sameItems);
     // original test header
@@ -427,7 +481,7 @@ yogaApp.events = function() {
         event.preventDefault();
 
         // store jquery form selectors of user choices
-        const $yogaChoice = $('select[name=yoga-style]').val();
+        // const $yogaChoice = $('select[name=yoga-style]').val();
         const $dayChoice = $('select[name=date]').val();
         const $cityChoiceObject = $('input[name=city]:checked');
         const $expChoiceObject = $('input[name=experience]:checked');
@@ -436,11 +490,11 @@ yogaApp.events = function() {
         
         // // find the user input data for the easier to access form items, collate them into one array called subChoices
         let dayChoicesArray = [];
-        let yogaChoicesArray = [];
+        // let yogaChoicesArray = [];
         let subChoices = [];
         dayChoicesArray.push($dayChoice);
-        yogaChoicesArray.push($yogaChoice);
-        subChoices.push(yogaChoicesArray);
+        // yogaChoicesArray.push($yogaChoice);
+        // subChoices.push(yogaChoicesArray);
         subChoices.push(dayChoicesArray);
 
         // set an object to collect all the harder form items (needed cleaning) user's answers
@@ -454,13 +508,14 @@ yogaApp.events = function() {
         // collate into allChoices all user input including harder and easier items
         allChoices = allChoices.concat(subChoices);
 
-        // console.log(allChoices);
 
         // loop through choices in the array with .filter. If true that city (example) = (example)
         // If these choices are in the dummy data, pull that object and put its info on the page
         
+        // yogaApp.saveToLocalStorage(allChoices);
+
+        // append to page using functions above
         yogaApp.appendHeader();
-        
         yogaApp.appendToPage(allChoices);
 
         // console.log(yogaApp.groupedSessions.tomsBeachYoga['atmosphere']);
