@@ -152,7 +152,7 @@ yogaApp.groupedSessions = {
 
     yogiJames: yogaApp.Session.createSession({
         city: 'toronto',
-        day: 'weekend',
+        day: 'morning',
         experience: 'advanced',
         yoga: 'vinyasa',
         atmosphere: 'studio',
@@ -503,6 +503,32 @@ yogaApp.cleanSimilarItems = function(incomingArray, outgoingArray) {
     }
 }
 
+yogaApp.checkForAnyCity = function (incomingArray, outgoingArray) {
+    if (incomingArray.length > 0) {
+        outgoingArray.push('toronto');
+        outgoingArray.push('london');
+        outgoingArray.push('new-york');
+    }
+}
+
+yogaApp.checkForAnyExperience = function (incomingArray, outgoingArray) {
+    if (incomingArray.length > 0) {
+        outgoingArray.push('beginner');
+        outgoingArray.push('intermediate');
+        outgoingArray.push('advanced');
+    }
+}
+
+yogaApp.checkForAnyAtmosphere = function (incomingArray, outgoingArray) {
+    if (incomingArray.length > 0) {
+        // console.log(incomingArray)
+        outgoingArray.push('outdoor');
+        outgoingArray.push('studio');
+        outgoingArray.push('home');
+        // console.log(outgoingArray)
+    }
+}
+
 yogaApp.checkForAnyDay = function (incomingArray, outgoingArray) {
     if (incomingArray.length > 0) {
         outgoingArray.push('morning');
@@ -612,18 +638,26 @@ yogaApp.appendToPage = function(userInputArrays) {
         // loop through the array and compare array city item to object city item. Return only those that are the same
         let sameCity;
         
-        let sameExperience
+        let sameExperience;
+        let sameAtmosphere;
+        let sameDay;
+
+        // console.log(userInputArrays);
+
         sameCity = userInputArrays[0].filter(function (option) {
             return option === yogaApp.groupedSessions[i]['city'];
         })
+        // console.log(sameCity);
 
         sameExperience = userInputArrays[1].filter(function (option) {
                 return option === yogaApp.groupedSessions[i]['experience'];
         })
+        // console.log(sameExperience);
 
         sameAtmosphere = userInputArrays[2].filter(function (option) {
             return option === yogaApp.groupedSessions[i]['atmosphere'];
         })
+        // console.log(sameAtmosphere);
 
         sameDay = userInputArrays[3].filter(function (option) {
             return option === yogaApp.groupedSessions[i]['day'];
@@ -631,13 +665,27 @@ yogaApp.appendToPage = function(userInputArrays) {
         // console.log(sameDay)
         
 
-        sameAnyDay = userInputArrays[3].filter(function (option) {
+        sameAnyCity = userInputArrays[0].filter(function (option) {
                 return option === 'any';
         })
+        // console.log(sameAnyCity);
 
-        
+        sameAnyExperience = userInputArrays[1].filter(function (option) {
+            return option === 'any';
+        })
+        // console.log(sameAnyExperience);
 
-        console.log(sameItems)
+        sameAnyAtmosphere = userInputArrays[2].filter(function (option) {
+            return option === 'any';
+        })
+        // console.log(userInputArrays[2]);
+
+
+        sameAnyDay = userInputArrays[3].filter(function (option) {
+            return option === 'any';
+        })
+        // console.log(sameAnyDay);
+
 
         // use if function to remove any undefined or replicated items of each user input (city, experience and atmosphere)
         // then collate the accurate items into one single array called sameItems
@@ -645,9 +693,15 @@ yogaApp.appendToPage = function(userInputArrays) {
         yogaApp.cleanSimilarItems(sameExperience, sameItems)
         yogaApp.cleanSimilarItems(sameAtmosphere, sameItems)
         yogaApp.cleanSimilarItems(sameDay, sameItems)
+        yogaApp.checkForAnyCity(sameAnyCity, sameItems)
+        yogaApp.checkForAnyExperience(sameAnyExperience, sameItems)
+        yogaApp.checkForAnyAtmosphere(sameAnyAtmosphere, sameItems)
+        console.log(sameItems);
         yogaApp.checkForAnyDay(sameAnyDay, sameItems)
+        console.log(sameItems);
 
-        // console.log(sameItems)
+
+        
 
         // grab objects with these similarities
         if (sameItems.includes(yogaApp.groupedSessions[i]['city']) && sameItems.includes(yogaApp.groupedSessions[i]['atmosphere']) && sameItems.includes(yogaApp.groupedSessions[i]['experience']) && sameItems.includes(yogaApp.groupedSessions[i]['day']) || sameItems.includes(yogaApp.groupedSessions[i]['any'])) {
@@ -740,13 +794,14 @@ yogaApp.events = function() {
         atmosChoicesArray.push($atmosChoice)
         // then put them in one larger array of arrays
         let allChoices = [];
-        allChoices.push(dayChoicesArray)
-        allChoices.push(cityChoicesArray)
-        allChoices.push(expChoicesArray)
-        allChoices.push(atmosChoicesArray)
+        allChoices.unshift(dayChoicesArray);
+        allChoices.splice(1, 0, expChoicesArray);
+        allChoices.splice(2, 1, atmosChoicesArray);
+        allChoices[3] = cityChoicesArray;
+
         // collate all harder user choices into a final array
         yogaApp.saveUserToLocalStorage(allChoices);
-        console.log(localStorage);
+        // console.log(localStorage);
         yogaApp.appendHeader();
         yogaApp.appendToPage(allChoices);
 
@@ -797,7 +852,8 @@ yogaApp.events = function() {
         
         yogaApp.saveUserToLocalStorage(allChoices);
         // yogaApp.saveObjToLocalStorage(yogaApp.groupedSessions);
-        
+        console.log(allChoices)
+
 
         // make sure that if no data selected the user isn't sent to the explore html and the error message is shown
         if (allChoices[0].length === 0 || allChoices[0].includes('toronto') === false || allChoices[1].length === 0 || allChoices[2].length === 0) {
@@ -822,7 +878,7 @@ yogaApp.exploreLoad = function () {
     if (window.location.href.indexOf('explore.html') > -1) {
         let userInput = yogaApp.pullAndConvertFromLocalStorage();
         
-        console.log(userInput)
+        // console.log(userInput)
 
         yogaApp.appendHeader();
          
