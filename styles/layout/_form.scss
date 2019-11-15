@@ -128,19 +128,19 @@ form .submit-form button:hover {
 }
 
 
-.form-section .form-fieldset div:nth-of-type(5) {
+.large-form .form-fieldset div:nth-of-type(5) {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
 }
 
-.form-section  .form-fieldset div:nth-of-type(5) div {
+.large-form  .form-fieldset div:nth-of-type(5) div {
     width: 20%;
     display: flex;
 }
 
-.form-section  .form-fieldset div:nth-of-type(5) div label { 
+.large-form  .form-fieldset div:nth-of-type(5) div label { 
     margin: 0px;
-    margin-left: 15px;
+    margin-left: 15px; 
 }

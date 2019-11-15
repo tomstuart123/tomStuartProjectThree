@@ -873,6 +873,74 @@ yogaApp.events = function() {
     })
 }
 
+let $formGuest = $('.form-host')
+$formGuest.on('submit', function (event) {
+
+    // stop submit refreshing the page
+    event.preventDefault();
+
+    // store jquery form selectors of user choices
+    const $nameChoice = $('input[type=text]').val();
+    const $emailChoice = $('input[type=email]').val();
+    const $yogaChoice = $('select[name=yoga-style]').val();
+    const $dayChoice = $('select[name=date]').val();
+    const $cityChoiceObject = $('input[name=city]:checked');
+    const $expChoiceObject = $('input[name=experience]:checked');
+    const $atmosChoiceObject = $('input[name=atmosphere]:checked');
+
+
+    // // find the user input data for the easier to access form items, collate them into one array called subChoices
+    let nameChoiceArray = [];
+    let emailChoiceArray = [];
+    let dayChoicesArray = [];
+    let yogaChoicesArray = [];
+    let subChoices = [];
+    nameChoiceArray.push($nameChoice);
+    emailChoiceArray.push($emailChoice);
+    dayChoicesArray.push($dayChoice);
+    yogaChoicesArray.push($yogaChoice);
+    subChoices.push(nameChoiceArray);
+    subChoices.push(emailChoiceArray);
+    subChoices.push(yogaChoicesArray);
+    subChoices.push(dayChoicesArray);
+
+    // set an object to collect all the harder form items (needed cleaning) user's answers
+    let allChoices = [];
+
+    // collate all harder user choices into a final array
+    yogaApp.findChoicesItems($cityChoiceObject, allChoices);
+    yogaApp.findChoicesItems($expChoiceObject, allChoices);
+    yogaApp.findChoicesItems($atmosChoiceObject, allChoices);
+
+    // collate into allChoices all user input including harder and easier items
+    allChoices = allChoices.concat(subChoices);
+
+    // loop through choices in the array with .filter. If true that city (example) = (example)
+    // If these choices are in the dummy data, pull that object and put its info on the page
+
+    yogaApp.saveUserToLocalStorage(allChoices);
+    // yogaApp.saveObjToLocalStorage(yogaApp.groupedSessions);
+    console.log(allChoices)
+
+
+    // make sure that if no data selected the user isn't sent to the explore html and the error message is shown
+    if (allChoices[0].length === 0 || allChoices[0].includes('toronto') === false || allChoices[1].length === 0 || allChoices[2].length === 0) {
+        event.preventDefault();
+        $('.reveal-data').toggleClass('reveal-data-style2')
+        $('.header-wrapper').toggleClass('hide')
+        $('.title5').toggleClass('hide')
+    }
+    // yogaApp.pullAndConvertFromLocalStorage();
+    // // append to page using functions above
+    // yogaApp.pullAndConvertFromLocalStorageObj();
+    // yogaApp.appendHeader();
+    // yogaApp.appendToPage(allChoices);
+
+    // console.log(yogaApp.groupedSessions.tomsBeachYoga['atmosphere']);
+
+})
+
+
 yogaApp.exploreLoad = function () {
     window.onload = function () {
     if (window.location.href.indexOf('explore.html') > -1) {

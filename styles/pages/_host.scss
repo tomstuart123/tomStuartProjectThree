@@ -17,12 +17,44 @@
     }
 } 
 
-
-
 .host-hero-text {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     height: 80%;
+}
+
+.large-form-host{ 
+    background-size: cover;
+    background: linear-gradient($gradient-color-one, $gradient-color-two );
+    height: 1050px;
+
+    @include mq-large-phone {
+        height: 1050px;
+    }
+    @include mq-tablet {
+        height: 1150px;
+    }
+
+    @include mq-desktop {
+       height: 1250px;
+    }
+}
+
+.large-form-host .form-fieldset div:nth-of-type(7) {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.large-form-host  .form-fieldset div:nth-of-type(7) div {
+    width: 20%;
+    display: flex;
+}
+
+.large-form-host .form-fieldset div:nth-of-type(7) div label { 
+    margin: 0px;
+    margin-left: 15px;
 }
 

@@ -40,12 +40,28 @@
         </section>
     </header>
 
-    <section class='form-section large-form'>
+    <section class='form-section large-form-host'>
         <div class='wrapper'>
-            <form class='form-host' action="explore.html">
+            <form class='form-host' action="">
                 <section class='form-fieldset'>
-                    <legend class='title'> Personalise your class, your way!</legend>
+                    <legend class='title'> Start creating your perfect class!</legend>
     
+                    <div class='question-form'>
+                        <legend>FIRST NAME?</legend>
+                        <div>
+                            <input type="text" name="name" id="name" placeholder="Name">
+                            <label class='visuallyHidden' for="name">YOUR NAME?</label>
+                        </div>
+                    </div>
+
+                    <div class='question-form'>
+                        <legend>YOUR EMAIL?</legend>
+                        <div>
+                            <input type="email" name="email" id="email" placeholder="Email">
+                            <label class='visuallyHidden' for="email">Email Address</label>
+                        </div>
+                    </div>
+
                     <div class='question-form'>
                         <legend>WHICH CITY?</legend>
                         <div>
@@ -61,6 +77,7 @@
                             <label for='city'>New York</label>
                         </div>
                     </div>
+                    
     
                     <div class='question-form'>
                         <legend>WHICH DAY?</legend>
