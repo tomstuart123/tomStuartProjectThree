@@ -38,8 +38,64 @@
             </section>
         </section>
     </header>
-    <section class='reveal data reveal-data-explore-page'>
+    <section class='form-section mini-form'>
+        <div class='wrapper'>
+            <form class='form-explore' action='explore.html'>
+                <section class='form-fieldset'>
+                
+                    <div class='question-form'>
+                        <select name="date" id="date" placeholder="Any" class="date">
+                            <option value="any">City (all)</option>
+                            
+                            <option value="toronto">Toronto</option>
+                            <label class="visuallyHidden" for="city">City</label>
+                        </select>
+                    </div>
+            
+                    <div class='question-form'>
+                        <select name="city" id="city" placeholder="Any" class="date">
+                            <option value="any">Time (all)</option>
+                            <option value="evening">Evening</option>
+                            <option value="morning">Early Morning</option>
+                            <option value="weekend">Weekend</option>
+                            <label class="visuallyHidden" for="date">Date</label>
+                        </select>
+                    </div>
 
+                    <div class='question-form'>
+                        <select name="experience" id="experience" placeholder="Any" class="date">
+                            <option value="any">Level (all)</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                            <label class="visuallyHidden" for="experience">Experience</label>
+                        </select>
+                    </div>
+
+                    <div class='question-form'>
+                        <select name="atmosphere" id="atmosphere" placeholder="Any" class="date">
+                            <option value="any">Area (all)</option>
+                            <option value="studio">Studio</option>
+                            <option value="home">Home</option>
+                            <option value="outdoor">Outdoor</option>
+                            <label class="visuallyHidden" for="atmosphere">Atmosphere</label>
+                        </select>
+                    </div>
+
+                    <div class='question-form mini-submit-form'>
+                        <button type="submit" id=""> Search</button>
+                    </div>
+                    <div class='no-input'>
+                        <h2 class='title4 hide'>Please try one of the options above</h2>
+                    </div>
+                    <div class='no-data'>
+                        <h2 class='title5 hide'>No options available. Please try different filters</h2>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </section>
+    <section class='reveal-data'>
     </section>
     <!-- <section class='class-section'> -->
         <!-- <section class='wrapper'>

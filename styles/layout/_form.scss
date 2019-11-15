@@ -1,4 +1,4 @@
-.form-section { 
+.large-form{ 
     background-size: cover;
     background: linear-gradient($gradient-color-one, $gradient-color-two );
     height: 775px;
@@ -14,6 +14,7 @@
        height: 875px;
     }
 }
+
 form legend {
     font-size: 2rem;
     font-weight: bold;
@@ -131,7 +132,7 @@ form .submit-form button:hover {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: flex-end;
 }
 
 .form-section  .form-fieldset div:nth-of-type(5) div {

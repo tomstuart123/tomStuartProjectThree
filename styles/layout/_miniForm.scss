@@ -1,0 +1,74 @@
+.mini-form {
+    height: 100px;
+    background-color: $gradient-color-one;
+    @include mq-tablet {
+       height: 75px;
+    }
+}
+
+.mini-form .form-fieldset {
+    height: auto;
+}
+
+.mini-form select { 
+    font-size: 1.5rem;
+    width: 100%;
+    margin: 10px 0;
+    height: 40px;
+    @include mq-tablet {
+        margin: 20px 0px;
+       font-size: 1.8rem;
+       padding: 5px;
+       height: auto;
+    }
+    @include mq-desktop {
+       font-size: 2.2rem;
+    }
+}
+
+.mini-form .form-fieldset {
+    justify-content: space-between;
+}
+
+
+.mini-form .question-form, .mini-form  .form-fieldset div:nth-of-type(5)  {
+    width: 28%;
+    text-align: left;
+    height: auto;
+    height: 60px;
+    padding: 10px 0;
+    flex-grow: 1;
+    @include mq-tablet {
+        height: auto;
+       flex-grow: 0;
+       padding: 20px 0;
+       width: 18%;
+       font-size: 1.8rem;
+       padding: 5px;
+    }
+    @include mq-desktop {
+       font-size: 2.2rem;
+    }
+}
+
+.mini-form .mini-submit-form button {  
+    height: 30px;
+    line-height: 0px;
+    width: 90%;
+    margin: 12px 0;
+    background: $light-color;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: font-size 0.5s;
+    @include mq-tablet {
+        height: 30px;
+        font-size: 1.8rem;
+        margin: 22px 0;
+    }
+    @include mq-desktop {
+        font-size: 2.2rem;
+        height: 40px;
+
+    }
+}
+

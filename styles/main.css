@@ -769,7 +769,7 @@ nav i {
   opacity: 1;
 }
 
-.form-section {
+.large-form {
   background-size: cover;
   background: -webkit-gradient(linear, left top, left bottom, from(#dbe6f4), to(#fcfcfc));
   background: linear-gradient(#dbe6f4, #fcfcfc);
@@ -777,19 +777,19 @@ nav i {
 }
 
 @media (min-width: 400px) {
-  .form-section {
+  .large-form {
     height: 775px;
   }
 }
 
 @media (min-width: 700px) {
-  .form-section {
+  .large-form {
     height: 800px;
   }
 }
 
 @media (min-width: 950px) {
-  .form-section {
+  .large-form {
     height: 875px;
   }
 }
@@ -952,9 +952,9 @@ form .submit-form button:hover {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .form-section .form-fieldset div:nth-of-type(5) div {
@@ -967,6 +967,106 @@ form .submit-form button:hover {
 .form-section .form-fieldset div:nth-of-type(5) div label {
   margin: 0px;
   margin-left: 15px;
+}
+
+.mini-form {
+  height: 100px;
+  background-color: #dbe6f4;
+}
+
+@media (min-width: 700px) {
+  .mini-form {
+    height: 75px;
+  }
+}
+
+.mini-form .form-fieldset {
+  height: auto;
+}
+
+.mini-form select {
+  font-size: 1.5rem;
+  width: 100%;
+  margin: 10px 0;
+  height: 40px;
+}
+
+@media (min-width: 700px) {
+  .mini-form select {
+    margin: 20px 0px;
+    font-size: 1.8rem;
+    padding: 5px;
+    height: auto;
+  }
+}
+
+@media (min-width: 950px) {
+  .mini-form select {
+    font-size: 2.2rem;
+  }
+}
+
+.mini-form .form-fieldset {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mini-form .question-form, .mini-form .form-fieldset div:nth-of-type(5) {
+  width: 28%;
+  text-align: left;
+  height: auto;
+  height: 60px;
+  padding: 10px 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+@media (min-width: 700px) {
+  .mini-form .question-form, .mini-form .form-fieldset div:nth-of-type(5) {
+    height: auto;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    padding: 20px 0;
+    width: 18%;
+    font-size: 1.8rem;
+    padding: 5px;
+  }
+}
+
+@media (min-width: 950px) {
+  .mini-form .question-form, .mini-form .form-fieldset div:nth-of-type(5) {
+    font-size: 2.2rem;
+  }
+}
+
+.mini-form .mini-submit-form button {
+  height: 30px;
+  line-height: 0px;
+  width: 90%;
+  margin: 12px 0;
+  background: #e2e0e4;
+  font-weight: bold;
+  font-size: 1.5rem;
+  -webkit-transition: font-size 0.5s;
+  transition: font-size 0.5s;
+}
+
+@media (min-width: 700px) {
+  .mini-form .mini-submit-form button {
+    height: 30px;
+    font-size: 1.8rem;
+    margin: 22px 0;
+  }
+}
+
+@media (min-width: 950px) {
+  .mini-form .mini-submit-form button {
+    font-size: 2.2rem;
+    height: 40px;
+  }
 }
 
 .class-section {
