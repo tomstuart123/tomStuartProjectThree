@@ -1,0 +1,52 @@
+.profile-hero-image {
+    background: url(../assets/farsai-chaikulngamdee-L2wq7Y3h7ag-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 30vh;
+    background-color:rgb(0, 0, 0);
+    background-blend-mode: screen;
+
+    @include mq-large-phone {
+        height: 60vh;
+    //     height: 700px;
+    //     background: url(../assets/host-visual-two.jpg);
+    //     background-size: cover;
+    //     background-position: center;
+    //     background-color: rgb(40, 39, 39);
+    //     background-blend-mode: screen;
+    }
+
+    @include mq-tablet {
+        height: 80vh;
+    }
+    @include mq-desktop {
+        height: 80vh;
+    }
+
+}
+
+
+.profile-hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 60%;
+    @include mq-tablet {
+        height: 70%;
+    }
+}
+
+.profile-hero-text h1 {
+    font-size: 3.5rem;
+    @include mq-large-phone {
+        font-size: 4.5rem;
+    }
+    @include mq-tablet {
+        font-size: 5rem;
+    }
+    @include mq-desktop {
+        font-size: 6.5rem;
+    }
+
+}

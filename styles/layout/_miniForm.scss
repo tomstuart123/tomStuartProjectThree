@@ -60,7 +60,7 @@
     font-weight: bold;
     font-size: 1.5rem;
     transition: font-size 0.5s;
-    @include mq-tablet {
+    @include mq-tablet { 
         height: 30px;
         font-size: 1.8rem;
         margin: 22px 0;

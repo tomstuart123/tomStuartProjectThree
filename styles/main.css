@@ -1496,24 +1496,24 @@ form .submit-form button:hover {
   background-size: cover;
   background: -webkit-gradient(linear, left top, left bottom, from(#dbe6f4), to(#fcfcfc));
   background: linear-gradient(#dbe6f4, #fcfcfc);
-  height: 1050px;
+  height: 1100px;
 }
 
 @media (min-width: 400px) {
   .large-form-host {
-    height: 1050px;
+    height: 1100px;
   }
 }
 
 @media (min-width: 700px) {
   .large-form-host {
-    height: 1150px;
+    height: 1250px;
   }
 }
 
 @media (min-width: 950px) {
   .large-form-host {
-    height: 1250px;
+    height: 1350px;
   }
 }
 
@@ -1580,6 +1580,76 @@ form .submit-form button:hover {
 
 .hide {
   display: none;
+}
+
+.profile-hero-image {
+  background: url(../assets/farsai-chaikulngamdee-L2wq7Y3h7ag-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 30vh;
+  background-color: black;
+  background-blend-mode: screen;
+}
+
+@media (min-width: 400px) {
+  .profile-hero-image {
+    height: 60vh;
+  }
+}
+
+@media (min-width: 700px) {
+  .profile-hero-image {
+    height: 80vh;
+  }
+}
+
+@media (min-width: 950px) {
+  .profile-hero-image {
+    height: 80vh;
+  }
+}
+
+.profile-hero-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 60%;
+}
+
+@media (min-width: 700px) {
+  .profile-hero-text {
+    height: 70%;
+  }
+}
+
+.profile-hero-text h1 {
+  font-size: 3.5rem;
+}
+
+@media (min-width: 400px) {
+  .profile-hero-text h1 {
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .profile-hero-text h1 {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 950px) {
+  .profile-hero-text h1 {
+    font-size: 6.5rem;
+  }
 }
 
 .class-section {

@@ -467,6 +467,7 @@ yogaApp.groupedSessions = {
     
 }
 
+yogaApp.userTickedOptions = [['toronto'], ['beginner', 'intermediate', 'advanced'], ['studio', 'home', 'outdoor'], ['any']];
 // use a function loop through each form item choice object to deliver the choices we want in an array 
 yogaApp.findChoicesItems = (choiceObj, finalArray) => {
     let newArray = [];
@@ -626,17 +627,17 @@ yogaApp.pullAndConvertFromLocalStorage = function () {
             let miniArray = [];
             miniArray.push(localStorage[i])
             let cleanMiniArray = miniArray[0].split(',');
-            postStorageArrays.unshift(cleanMiniArray)
+            postStorageArrays[0] = cleanMiniArray;
         } else if (i === 'experience') {            
             let miniArray = [];
             miniArray.push(localStorage[i])
             let cleanMiniArray = miniArray[0].split(',');
-            postStorageArrays.splice(1, 0, cleanMiniArray)
+            postStorageArrays[1] = cleanMiniArray;
         } else if (i === 'atmosphere') {
             let miniArray = [];
             miniArray.push(localStorage[i])
             let cleanMiniArray = miniArray[0].split(',');
-            postStorageArrays.splice(2, 1, cleanMiniArray)
+            postStorageArrays[2] = cleanMiniArray;
         } 
         else if (i === 'day') {
             let miniArray = [];
@@ -792,9 +793,9 @@ yogaApp.appendToPage = function(userInputArrays) {
         yogaApp.checkForAnyCity(sameAnyCity, sameItems)
         yogaApp.checkForAnyExperience(sameAnyExperience, sameItems)
         yogaApp.checkForAnyAtmosphere(sameAnyAtmosphere, sameItems)
-        console.log(sameItems);
+        
         yogaApp.checkForAnyDay(sameAnyDay, sameItems)
-        console.log(sameItems);
+        
 
 
         
@@ -865,7 +866,7 @@ yogaApp.appendHeader = function() {
 yogaApp.appendProfile = function () {
     $('.profile-name').text(`yogi${localStorage.hostName}`)
     $('.profile-email').text(`${localStorage.hostEmail}`)
-    $('.profile-price').text(`${localStorage.hostPrice}`)
+    $('.profile-price').text(`$${localStorage.hostPrice} per class`)
     $('.profile-experience').text(`${localStorage.hostExperience}`)
     $('.profile-city').text(`${localStorage.hostCity}`)
     $('.profile-atmosphere').text(`${localStorage.hostAtmosphere}`)
@@ -876,7 +877,8 @@ yogaApp.appendProfile = function () {
 
 // The event function that kicks off everything. This runs all the functions aboves
 yogaApp.events = function() {
-    
+    console.log(localStorage);
+
     let $formExplore = $('.form-explore')
     $formExplore.on('submit', function (event) {
         // prevent default form action
@@ -892,7 +894,7 @@ yogaApp.events = function() {
         const $cityChoice = $('select[name=city]').val();
         const $expChoice= $('select[name=experience]').val();
         const $atmosChoice = $('select[name=atmosphere]').val();
-        console.log($dayChoice)
+        
         
         // store answers in individual arrays
         dayChoicesArray.push($dayChoice)
@@ -909,7 +911,6 @@ yogaApp.events = function() {
 
         // collate all harder user choices into a final array
         yogaApp.saveUserToLocalStorage(allChoices);
-        // console.log(localStorage);
         yogaApp.appendHeader();
         yogaApp.appendToPage(allChoices);
 
@@ -960,7 +961,7 @@ yogaApp.events = function() {
         
         yogaApp.saveUserToLocalStorage(allChoices);
         // yogaApp.saveObjToLocalStorage(yogaApp.groupedSessions);
-        console.log(allChoices)
+        // console.log(allChoices)
 
 
         // make sure that if no data selected the user isn't sent to the explore html and the error message is shown
@@ -1030,13 +1031,14 @@ $formHost.on('submit', function (event) {
     // yogaApp.saveObjToLocalStorage(yogaApp.groupedSessions);
     console.log(allChoices)
 
-
     // make sure that if no data selected the user isn't sent to the explore html and the error message is shown
-    if (allChoices[0].length === 0 || allChoices[0].includes('toronto') === false || allChoices[1].length === 0 || allChoices[2].length === 0 || allChoices[3].length === 0 || allChoices[4].length === 0 || allChoices[5].length === 0 || allChoices[6].length === 0 || allChoices[7].length === 0) {
+    if (allChoices[0].length === 0 || allChoices[0].includes('toronto') === false || allChoices[1].length === 0 || allChoices[2].length === 0 || allChoices[3][0] === '' || allChoices[4][0] === '' || allChoices[5].length === 0 || allChoices[6].length === 0 || allChoices[7][0] === '' ) {
         event.preventDefault();
+        console.log('need info')
         $('.reveal-data').toggleClass('reveal-data-style2')
         $('.header-wrapper').toggleClass('hide')
         $('.title5').toggleClass('hide')
+        
     }
 
 })
@@ -1046,9 +1048,14 @@ yogaApp.pageLoad = function () {
     window.onload = function () {
     // if explore page do this
     if (window.location.href.indexOf('explore.html') > -1) {
+
         let userInput = yogaApp.pullAndConvertFromLocalStorage();
+        console.log(userInput)
+
+        if (userInput.length === 0 || userInput[0][0] === '') {
+            userInput = yogaApp.userTickedOptions
+        } 
         
-        // console.log(userInput)
 
         yogaApp.appendHeader();
          
@@ -1057,18 +1064,20 @@ yogaApp.pageLoad = function () {
         
     } else if (window.location.href.indexOf('profile.html') > -1) {
         // if they don't have a profile, return, build a profile
-        // if (localStorage.hostName == '') {
-        //     console.log('no account')
-        // } // if they do have a profile, build out their page 
-        // else {
-        console.log('profile page')
+        if (localStorage.hostName === undefined) {
+            $('.profile').addClass('hide');
+            $('.profile-title').text(`Sorry, you don't have a host account yet!`);
+            $('.no-account').html(`<button>Go to Host Class Page to Set Up an Account</button>`);
+
+
+        } // if they do have a profile, build out their page 
+        else {
+        $('.no-account').html(``);
+        $('.profile').removeClass('hide');
         // yogaApp.pullAndConvertHostFromLocalStorage();
         yogaApp.appendProfile();
 
-
-
-
-        // }
+        }
     } else {
         console.log('not explore or profile page');
     }
@@ -1080,6 +1089,8 @@ yogaApp.pageLoad = function () {
 yogaApp.init = function () {
     yogaApp.events();
     yogaApp.pageLoad();
+    console.log(localStorage);
+
 }
 
 

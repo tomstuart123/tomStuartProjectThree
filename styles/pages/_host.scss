@@ -27,17 +27,17 @@
 .large-form-host{ 
     background-size: cover;
     background: linear-gradient($gradient-color-one, $gradient-color-two );
-    height: 1050px;
+    height: 1100px;
 
     @include mq-large-phone {
-        height: 1050px;
+        height: 1100px;
     }
     @include mq-tablet {
-        height: 1150px;
+        height: 1250px;
     }
 
     @include mq-desktop {
-       height: 1250px;
+       height: 1350px;
     }
 }
 
