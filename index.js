@@ -546,11 +546,10 @@ yogaApp.checkForAnyDay = function (incomingArray, outgoingArray) {
 //     } 
 // } 
 yogaApp.saveUserToLocalStorage = function(userInputArrays) {
-    // currently we have an array holding multiple arrays for each user input (array[0] holds all cities clicked /  array[1] holds all levels clicked)
+    // currently we have an array holding multiple arrays for each user input (e.g. array[0] holds all cities clicked /  array[1] holds all levels clicked)
     // convert these to local storage key value pairs
         // for each item in array[0], localStorage.setItem('city', array[0)[i]
         // if counter at 0 , put city, if counter +1 do x, etc
-        localStorage.clear()
         
         let counter = 0;
 
@@ -573,6 +572,44 @@ yogaApp.saveUserToLocalStorage = function(userInputArrays) {
         })
         // for each item in array[1], localStorage.setItem('city', array[0)[i]
     // before this run data to delete all localStorage.clear    
+}
+
+
+yogaApp.saveHostToLocalStorage = function (userInputArrays) {
+    // currently we have an array holding multiple arrays for each host input (e.g. array[0] holds all cities clicked /  array[1] holds all levels clicked)
+    // similar to above we need to convert these to local storage key value pairs but without overitting the user input above
+        // for each item in array[0], localStorage.setItem('city', array[0)[i]
+        // if counter at 0 , put city, if counter +1 do x, etc
+    let counter = 0;
+    
+    console.log(userInputArrays)
+
+    userInputArrays.forEach(function (choice) {
+        counter = counter + 1;
+
+        if (counter === 1) {
+            localStorage.setItem('hostCity', `${choice}`)
+        }
+        else if (counter === 2) {
+            localStorage.setItem('hostExperience', `${choice}`)
+        }
+        else if (counter === 3) {
+            localStorage.setItem('hostAtmosphere', `${choice}`)
+        } else if (counter === 4) {
+            localStorage.setItem('hostName', `${choice}`)
+        } else if (counter === 5) {
+            localStorage.setItem('hostEmail', `${choice}`)
+        } else if (counter === 6) {
+            localStorage.setItem('hostYoga', `${choice}`)
+        } else if (counter === 7) {
+            localStorage.setItem('hostDay', `${choice}`)
+        } else if (counter === 8) {
+            localStorage.setItem('hostPrice', `${choice}`)
+        }
+
+
+    })
+
 }
 
 yogaApp.saveObjToLocalStorage = function(object) {
@@ -613,9 +650,68 @@ yogaApp.pullAndConvertFromLocalStorage = function () {
     return postStorageArrays;
 }
 
-yogaApp.pullAndConvertFromLocalStorageObj = function () {
-    return JSON.parse(localStorage.getItem('groupedSessions'));
-}
+// yogaApp.pullAndConvertHostFromLocalStorage = function () {
+//     console.log('profile and pulling')
+//     let postStorageArrays = [];
+    
+//     // readd to an array so appendToPage can run on it. Make sure it is using the right order using splice, unshift and push
+//     for (i in localStorage) {
+
+//         if (i === 'hostCity') {
+//             let miniArray = [];
+//             miniArray.push(localStorage[i])
+//             let cleanMiniArray = miniArray[0].split(',');
+//             postStorageArrays[0] = cleanMiniArray;
+//         } else if (i === 'hostExperience') {
+//             let miniArray = [];
+//             miniArray.push(localStorage[i])
+//             let cleanMiniArray = miniArray[0].split(',');
+//             postStorageArrays[1] = cleanMiniArray;
+//         } else if (i === 'hostAtmosphere') {
+//             let miniArray = [];
+//             miniArray.push(localStorage[i])
+//             let cleanMiniArray = miniArray[0].split(',');
+//             postStorageArrays[2] = cleanMiniArray;
+//         }
+//         else if (i === 'hostDay') {
+//             let miniArray = [];
+//             miniArray.push(localStorage[i])
+//             let cleanMiniArray = miniArray[0].split(',');
+
+//             postStorageArrays[3] = cleanMiniArray;
+
+//         } else if (i === 'hostEmail') {
+//             let miniArray = [];
+//             miniArray.push(localStorage[i])
+//             let cleanMiniArray = miniArray[0].split(',');
+
+//             postStorageArrays[4] = cleanMiniArray;
+
+//         } else if (i === 'hostName') {
+//             let miniArray = [];
+//             miniArray.push(localStorage[i])
+//             let cleanMiniArray = miniArray[0].split(',');
+
+//             postStorageArrays[5] = cleanMiniArray;
+
+//         } else if (i === 'hostYoga') {
+//             let miniArray = [];
+//             miniArray.push(localStorage[i])
+//             let cleanMiniArray = miniArray[0].split(',');
+
+//             postStorageArrays[6] = cleanMiniArray;
+
+//         } else if (i === 'hostPrice') {
+//             let miniArray = [];
+//             miniArray.push(localStorage[i])
+//             let cleanMiniArray = miniArray[0].split(',');
+
+//             postStorageArrays[7] = cleanMiniArray;
+
+//         }
+//     }
+//     return postStorageArrays;
+// }
 
 
 // function:
@@ -766,6 +862,18 @@ yogaApp.appendHeader = function() {
     
 }
 
+yogaApp.appendProfile = function () {
+    $('.profile-name').text(`yogi${localStorage.hostName}`)
+    $('.profile-email').text(`${localStorage.hostEmail}`)
+    $('.profile-price').text(`${localStorage.hostPrice}`)
+    $('.profile-experience').text(`${localStorage.hostExperience}`)
+    $('.profile-city').text(`${localStorage.hostCity}`)
+    $('.profile-atmosphere').text(`${localStorage.hostAtmosphere}`)
+    $('.profile-yoga').text(`${localStorage.hostYoga}`)
+    $('.profile-day').text(`${localStorage.hostDay}`)
+
+}
+
 // The event function that kicks off everything. This runs all the functions aboves
 yogaApp.events = function() {
     
@@ -781,7 +889,6 @@ yogaApp.events = function() {
 
         //pull the answers
         const $dayChoice = $('select[name=date]').val();
-        
         const $cityChoice = $('select[name=city]').val();
         const $expChoice= $('select[name=experience]').val();
         const $atmosChoice = $('select[name=atmosphere]').val();
@@ -792,6 +899,7 @@ yogaApp.events = function() {
         cityChoicesArray.push($cityChoice)
         expChoicesArray.push($expChoice)
         atmosChoicesArray.push($atmosChoice)
+
         // then put them in one larger array of arrays
         let allChoices = [];
         allChoices.unshift(dayChoicesArray);
@@ -862,22 +970,15 @@ yogaApp.events = function() {
             $('.header-wrapper').toggleClass('hide')
             $('.title5').toggleClass('hide')
         }
-        // yogaApp.pullAndConvertFromLocalStorage();
-        // // append to page using functions above
-        // yogaApp.pullAndConvertFromLocalStorageObj();
-        // yogaApp.appendHeader();
-        // yogaApp.appendToPage(allChoices);
-
-        // console.log(yogaApp.groupedSessions.tomsBeachYoga['atmosphere']);
          
     })
 }
 
-let $formGuest = $('.form-host')
-$formGuest.on('submit', function (event) {
+let $formHost = $('.form-host')
+$formHost.on('submit', function (event) {
 
     // stop submit refreshing the page
-    event.preventDefault();
+    // event.preventDefault();
 
     // store jquery form selectors of user choices
     const $nameChoice = $('input[type=text]').val();
@@ -887,27 +988,34 @@ $formGuest.on('submit', function (event) {
     const $cityChoiceObject = $('input[name=city]:checked');
     const $expChoiceObject = $('input[name=experience]:checked');
     const $atmosChoiceObject = $('input[name=atmosphere]:checked');
+    const $priceChoice = $('input[name=price]').val();
 
 
-    // // find the user input data for the easier to access form items, collate them into one array called subChoices
+    // // find the user input data for the single answer form items, collate them into one array called subChoices
     let nameChoiceArray = [];
     let emailChoiceArray = [];
     let dayChoicesArray = [];
     let yogaChoicesArray = [];
+    let priceChoicesArray = [];
     let subChoices = [];
     nameChoiceArray.push($nameChoice);
     emailChoiceArray.push($emailChoice);
     dayChoicesArray.push($dayChoice);
     yogaChoicesArray.push($yogaChoice);
+    priceChoicesArray.push($priceChoice)
+
+
     subChoices.push(nameChoiceArray);
     subChoices.push(emailChoiceArray);
     subChoices.push(yogaChoicesArray);
     subChoices.push(dayChoicesArray);
+    subChoices.push(priceChoicesArray);
+
 
     // set an object to collect all the harder form items (needed cleaning) user's answers
     let allChoices = [];
 
-    // collate all harder user choices into a final array
+    // collate all user choices that have multiple options into a final array
     yogaApp.findChoicesItems($cityChoiceObject, allChoices);
     yogaApp.findChoicesItems($expChoiceObject, allChoices);
     yogaApp.findChoicesItems($atmosChoiceObject, allChoices);
@@ -918,31 +1026,25 @@ $formGuest.on('submit', function (event) {
     // loop through choices in the array with .filter. If true that city (example) = (example)
     // If these choices are in the dummy data, pull that object and put its info on the page
 
-    yogaApp.saveUserToLocalStorage(allChoices);
+    yogaApp.saveHostToLocalStorage(allChoices);
     // yogaApp.saveObjToLocalStorage(yogaApp.groupedSessions);
     console.log(allChoices)
 
 
     // make sure that if no data selected the user isn't sent to the explore html and the error message is shown
-    if (allChoices[0].length === 0 || allChoices[0].includes('toronto') === false || allChoices[1].length === 0 || allChoices[2].length === 0) {
+    if (allChoices[0].length === 0 || allChoices[0].includes('toronto') === false || allChoices[1].length === 0 || allChoices[2].length === 0 || allChoices[3].length === 0 || allChoices[4].length === 0 || allChoices[5].length === 0 || allChoices[6].length === 0 || allChoices[7].length === 0) {
         event.preventDefault();
         $('.reveal-data').toggleClass('reveal-data-style2')
         $('.header-wrapper').toggleClass('hide')
         $('.title5').toggleClass('hide')
     }
-    // yogaApp.pullAndConvertFromLocalStorage();
-    // // append to page using functions above
-    // yogaApp.pullAndConvertFromLocalStorageObj();
-    // yogaApp.appendHeader();
-    // yogaApp.appendToPage(allChoices);
-
-    // console.log(yogaApp.groupedSessions.tomsBeachYoga['atmosphere']);
 
 })
 
 
-yogaApp.exploreLoad = function () {
+yogaApp.pageLoad = function () {
     window.onload = function () {
+    // if explore page do this
     if (window.location.href.indexOf('explore.html') > -1) {
         let userInput = yogaApp.pullAndConvertFromLocalStorage();
         
@@ -953,15 +1055,31 @@ yogaApp.exploreLoad = function () {
         yogaApp.appendToPage(userInput); 
         
         
+    } else if (window.location.href.indexOf('profile.html') > -1) {
+        // if they don't have a profile, return, build a profile
+        // if (localStorage.hostName == '') {
+        //     console.log('no account')
+        // } // if they do have a profile, build out their page 
+        // else {
+        console.log('profile page')
+        // yogaApp.pullAndConvertHostFromLocalStorage();
+        yogaApp.appendProfile();
+
+
+
+
+        // }
     } else {
-        console.log('not-explore') 
+        console.log('not explore or profile page');
     }
     }
 }
+
+
     
 yogaApp.init = function () {
     yogaApp.events();
-    yogaApp.exploreLoad();
+    yogaApp.pageLoad();
 }
 
 

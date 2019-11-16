@@ -945,30 +945,6 @@ form .submit-form button:hover {
   }
 }
 
-.large-form .form-fieldset div:nth-of-type(5) {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.large-form .form-fieldset div:nth-of-type(5) div {
-  width: 20%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.large-form .form-fieldset div:nth-of-type(5) div label {
-  margin: 0px;
-  margin-left: 15px;
-}
-
 .mini-form {
   height: 100px;
   background-color: #dbe6f4;
@@ -1539,30 +1515,6 @@ form .submit-form button:hover {
   .large-form-host {
     height: 1250px;
   }
-}
-
-.large-form-host .form-fieldset div:nth-of-type(7) {
-  width: 95%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.large-form-host .form-fieldset div:nth-of-type(7) div {
-  width: 20%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.large-form-host .form-fieldset div:nth-of-type(7) div label {
-  margin: 0px;
-  margin-left: 15px;
 }
 
 .guest-hero-image {
