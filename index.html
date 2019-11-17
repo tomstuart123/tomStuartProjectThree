@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Landing Page</title>
     <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Libre+Baskerville|Libre+Franklin|Merriweather&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e9b96cf6dd.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
@@ -13,41 +17,64 @@
         <section class='wrapper landing-wrapper'>
             <nav>
                 <ul>
-                     <li class='logo'> <a href="index.html">HomeYogi</a> </li>
+                     <li class='logo logo-landing'> <a href="index.html">YamaS</a> </li>
                 </ul>
                 
-                <ul>
-                    <li class='nav-item'><a href="guest.html">Find Classes</a></li>
-                    <li class='nav-item'><a href="host.html">Host Classes </a></li>
-                    <li class='nav-item'><a href="explore.html">Explore</a></li>
-                    <li class='nav-item'><a href="profile.html">Account</a></li>
-                </ul>
                 <button class="hamburger hamburger--vortex " type="button">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                     </span>
                 </button>
             </nav>
+        
+            
+            <ul class="dropdown dropdown-start">
+                <li><a href="guest.html">Find Class</a></li>
+                <li><a href="host.html">Host Class</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="profile.html">Account</a></li>
+            </ul>
         </section>
         <section class="wrapper landing-wrapper-two">
             <section class='landing-text-section'>
-                <h1 class='landing-title'> Real Yoga! Anywhere! </h1>
+                <h1 class='landing-title'> Yoga should roam </h1>
                 <div class='guest-buttons'>
-                    <a href="guest.html">
-                        <button class="join-button">Find Classes</button>
+                    <a href="#landing-footer" >
+                        <i class="fas fa-chevron-down"></i>
                     </a>
-                    <a href="host.html">
-                        <button class="host-button">Host Classes</button>
+                    <a href="#landing-footer">
+                        <p class="join-button">Explore Your Needs</p>
                     </a>
-                    
                 </div>
             </section>
         </section>
     </header>
-    <footer class="landing-footer">
-        <p class='footer-about'>HomeYogi is a platform for connecting Yogis with instructors </p>
-        <p>Find a Class here </p>
-        <p>Host a Class here </p>
+    
+    <section class="landing-footer" id='landing-footer'>
+        <section class='wrapper'>
+            <p class='footer-about'>Yama5 (Y5) is a platform for connecting those who want unique yoga experiences with  trained & authentic instructors. No studios or subscriptions. Just yoga! </p>
+            <p class='footer-about'>Get started below! </p>
+        </section>
+    </section>
+    <section class='choice-section'>
+        <section class='choice choice-1' id='choice-1'>
+            <a href='guest.html'>
+                <button>Find a Class</button>
+            </a>        
+        </section>
+        <section class='choice choice-2' id='choice-1'>
+            <a href='host.html'>
+                <button>Host a Class</button>
+            </a>
+        </section>
+    
+    </section>
+    <footer class='footer-to-explore'>
+        <section class='image-section-explore'>
+            <section class='wrapper'>
+                <button href=''>... or explore all options </button>
+            </section>
+        </section>
     </footer>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
     <script src='index.js'></script>

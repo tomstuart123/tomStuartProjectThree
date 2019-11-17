@@ -1,20 +1,12 @@
 .footer-to-explore {
-    background: url(../assets/yoga-class-cliff.jpg);
+    background: url(../assets/farsai-chaikulngamdee-L2wq7Y3h7ag-unsplash.jpg);
     background-size: cover;
     background-position: center;
-    background-color: rgb(104, 104, 104);
+    background-color: rgb(207, 203, 203);
     background-blend-mode: screen;
     width: 100%;
-    height: 450px;
-    @include mq-large-phone {
-        height: 250px;
-    }
-    @include mq-tablet {
-        height: 350px;
-    }
-    @include mq-tablet {
-        height: 400px;
-    }
+    height: 40vh;
+   
 }
 
 .footer-to-explore .image-section-explore {
@@ -32,7 +24,7 @@
 
 .footer-to-explore button {
     color: black;
-    font-size: 3.5rem;
+    font-size: 2.2rem;
     text-decoration: none;
     height: 50%;
     font-weight: bold;
@@ -43,22 +35,22 @@
     transition: font-size 0.5s;
 
     @include mq-tablet {
-        font-size: 4.5rem;
+        font-size: 2.4rem;
     }
     @include mq-desktop {
-        font-size: 5.5rem;
+        font-size: 2.8rem;
     }
 }
 
 .footer-to-explore button:hover {
     @include mq-large-phone {
-        font-size: 4rem;
+        font-size: 2.4rem;
     }
     @include mq-tablet {
-        font-size: 5rem;
+        font-size: 2.8rem;
     }
     @include mq-desktop {
-        font-size: 6rem;
+        font-size: 3.2rem;
     }
 }
 

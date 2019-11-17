@@ -8,7 +8,6 @@
     background-blend-mode: screen;
 
     @include mq-large-phone {
-        height: 700px;
         background: url(../assets/host-visual-two.jpg);
         background-size: cover;
         background-position: center;
@@ -24,22 +23,13 @@
     height: 80%;
 }
 
-.large-form-host{ 
-    background-size: cover;
-    background: linear-gradient($gradient-color-one, $gradient-color-two );
-    height: 1100px;
+.large-form-host{     
+    height: 160vh;
 
-    @include mq-large-phone {
-        height: 1100px;
-    }
-    @include mq-tablet {
-        height: 1250px;
-    }
-
-    @include mq-desktop {
-       height: 1350px;
-    }
 }
+
+
+
 
 // .large-form-host .form-fieldset div:nth-of-type(7) {
 //     width: 95%;

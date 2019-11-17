@@ -6,25 +6,24 @@ nav {
     justify-content: space-between;
     font-family: Lato, sans-serif;
     position: relative;
-    padding: 10px 0px; 
+    padding-top: 30px; 
 
     @include mq-large-phone {
-        padding: 20px 0px;
+        padding-top: 30px; 
     }
     @include mq-desktop {
-        padding: 30px 0px;
+        padding-top: 30px; 
     }
 }
 
 nav ul:nth-of-type(1) {
-    font-family: Pacifico, cursive;
     padding-top: 20px;
     padding-left: 0;
     @include mq-large-phone {
      padding-left: 0;
     }
     @include mq-tablet {
-        padding-top: 0px;
+        padding-top: 0;
     } 
 }
 
@@ -33,23 +32,27 @@ ul {
 }
 
 nav li {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     line-height: 15px;
     list-style-type: none;
     text-decoration: none;
 
-    color: black;
+    color: $light-color;
 
     @include mq-desktop {
-        font-size: 3rem;
-        text-decoration: none;
+        font-size: 2.8rem;
+        text-decoration: none; 
         position: relative;
     } 
 }
 
-nav a {
+.landing-image .logo a {
+    color: $light-colour;
+}
 
-    color: rgb(26, 49, 92);
+nav a {
+    font-weight: bold;
+    color: $dark-colour-two;
     text-decoration: none;
     @include mq-tablet {
         font-size: 1.8rem;
@@ -64,7 +67,23 @@ nav a {
 }
 
 nav .logo a {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
+    @include mq-tablet {
+        padding-top: 10px;        
+        display: block;
+
+    }
+    
+}
+
+nav .logo-landing a {
+    // display: none;
+    color: $light-colour;
+    font-size: 2.2rem;
+    @include mq-tablet {
+        padding-top: 10px;
+        display: block;
+    }
 }
 
 nav a:hover{
@@ -141,9 +160,6 @@ nav i {
     border-radius: 5%;
     opacity: 0.9;
 
-    @include mq-tablet {
-        display: none;
-    } 
 }
 
 .dropdown-start {

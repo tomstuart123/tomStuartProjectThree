@@ -1,75 +1,16 @@
-// Long-Term SITE STRUCTURE
-
-    // LANDING PAGE (MVP)
-        // A landing page
-        // Base Description
-        // Two buttons driving tow host or guest
-    // Guest (MVP)
-        //PAGE 1
-            // Quiz (where do you live, day you want yoga session, number of attendees, favourite type of yoga)
-            // Explore yoga options
-            // NAV - back to guest or Host
-        // Page 2
-            // Options offered and shown depend on what parameters they prefer
-            // filter buttons at the top
-            // Also button to go back to the form 
-
-    
-    // Host (STRETCH-GOAL)
-        // Page 1
-            // Quiz (where do you want to host, where is this, how many people can you take, type of yoga, your experience level) >> 
-            // Explore what others are doing >> PUSH TO HOST SITE
-        // Page 2
-            //  Profile review
-            //  submit button
-        // Page 3
-            // Add profile to the profile options
-
-// PSEUDO CODE
-
-    // MVP - PSEUDO CODE
-    // guest.html shows a form with how they want their yoga class (e.g. level of experience and atmosphere) (STRETCH GOAL - add more filter options e.g. day of the week)
-    // on submit button of form, i) check the checked fields in the form and ii) append the relevant class options to the page.
-    // HOW
-            // I have created javascript objects of each yoga class that matches the items in the form field. They also have a name of the Yoga teacher and a visual
-            // on click of submit event .preventdefault()
-            // then find the checked answer to each question in the form using ':checked'
-            // run through the object vs. these ':checked' responses using .filter()
-            // .append() only the objects that meet the correct criteria to the page below it (or STRETCH GOAL - send them another html site)
-            // finally, use an automatic scroll down feature so the user can view their options easily
-
-    // STRETCH GOAL 1.1 - PSEUDO-CODE
-    // on explore.html, if user clicks on a class, user isn't sent to a coming soon
-    // instead user is sent to a standard profile page html. Depending on which class is clicked, loop through the corresponding JS object holding that class. Populate the profile page with the class data from the object using .text(), .html() etc. 
-
-    // STRETCH GOAL 1.2 - PSEUDO-CODE
-    // Create landingPage.html, show user buttons of Am I host or a guest yogi 
-    // on click of host ->>>  send the user to host.html. 
-    // host.html This is very similar to guest.html and its form. However, added questions that those hosting a yoga class would need to answer (e.g. name, email etc).
-    // on submit of the form, it checks the form using :checked and uses the data to create a javascript object for the class. It also sends the user to profilePage.html
-    // On profilePage.html, it would loop throguh the javascript object and populate the profile page with data from the javascript object
-
-    // STRETCH GOAL 1.3 - PSEUDO-CODE 
-    // filter buttons at the top of explore html that automatically re-adjusts the page 
-    
-
-    // LONG-TERM GOAL 2.1 (not for this project)
-    // Use firebase to link the profiles created in profile.html with the classes that the user sees
-
-    // LONG-TERM GOAL 2.2 (not for this project)
-    // set up verification of hosts on profile creation that accepts a userName, password etc. Store this profile in a database
-
-
 // TO DO - fun stuff
-    // add filter buttons to explore page (AM)
     // design (PM)
-    // design (saturday)
-    // sunday (host classes / profile)
+    // make responsive
+    // create a host class actually builds a JS object
+ 
 
 // TO DO - clean up to do
+    // remove clickable options
+    // on profile page, remove clickable options
     // store all jquery as variables
-    // review last projects feedabck and apply
-    // change all image files to camel
+    // review last projects feedback and apply
+    // make all images a lower res
+    // change all image files to camelCase
 
 
 let yogaApp = {};
@@ -878,6 +819,13 @@ yogaApp.appendProfile = function () {
 // The event function that kicks off everything. This runs all the functions aboves
 yogaApp.events = function() {
     console.log(localStorage);
+    var $hamburger = $(".hamburger");
+    var $dropdown = $(".dropdown");
+    $hamburger.on("click", function (e) {
+        $hamburger.toggleClass("is-active");
+        console.log('click')
+        $dropdown.toggleClass('dropdown-start')
+    });
 
     let $formExplore = $('.form-explore')
     $formExplore.on('submit', function (event) {

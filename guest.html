@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Guest Page</title>
     <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e9b96cf6dd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 
 </head>
@@ -16,40 +17,49 @@
         <section class='wrapper'>
             <nav>
                 <ul>
-                    <li class='logo'> <a href="index.html">HomeYogi</a> </li>
+                    <li class='logo'> <a href="index.html">Yama5</a> </li>
                 </ul>
         
-                <ul>
-                    <li class='nav-item'><a href="guest.html">Find Classes</a></li>
-                    <li class='nav-item'><a href="host.html">Host Classes </a></li>
-                    <li class='nav-item'><a href="explore.html">Explore</a></li>
-                    <li class='nav-item'><a href="profile.html">Account</a></li>
-                </ul>
+                
                 <button class="hamburger hamburger--vortex " type="button">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                     </span>
                 </button>
             </nav>
+            <ul class="dropdown dropdown-start">
+                <li><a href="guest.html">Find Class</a></li>
+                <li><a href="host.html">Host Class</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="profile.html">Account</a></li>
+            </ul>
         
-            <section class="hero-text guest-hero-text">
-                
-                <h1 class='landing-title'> Book Unique Yoga Classes!</h1>
-        
+            <section class="wrapper landing-wrapper-two">
+                <section class='landing-text-section'>
+                    <h1 class='landing-title'> </h1>
+                    <div class='guest-buttons'>
+                        <a href="#landing-footer">
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <a href="#landing-footer">
+                            <p class="join-button">A seasoned teacher... a click away</p>
+                        </a>
+                    </div>
+                </section>
             </section>
-        </section>
     </header>
     <section class= 'form-section large-form'>
         <div class='wrapper'>
-            <form class='form-guest' action='explore.html'>
-                <section class='form-fieldset'>
-                        <legend class='title'>Find a class in Toronto that suits you</legend>
-
+            <section class='form-side form-side-two'>
+                <form class='form-guest' action='explore.html'>
+                    <section class='form-fieldset'>
+                        <legend class='title'>Tailor your class below:</legend>
+                
                         <div class='question-form'>
-                            <legend>WHICH CITY?</legend>
+                            <legend>CITY?</legend>
                             <div>
                                 <input type="checkbox" name="city" value="London" id="london">
-                                <label for='city'>London <span class='small-font'>(coming soon)</span></label>
+                                <label for='city'>London <span class='small-font'>(n/a)</span></label>
                             </div>
                             <div>
                                 <input type="checkbox" name="city" value="Toronto" id="toronto">
@@ -57,12 +67,12 @@
                             </div>
                             <div>
                                 <input type="checkbox" name="city" value="New York" id="new-york">
-                                <label for='city'>New York <span class='small-font'>(coming soon)</span></label>
+                                <label for='city'>New York <span class='small-font'>(n/a)</span></label>
                             </div>
                         </div>
-
+                
                         <div class='question-form'>
-                            <legend>WHICH TIME OF DAY?</legend>
+                            <legend>TIME OF DAY?</legend>
                             <select name="date" id="date" placeholder="Any" class="date">
                                 <option value="any">Any</option>
                                 <option value="evening">Evening</option>
@@ -71,9 +81,9 @@
                                 <label class="visuallyHidden" for="date">Date</label>
                             </select>
                         </div>
-
+                
                         <div class='question-form'>
-                            <legend>EXPERIENCE LEVEL? </legend>
+                            <legend>LEVEL? </legend>
                             <div>
                                 <input type="checkbox" name="experience" value="Beginner" id="beginner">
                                 <label for='experience'>Beginner</label>
@@ -87,20 +97,20 @@
                                 <label for='experience'>Advanced</label>
                             </div>
                         </div>
-
+                
                         <!-- <div class='question-form'>
-                            <legend>WHAT TYPE OF YOGA? </legend>
-                            <select name="yoga-style" id="yoga-style" placeholder="Any" class="yoga-style">
-                                <option value="any">Any</option>
-                                <option value="vinyasa">Vinyasa</option>
-                                <option value="restorative">Restorative (slow flow)</option>
-                                <option value="ashtanga">Ashtanga</option>
-                                <label class="visuallyHidden" for="yoga-style">Yoga-style</label>
-                            </select>
-                        </div> -->
-
+                                            <legend>WHAT TYPE OF YOGA? </legend>
+                                            <select name="yoga-style" id="yoga-style" placeholder="Any" class="yoga-style">
+                                                <option value="any">Any</option>
+                                                <option value="vinyasa">Vinyasa</option>
+                                                <option value="restorative">Restorative (slow flow)</option>
+                                                <option value="ashtanga">Ashtanga</option>
+                                                <label class="visuallyHidden" for="yoga-style">Yoga-style</label>
+                                            </select>
+                                        </div> -->
+                
                         <div class='question-form'>
-                            <legend>WHAT ATMOSPHERE? </legend> 
+                            <legend>LOCATION? </legend>
                             <div>
                                 <input type="checkbox" name="atmosphere" value="Studio" id="studio">
                                 <label for='atmosphere'>Studio</label>
@@ -114,16 +124,23 @@
                                 <label for='atmosphere'>Outdoor</label>
                             </div>
                         </div>
-
+                
                         <div class='question-form submit-form'>
-                             <button type="submit" id=""> Search Yoga Classes </button>
+                            <button type="submit" id=""> Search Yoga Classes </button>
                         </div>
-                        
+                
                         <div class='no-data'>
-                            <h2 class='title5 hide guest-hide'>No options available. Please try different filters</h2>
+                            <h2 class='title5 hide guest-hide'>Reminder, tick an option from all fields above</h2>
                         </div>
                     </section>
-            </form>
+                </form>
+            </section>
+            <section class='form-side form-side-one'>
+                <div class='image-container'>
+                    <img src='assets/two-yoga-water.jpg'>
+                </div>
+            </section>
+            
         </div>
     </section>
     <section class='reveal-data'>
@@ -132,7 +149,9 @@
     <footer class='footer-to-explore'>
         <section class='image-section-explore'>
             <section class='wrapper'>
-                <button href=''>... or explore all available classes here! </button>
+                <a href='explore.html'>
+                    <button href=''>... or explore what other instructors are doing!</button>
+                </a>
             </section>
         </section>
     </footer>

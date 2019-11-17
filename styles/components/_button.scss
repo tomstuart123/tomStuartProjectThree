@@ -1,1 +1,26 @@
 // This file contains all styles related to the button component.
+.choice button {
+    height: 60px;
+    width: 200px;
+    margin: 0 auto;
+    color: $light-colour;
+    border-radius: 10%;
+    border-color: $light-colour;
+    background: none;
+    transition: font-size 1s, width 1s, height 1s;
+    
+}
+
+.choice-2 button {
+    color: $dark-colour-two;
+    border-color: $light-colour;
+}
+
+.choice button:hover {
+    font-size: 2rem;
+    height: 70px;
+    width: 220px;
+    color: $dark-colour-two;
+    background: $primary-colour;
+    
+}

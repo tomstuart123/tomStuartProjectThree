@@ -1,18 +1,21 @@
 .hero-text {
     display: flex;
-    flex-direction: column; 
-    justify-content: flex-end;
+    flex-direction: row; 
+    justify-content: center;
+    align-content: flex-end;
     height: 80%;
+    width: 100%;
+    
 }
 
 header h1 {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     @include mq-large-phone {
-        font-size: 4.5rem; 
+        font-size: 2.5rem; 
     }
 
     @include mq-tablet {
-        font-size: 5.5rem;
+        font-size: 3.5rem;
     }
 }
 
