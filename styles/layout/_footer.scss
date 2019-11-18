@@ -23,7 +23,7 @@
 }
 
 .footer-to-explore button {
-    color: black;
+    color: rgb(32, 32, 32);
     font-size: 2.2rem;
     text-decoration: none;
     height: 50%;
@@ -31,7 +31,6 @@
     background: none;
     border: none;
     line-height: 50px;
-    opacity: 0.6;
     transition: font-size 0.5s;
 
     @include mq-tablet {
@@ -47,10 +46,10 @@
         font-size: 2.4rem;
     }
     @include mq-tablet {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
     }
     @include mq-desktop {
-        font-size: 3.2rem;
+        font-size: 3rem;
     }
 }
 

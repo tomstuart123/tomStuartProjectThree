@@ -125,6 +125,17 @@
     }
 }
 
+.guest-buttons p:hover {
+    font-size: 1.7rem; 
+    @include mq-tablet {
+        font-size: 2rem;
+    }
+
+    @include mq-desktop {
+        font-size: 2rem;
+    }
+}
+
 .fas {
     color: $primary-colour;
     font-size: 4rem;

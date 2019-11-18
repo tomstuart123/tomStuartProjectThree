@@ -437,6 +437,8 @@ nav a {
 
 nav .logo a {
   font-size: 2.4rem;
+  -webkit-transition: font-size 0.5s;
+  transition: font-size 0.5s;
 }
 
 @media (min-width: 700px) {
@@ -448,7 +450,9 @@ nav .logo a {
 
 nav .logo-landing a {
   color: #F5F5F5;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
+  -webkit-transition: font-size 0.5s;
+  transition: font-size 0.5s;
 }
 
 @media (min-width: 700px) {
@@ -459,7 +463,11 @@ nav .logo-landing a {
 }
 
 nav a:hover {
-  font-weight: bold;
+  font-size: 2.6rem;
+}
+
+nav .logo-landing a:hover {
+  font-size: 2.6rem;
 }
 
 .fa {
@@ -526,7 +534,7 @@ nav i {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: #e2e0e4;
+  background: #F5F5F5;
   width: 50%;
   text-align: left;
   padding: 20px;
@@ -545,13 +553,19 @@ nav i {
   margin-bottom: 15px;
   margin-top: 5px;
   list-style-type: none;
+  -webkit-transition: font-size 0.5s;
+  transition: font-size 0.5s;
 }
 
 .dropdown a {
-  color: #667c8c;
+  color: #373663;
   text-decoration: none;
   cursor: pointer;
   font-weight: bold;
+}
+
+.dropdown li:hover {
+  font-size: 2rem;
 }
 
 .hamburger {
@@ -720,7 +734,7 @@ nav i {
 }
 
 .footer-to-explore button {
-  color: black;
+  color: #202020;
   font-size: 2.2rem;
   text-decoration: none;
   height: 50%;
@@ -728,7 +742,6 @@ nav i {
   background: none;
   border: none;
   line-height: 50px;
-  opacity: 0.6;
   -webkit-transition: font-size 0.5s;
   transition: font-size 0.5s;
 }
@@ -753,13 +766,13 @@ nav i {
 
 @media (min-width: 700px) {
   .footer-to-explore button:hover {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
 }
 
 @media (min-width: 950px) {
   .footer-to-explore button:hover {
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
 }
 
@@ -1110,9 +1123,9 @@ form .submit-form button:hover {
   height: 40px;
   line-height: 0px;
   width: 90%;
-  color: #373663;
+  color: #F5F5F5;
   margin: 20px 10px;
-  background: #c7cece;
+  background: #75748d;
   font-weight: bold;
   border: none;
   font-size: 1.5rem;
@@ -1532,6 +1545,22 @@ img {
   }
 }
 
+.guest-buttons p:hover {
+  font-size: 1.7rem;
+}
+
+@media (min-width: 700px) {
+  .guest-buttons p:hover {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 950px) {
+  .guest-buttons p:hover {
+    font-size: 2rem;
+  }
+}
+
 .fas {
   color: #f5c69f;
   font-size: 4rem;
@@ -1947,7 +1976,7 @@ img {
 }
 
 .no-account {
-  background: #c7cece;
+  background: #F5F5F5;
   height: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1969,10 +1998,10 @@ img {
   width: 100%;
   margin: 0 auto;
   font-size: 1.5rem;
-  color: #F5F5F5;
+  color: #373663;
   border-radius: 10%;
   border-color: #F5F5F5;
-  background: #373663;
+  background: #B9D2DC;
   -webkit-transition: font-size 1s, width 1s, height 1s;
   transition: font-size 1s, width 1s, height 1s;
 }

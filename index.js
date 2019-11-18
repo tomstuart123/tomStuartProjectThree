@@ -1,5 +1,4 @@
-// TO DO - clean up to do
-    // review last projects feedback and apply
+
 
 // Note to Reader - this is a WIP project for 2020
     // Next Steps:
@@ -8,7 +7,7 @@
     // beautify the site further with more explore options 
 
 // create the yogaApp to store all JS
-let yogaApp = {};
+const yogaApp = {};
 
 // create class for iteration of session to hold yoga sessions. Inside the class use a static function to allow easy creation of new session classes. This future proofs us so that its easy for users to create new classes once we have firebase set up long-term.
 yogaApp.Session = class Session {
@@ -482,7 +481,7 @@ yogaApp.findChoicesItems = (choiceObj, finalArray) => {
     };
 
     // remove all null / undefined elements in this array in case nothing is chosen
-    const cleanedArray = newArray.filter(function (item) {
+    let cleanedArray = newArray.filter(function (item) {
         return item != null;
     });
 
@@ -706,7 +705,7 @@ yogaApp.appendToPage = function(userInputArrays) {
         // if all the similarities that the user has specified come out as accurate, then append to page with relevant data from the JS classes at the top. then add to checker counter
         if (sameItems.includes(yogaApp.groupedSessions[i]['city']) && sameItems.includes(yogaApp.groupedSessions[i]['atmosphere']) && sameItems.includes(yogaApp.groupedSessions[i]['experience']) && sameItems.includes(yogaApp.groupedSessions[i]['day']) || sameItems.includes(yogaApp.groupedSessions[i]['any'])) {
             checker = checker + 1;
-            let $revealData = $('.reveal-data');
+            const $revealData = $('.reveal-data');
             $revealData.addClass('reveal-data-style');
 
             $revealData.append(
@@ -740,9 +739,9 @@ yogaApp.appendToPage = function(userInputArrays) {
                 </section>
                 `)  
             // toggle different styling for alternate appending. One is a darker background, the other lighter
-            let $option = $('.option');
-            let $normalPara = $('.normal-paragraph');
-            let $image = $('.image');
+            const $option = $('.option');
+            const $normalPara = $('.normal-paragraph');
+            const $image = $('.image');
             if (checker % 2 === 0) {
                 $option.toggleClass('option-one');
                 $normalPara.toggleClass('alt-text');
@@ -753,13 +752,7 @@ yogaApp.appendToPage = function(userInputArrays) {
                 $image .toggleClass('box-shadow');
             }
         } 
-        
-
-        
-        
-
     }  
-
 }
 
 // similar to the above but instead for host.html.
@@ -780,15 +773,15 @@ yogaApp.appendProfile = function () {
 // The event function that kicks off everything. This runs all the functions aboves
 yogaApp.events = function() {
     // click event function to make sure the hamburger works
-    var $hamburger = $(".hamburger");
-    var $dropdown = $(".dropdown");
+    const $hamburger = $(".hamburger");
+    const $dropdown = $(".dropdown");
     $hamburger.on("click", function (e) {
         $hamburger.toggleClass("is-active");
         $dropdown.toggleClass('dropdown-start')
     });
 
     // click event that allows us to update the items appended on explore.html based on the filter buttons at the top of the page
-    let $formExplore = $('.form-explore')
+    const $formExplore = $('.form-explore')
     $formExplore.on('submit', function (event) {
         // prevent default form action
         event.preventDefault();
@@ -827,7 +820,7 @@ yogaApp.events = function() {
      // then sends user to explore.html for appending of the data to the page 
      // also blocks the user in case any form field is missed
 
-    let $formGuest = $('.form-guest')
+    const $formGuest = $('.form-guest')
     $formGuest.on('submit', function (event) {
  
         const $dayChoice = $('select[name=date]').val();
@@ -874,7 +867,7 @@ yogaApp.events = function() {
   // similar to the above but for host. click event that allows us to set preferences on host.html and stores them to local storage
      // then sends user to profile.html for appending of the data to the page 
      // also blocks the user in case any form field is missed
-let $formHost = $('.form-host')
+const $formHost = $('.form-host')
 $formHost.on('submit', function (event) {
 
     // store jquery form selectors of user choices

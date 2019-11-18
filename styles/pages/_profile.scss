@@ -185,7 +185,7 @@
 }
 
 .no-account {
-    background: $mid-colour;
+    background: $light-colour;
     height: 0px;
     display: flex;
     justify-content: center;
@@ -201,10 +201,10 @@
     width: 100%;
     margin: 0 auto;
     font-size: 1.5rem;
-    color: $light-colour;
+    color: $dark-colour-two;
     border-radius: 10%;
     border-color: $light-colour;
-    background: $dark-colour-two;
+    background: $mid-colour-two;
     transition: font-size 1s, width 1s, height 1s;
     
 }
