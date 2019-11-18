@@ -5,9 +5,11 @@
 .large-form{ 
     background-size: cover;
     background: $light-colour;
-    height: 90vh;
+    // height: 90vh;
+    height: 740px;
     @include mq-large-phone {
-        height: 105vh;
+        // height: 105vh;
+        height: 700px;
 
     }
 
@@ -99,7 +101,8 @@ form .title {
 }
 
 .form-side-one .image-container {
-    margin: 20vh 0px;
+    // margin: 20vh 0px;
+    margin: 120px 0;
 }
 
 form .question-form div, form select  { 
@@ -203,7 +206,7 @@ form .submit-form button:hover {
 
 .title3, .title4, .title5 {
     font-size: 1.5rem;
-    color: $dark-colour-two;
+    color: $dark-colour;
     text-align: center;
     padding-bottom: 30px;
     @include mq-tablet {

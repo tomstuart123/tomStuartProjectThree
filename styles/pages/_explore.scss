@@ -73,3 +73,11 @@
     color: black;
     opacity: 1;
 }
+
+.title6 {
+    font-size: 1.3rem;
+    display: none;
+    @include mq-tablet {
+        display: block;
+    }
+}

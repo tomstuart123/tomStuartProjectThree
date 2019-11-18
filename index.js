@@ -742,11 +742,7 @@ yogaApp.appendToPage = function(userInputArrays) {
         yogaApp.checkForAnyExperience(sameAnyExperience, sameItems)
         yogaApp.checkForAnyAtmosphere(sameAnyAtmosphere, sameItems)
         
-        yogaApp.checkForAnyDay(sameAnyDay, sameItems)
-        
-
-
-        
+        yogaApp.checkForAnyDay(sameAnyDay, sameItems);
 
         // if all the similarities that the user has specified come out as accurate, then append to page with relevant data from the JS classes at the top. then add to checker counter
         if (sameItems.includes(yogaApp.groupedSessions[i]['city']) && sameItems.includes(yogaApp.groupedSessions[i]['atmosphere']) && sameItems.includes(yogaApp.groupedSessions[i]['experience']) && sameItems.includes(yogaApp.groupedSessions[i]['day']) || sameItems.includes(yogaApp.groupedSessions[i]['any'])) {
@@ -830,6 +826,7 @@ yogaApp.events = function() {
     const $formExplore = $('.form-explore')
     $formExplore.on('submit', function (event) {
         // prevent default form action
+        // $('title6').toggleClass('hide');
         event.preventDefault();
         // create arrays to store answers
         let dayChoicesArray = [];
@@ -896,8 +893,6 @@ yogaApp.events = function() {
         // If these choices are in the dummy data, pull that object and put its info on the page
         
         yogaApp.saveUserToLocalStorage(allChoices);
-        // yogaApp.saveObjToLocalStorage(yogaApp.groupedSessions);
-
 
         // make sure that if no data selected the user isn't sent to the explore html and the error message is shown
         if (allChoices[0].length === 0 || allChoices[0].includes('toronto') === false || allChoices[1].length === 0 || allChoices[2].length === 0) {
