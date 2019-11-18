@@ -32,6 +32,7 @@ yogaApp.Session = class Session {
 
 // for now, create some dummy data to represent the yoga classes. This will be subbed in for real user profiles once we include firebase
 // store these profiles in larger grouped sessions object for easy access when pulling data to put on the page (see appendToPage function)
+ // unsplash credit to artem-beliaikin
 yogaApp.groupedSessions = {
     yogiTom: yogaApp.Session.createSession({
         city: 'toronto',
@@ -44,6 +45,7 @@ yogaApp.groupedSessions = {
         rating: 4.5,
         cost: 10
     }),
+    // unsplash credit to jonathan-borba
 
     yogiAlex: yogaApp.Session.createSession({
         city: 'toronto',
@@ -57,7 +59,7 @@ yogaApp.groupedSessions = {
         cost: 12
         
     }),
-
+    // unsplash credit to patrick kool
     yogiSofia: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'weekend',
@@ -70,6 +72,7 @@ yogaApp.groupedSessions = {
         cost: 8
     }),
 
+    // unsplash credit to rima kruciene
     yogiZac: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'evening',
@@ -82,6 +85,7 @@ yogaApp.groupedSessions = {
         cost: 7
     }),
 
+    // unsplash credit to nate johnston
     yogiSandy: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'morning',
@@ -94,6 +98,7 @@ yogaApp.groupedSessions = {
         cost: 19
     }),
 
+    // unsplash credit to simon raeker
     yogiJames: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'morning',
@@ -105,6 +110,7 @@ yogaApp.groupedSessions = {
         rating: 4.4,
         cost: 8
     }),
+    // unsplash credit to scott broome
 
     yogiJohn: yogaApp.Session.createSession({
         city: 'toronto',
@@ -119,6 +125,7 @@ yogaApp.groupedSessions = {
 
     }),
 
+     // unsplash credit to ruslan
     yogiSam: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'morning',
@@ -132,6 +139,7 @@ yogaApp.groupedSessions = {
 
     }),
 
+    // unsplash credit to kike vega
     yogiElise: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'weekend',
@@ -144,6 +152,7 @@ yogaApp.groupedSessions = {
         cost: 18
     }),
 
+    // unsplash credit to mark zamore
     yogiBella: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'evening',
@@ -156,6 +165,7 @@ yogaApp.groupedSessions = {
         cost: 17
     }),
 
+        // unsplash credit to ashes sitoula
     yogiSean: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'morning',
@@ -167,6 +177,7 @@ yogaApp.groupedSessions = {
         rating: 4.3,
         cost: 20
     }),
+    // unsplash credit to dane wetton
 
     yogiRachita: yogaApp.Session.createSession({
         city: 'toronto',
@@ -179,6 +190,7 @@ yogaApp.groupedSessions = {
         rating: 4.5,
         cost: 6
     }),
+    // unsplash credit to isabell winter
 
     yogiPaul: yogaApp.Session.createSession({
         city: 'toronto',
@@ -191,6 +203,7 @@ yogaApp.groupedSessions = {
         rating: 4.6,
         cost: 16
     }),
+    // unsplash credit to form fitness
 
     yogiCatri: yogaApp.Session.createSession({
         city: 'toronto',
@@ -203,6 +216,7 @@ yogaApp.groupedSessions = {
         rating: 4.9,
         cost: 30
     }),
+        // unsplash credit to wesley tingey
 
     yogiLucy: yogaApp.Session.createSession({
         city: 'toronto',
@@ -215,6 +229,7 @@ yogaApp.groupedSessions = {
         rating: 3.6,
         cost: 5
     }),
+    // unsplash credit to samuel austin
 
     yogiDom: yogaApp.Session.createSession({
         city: 'toronto',
@@ -228,6 +243,7 @@ yogaApp.groupedSessions = {
         cost: 16
 
     }),
+    // unsplash credit to zoltan tasi
 
     yogiGenene: yogaApp.Session.createSession({
         city: 'toronto',
@@ -241,6 +257,7 @@ yogaApp.groupedSessions = {
         cost: 12
 
     }),
+    // unsplash credit to mark zamora
 
     yogiSarah: yogaApp.Session.createSession({
         city: 'toronto',
@@ -253,6 +270,7 @@ yogaApp.groupedSessions = {
         rating: 4.8,
         cost: 16
     }),
+    // unsplash credit to carl newton
 
     yogiJack: yogaApp.Session.createSession({
         city: 'toronto',
@@ -267,6 +285,8 @@ yogaApp.groupedSessions = {
 
     }),
 
+    // unsplash credit to farsai chaikukl
+
     yogiGeorgia: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'evening',
@@ -280,6 +300,8 @@ yogaApp.groupedSessions = {
 
     }),
 
+    // unsplash credit to max rovensky
+
     yogiSally: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'evening',
@@ -291,6 +313,8 @@ yogaApp.groupedSessions = {
         rating: 4.2,
         cost: 14
     }),
+
+    // unsplash credit to chris ensey
 
     yogiRussell: yogaApp.Session.createSession({
         city: 'toronto',
@@ -304,6 +328,7 @@ yogaApp.groupedSessions = {
         cost: 13
 
     }),
+    // unsplash credit to alexander mills
 
     yogiJanet: yogaApp.Session.createSession({
         city: 'toronto',
@@ -318,6 +343,8 @@ yogaApp.groupedSessions = {
 
     }),
 
+    // unsplash credit to william farlow
+
     yogiTara: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'morning',
@@ -329,6 +356,8 @@ yogaApp.groupedSessions = {
         rating: 4.8,
         cost: 12
     }),
+
+    // unsplash credit to fabian moller
 
     yogiTim: yogaApp.Session.createSession({
         city: 'toronto',
@@ -342,6 +371,7 @@ yogaApp.groupedSessions = {
         cost: 14
 
     }),
+    // unsplash credit to steve halama
 
     yogiPaula: yogaApp.Session.createSession({
         city: 'toronto',
@@ -356,6 +386,8 @@ yogaApp.groupedSessions = {
 
     }),
 
+    // unsplash credit to bekir donmez
+
     yogiBonnie: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'weekend',
@@ -367,6 +399,8 @@ yogaApp.groupedSessions = {
         rating: 4.4,
         cost: 17
     }),
+
+    // unsplash credit to patrick malleret
 
     yogiIdris: yogaApp.Session.createSession({
         city: 'toronto',
@@ -380,6 +414,7 @@ yogaApp.groupedSessions = {
         cost: 18
 
     }),
+    // unsplash credit to mark adriane
 
     yogiHarry: yogaApp.Session.createSession({
         city: 'toronto',
@@ -387,12 +422,14 @@ yogaApp.groupedSessions = {
         experience: 'intermediate',
         yoga: 'ashtanga',
         atmosphere: 'studio',
-        imageURL: 'assets/option-visuals/mark-adriane-muS2RraYRuQ-unsplash(1).jpg',
+        imageURL: 'assets/option-visuals/mark-adriane-muS2RraYRuQ-unsplash.jpg',
         name: 'yogiHarry',
         rating: 4.9,
         cost: 18
 
     }),
+
+    // unsplash credit to aniie spraat
 
     yogiHolly: yogaApp.Session.createSession({
         city: 'toronto',
@@ -405,6 +442,7 @@ yogaApp.groupedSessions = {
         rating: 3.9,
         cost: 18
     }),
+    // unsplash credit to wesley tingey
 
     yogiStar: yogaApp.Session.createSession({
         city: 'toronto',
@@ -418,6 +456,8 @@ yogaApp.groupedSessions = {
         cost: 14
     }),
 
+    // unsplash credit to ksenia makagonova
+
     yogiJosh: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'morning',
@@ -429,6 +469,8 @@ yogaApp.groupedSessions = {
         rating: 4.5,
         cost: 6
     }),
+
+    // unsplash credit to bruce mars
 
     yogiCharlotte: yogaApp.Session.createSession({
         city: 'toronto',
@@ -442,6 +484,8 @@ yogaApp.groupedSessions = {
         cost: 6
     }),
 
+     // unsplash credit to natalie grainger
+
     yogiCres: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'weekend',
@@ -453,6 +497,8 @@ yogaApp.groupedSessions = {
         rating: 4.7,
         cost: 18
     }),
+
+    // unsplash credit to jay castor
 
     yogiChris: yogaApp.Session.createSession({
         city: 'toronto',
