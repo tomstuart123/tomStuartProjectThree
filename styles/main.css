@@ -216,10 +216,10 @@ html {
 
 h1, h2, h3, p, li, form, button {
   font-family: 'Merriweather', serif;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   font-weight: 400;
   line-height: 22px;
-  color: #73728d;
+  color: #75748d;
 }
 
 h1 {
@@ -701,7 +701,7 @@ nav i {
   background: url(../assets/farsai-chaikulngamdee-L2wq7Y3h7ag-unsplash.jpg);
   background-size: cover;
   background-position: center;
-  background-color: #cfcbcb;
+  background-color: #949393;
   background-blend-mode: screen;
   width: 100%;
   height: 40vh;
@@ -917,20 +917,20 @@ form .question-form div, form select {
   }
 }
 
-form select[name='date'], form input[name='name'], form input[name='email'], form select[name='yoga-style'], form input[type='number'] {
+.large-form select[name='date'], .large-form input[name='name'], .large-form input[name='email'], form select[name='yoga-style'], .large-form input[type='number'] {
   width: 80%;
-  color: #73728d;
+  color: #75748d;
   margin: 0 3px;
   background: transparent;
   border: 1px #d3d2d2 solid;
   padding-left: 4px;
 }
 
-form input[name='name'], form input[name='email'], form input[type='number'] {
+.large-form input[name='name'], .large-form input[name='email'], .large-form input[type='number'] {
   color: #373663;
 }
 
-form select[name='date'], form select[name='yoga-style'] {
+.large-form select[name='date'], .large-form select[name='yoga-style'] {
   border-radius: 10%;
 }
 
@@ -991,7 +991,7 @@ form .submit-form {
   color: #F5F5F5;
   border-radius: 10%;
   border-color: #f5c69f;
-  background: #73728d;
+  background: #75748d;
   -webkit-transition: font-size 1s, width 1s, height 1s;
   transition: font-size 1s, width 1s, height 1s;
 }
@@ -999,7 +999,7 @@ form .submit-form {
 form .submit-form button:hover {
   font-size: 1.8rem;
   background: #F5F5F5;
-  color: #73728d;
+  color: #75748d;
 }
 
 @media (min-width: 700px) {
@@ -1048,8 +1048,9 @@ form .submit-form button:hover {
 }
 
 .mini-form {
-  height: 100px;
-  background-color: #dbe6f4;
+  height: 150px;
+  padding: 20px 0;
+  background-color: #F5F5F5;
 }
 
 @media (min-width: 700px) {
@@ -1063,16 +1064,24 @@ form .submit-form button:hover {
 }
 
 .mini-form select {
-  font-size: 1.5rem;
-  width: 100%;
-  margin: 10px 0;
+  font-size: 1.2rem;
+  width: 90%;
+  margin: 20px 20px;
   height: 40px;
+  color: #75748d;
+}
+
+@media (min-width: 400px) {
+  .mini-form select {
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 700px) {
   .mini-form select {
-    margin: 20px 0px;
-    font-size: 1.8rem;
+    smargin: 20px 0px;
+    width: 100%;
+    font-size: 1.5rem;
     padding: 5px;
     height: auto;
   }
@@ -1080,7 +1089,7 @@ form .submit-form button:hover {
 
 @media (min-width: 950px) {
   .mini-form select {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -1121,12 +1130,14 @@ form .submit-form button:hover {
 }
 
 .mini-form .mini-submit-form button {
-  height: 30px;
+  height: 26px;
   line-height: 0px;
   width: 90%;
-  margin: 12px 0;
-  background: #e2e0e4;
+  color: #e2e0e4;
+  margin: 22px 10px;
+  background: #667c8c;
   font-weight: bold;
+  border: none;
   font-size: 1.5rem;
   -webkit-transition: font-size 0.5s;
   transition: font-size 0.5s;
@@ -1134,22 +1145,20 @@ form .submit-form button:hover {
 
 @media (min-width: 700px) {
   .mini-form .mini-submit-form button {
-    height: 30px;
     font-size: 1.8rem;
-    margin: 22px 0;
+    margin: 22px 10px;
+    width: 90%;
   }
 }
 
 @media (min-width: 950px) {
   .mini-form .mini-submit-form button {
     font-size: 2.2rem;
-    height: 40px;
+    height: 30px;
   }
 }
 
 .class-section {
-  background: -webkit-gradient(linear, left top, left bottom, from(#dbe6f4), to(#fcfcfc));
-  background: linear-gradient(#dbe6f4, #fcfcfc);
   padding: 0px;
 }
 
@@ -1158,16 +1167,33 @@ form .submit-form button:hover {
   padding: 30px 0;
 }
 
+.reveal-data .title {
+  font-size: 2.5rem;
+}
+
 .option {
+  padding: 30px 0;
+  background-color: #75748d;
+}
+
+.option .wrapper {
   padding: 30px 0;
 }
 
+@media (min-width: 700px) {
+  .option .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .option-one {
-  background-color: #dbe6f4;
+  background-color: #F5F5F5;
 }
 
 .option-two {
-  background-color: #fcfcfc;
+  background-color: #75748d;
 }
 
 .option-image {
@@ -1182,13 +1208,7 @@ form .submit-form button:hover {
 
 @media (min-width: 700px) {
   .option-image {
-    height: 400px;
-  }
-}
-
-@media (min-width: 950px) {
-  .option-image {
-    height: 550px;
+    width: 50%;
   }
 }
 
@@ -1243,37 +1263,79 @@ form .submit-form button:hover {
 
 @media (min-width: 400px) {
   .option-text {
-    padding: 20px 1.25%;
+    padding: 20px 5%;
+  }
+}
+
+@media (min-width: 700px) {
+  .option-text {
+    width: 50%;
+    padding: 0px;
+    padding-left: 7.5%;
+  }
+}
+
+@media (min-width: 950px) {
+  .option-text {
+    padding-left: 10%;
   }
 }
 
 .option-text p {
-  width: 25%;
   font-size: 1.2rem;
+  height: 10px;
+  line-height: 30px;
+  margin: 10px 0;
 }
 
 @media (min-width: 400px) {
   .option-text p {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 }
 
 @media (min-width: 700px) {
   .option-text p {
-    font-size: 2.2rem;
-    margin: 3px 0;
+    font-size: 1.8rem;
+    margin: 0px 0;
   }
 }
 
 @media (min-width: 950px) {
   .option-text p {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin: 5px 0;
   }
 }
 
+.option-text .normal-paragraph {
+  color: white;
+}
+
+.option-text .alt-text {
+  color: #75748d;
+}
+
 .option-text p:nth-of-type(1), .option-text p:nth-of-type(3), .option-text p:nth-of-type(5), .option-text p:nth-of-type(7), .option-text p:nth-of-type(9), .option-text p:nth-of-type(11) {
   font-weight: bold;
+  width: 20%;
+}
+
+@media (min-width: 700px) {
+  .option-text p:nth-of-type(1), .option-text p:nth-of-type(3), .option-text p:nth-of-type(5), .option-text p:nth-of-type(7), .option-text p:nth-of-type(9), .option-text p:nth-of-type(11) {
+    width: 40%;
+  }
+}
+
+.option-text p:nth-of-type(2), .option-text p:nth-of-type(4), .option-text p:nth-of-type(6), .option-text p:nth-of-type(8), .option-text p:nth-of-type(10), .option-text p:nth-of-type(12) {
+  text-align: left;
+  width: 30%;
+}
+
+@media (min-width: 700px) {
+  .option-text p:nth-of-type(2), .option-text p:nth-of-type(4), .option-text p:nth-of-type(6), .option-text p:nth-of-type(8), .option-text p:nth-of-type(10), .option-text p:nth-of-type(12) {
+    width: 60%;
+  }
 }
 
 .choice button {
@@ -1298,7 +1360,7 @@ form .submit-form button:hover {
   height: 70px;
   width: 220px;
   color: #373663;
-  background: #f5c69f;
+  background: #F5F5F5;
 }
 
 .image-container {
@@ -1309,8 +1371,19 @@ form .submit-form button:hover {
 
 img {
   width: 100%;
-  -webkit-box-shadow: 10px 10px #73728d;
-          box-shadow: 10px 10px #73728d;
+  -webkit-box-shadow: 10px 10px #F5F5F5;
+          box-shadow: 10px 10px #F5F5F5;
+}
+
+.box-shadow {
+  width: 100%;
+  -webkit-box-shadow: 10px 10px #75748d;
+          box-shadow: 10px 10px #75748d;
+}
+
+.alt-shadow-image {
+  -webkit-box-shadow: 10px 10px #F5F5F5;
+          box-shadow: 10px 10px #F5F5F5;
 }
 
 .landing-image {
@@ -1512,7 +1585,7 @@ img {
   text-align: center;
   line-height: 35px;
   width: 50%;
-  color: #73728d;
+  color: #75748d;
   padding: auto 0px;
 }
 
@@ -1572,7 +1645,7 @@ img {
 }
 
 .choice-1 {
-  background: #73728d;
+  background: #75748d;
 }
 
 .choice-2 {
@@ -1635,12 +1708,12 @@ img {
 
 .reveal-data {
   height: auto;
-  background: #fcfcfc;
+  background: #F5F5F5;
 }
 
 .reveal-data-style {
   padding-top: 50px;
-  background: #dbe6f4;
+  background: #F5F5F5;
 }
 
 .profile-hero-image {
@@ -1718,31 +1791,11 @@ img {
 }
 
 .explore-hero-image {
-  background: url(../assets/explore-visual.jpg);
+  background: url(../assets/man-and-woman-doing-yoga-1882004.jpg);
+  height: 85vh;
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 30vh;
-  background-color: black;
-  background-blend-mode: screen;
-}
-
-@media (min-width: 400px) {
-  .explore-hero-image {
-    height: 50vh;
-  }
-}
-
-@media (min-width: 700px) {
-  .explore-hero-image {
-    height: 60vh;
-  }
-}
-
-@media (min-width: 950px) {
-  .explore-hero-image {
-    height: 70vh;
-  }
 }
 
 .explore-hero-text {

@@ -3,30 +3,11 @@
 } 
 
 .explore-hero-image {
-    background: url(../assets/explore-visual.jpg);
+    background: url(../assets/man-and-woman-doing-yoga-1882004.jpg);
+    height: 85vh;
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 30vh;
-    background-color:rgb(0, 0, 0);
-    background-blend-mode: screen;
-
-    @include mq-large-phone {
-        height: 50vh;
-    //     height: 700px;
-    //     background: url(../assets/host-visual-two.jpg);
-    //     background-size: cover;
-    //     background-position: center;
-    //     background-color: rgb(40, 39, 39);
-    //     background-blend-mode: screen;
-    }
-
-    @include mq-tablet {
-        height: 60vh;
-    }
-    @include mq-desktop {
-        height: 70vh;
-    }
 
 }
 

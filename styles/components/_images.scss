@@ -7,6 +7,20 @@
 
 img {
     width: 100%;
-    box-shadow: 10px 10px $dark-colour;
+    box-shadow: 10px 10px $light-colour;
+
     // height: 100%;
 }
+
+.box-shadow {
+    width: 100%;
+    box-shadow: 10px 10px $dark-colour;
+
+    // height: 100%;
+}
+
+.alt-shadow-image {
+    box-shadow: 10px 10px $light-colour;
+
+}
+

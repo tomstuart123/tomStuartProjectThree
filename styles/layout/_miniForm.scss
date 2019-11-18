@@ -1,6 +1,7 @@
 .mini-form {
-    height: 100px;
-    background-color: $gradient-color-one;
+    height: 150px;
+    padding: 20px 0;
+    background-color: $light-colour;
     @include mq-tablet {
        height: 75px;
     }
@@ -11,18 +12,23 @@
 }
 
 .mini-form select { 
-    font-size: 1.5rem;
-    width: 100%;
-    margin: 10px 0;
+    font-size: 1.2rem;
+    width: 90%;
+    margin: 20px 20px;
     height: 40px;
+    color: $dark-colour;
+    @include mq-large-phone {
+        font-size: 1.5rem;
+    }
     @include mq-tablet {
-        margin: 20px 0px;
-       font-size: 1.8rem;
+       smargin: 20px 0px;
+       width: 100%;
+       font-size: 1.5rem;
        padding: 5px;
        height: auto;
     }
     @include mq-desktop {
-       font-size: 2.2rem;
+       font-size: 1.8rem;
     }
 }
 
@@ -52,22 +58,24 @@
 }
 
 .mini-form .mini-submit-form button {  
-    height: 30px;
+    height: 26px;
     line-height: 0px;
     width: 90%;
-    margin: 12px 0;
-    background: $light-color;
+    color: $light-color;
+    margin: 22px 10px;
+    background: $dark-color;
     font-weight: bold;
+    border: none;
     font-size: 1.5rem;
     transition: font-size 0.5s;
     @include mq-tablet { 
-        height: 30px;
         font-size: 1.8rem;
-        margin: 22px 0;
+        margin: 22px 10px;
+        width: 90%;
     }
     @include mq-desktop {
         font-size: 2.2rem;
-        height: 40px;
+        height: 30px;
 
     }
 }

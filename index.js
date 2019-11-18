@@ -667,7 +667,7 @@ yogaApp.appendToPage = function(userInputArrays) {
     // variable to collate all similar items
     let sameItems = [];
     // set a checker if some is appended to page or not (if not, we'll ask for them to input more filter)
-    let checker;
+    let checker = 0;
     // remove current appended data if exists
     yogaApp.removeCurrentData('.results');
     
@@ -743,14 +743,15 @@ yogaApp.appendToPage = function(userInputArrays) {
 
         // grab objects with these similarities
         if (sameItems.includes(yogaApp.groupedSessions[i]['city']) && sameItems.includes(yogaApp.groupedSessions[i]['atmosphere']) && sameItems.includes(yogaApp.groupedSessions[i]['experience']) && sameItems.includes(yogaApp.groupedSessions[i]['day']) || sameItems.includes(yogaApp.groupedSessions[i]['any'])) {
-            checker = checker + 1
+            checker = checker + 1;
             $('.reveal-data').addClass('reveal-data-style');
+
             $('.reveal-data').append(
                 
                 `
                 <section class='results'>
                 
-                <div class='option option-one'>
+                <div class='option'>
                     <section class='wrapper'>
                         <div class='option-image'>
                             <a href="default.asp">
@@ -758,24 +759,39 @@ yogaApp.appendToPage = function(userInputArrays) {
                             </a>
                         </div>
                         <div class='option-text'>
-                            <p>Lead Yogi: </p>
-                            <p>${yogaApp.groupedSessions[i]['name']} </p>
-                            <p>Cost: </p>
-                            <p>$10 </p>
-                            <p>Where:</p>
-                            <p>${yogaApp.groupedSessions[i]['city']}</p>
-                            <p>Yoga Type:</p>
-                            <p>${yogaApp.groupedSessions[i]['yoga']}</p>
-                            <p>Atmosphere: </p>
-                            <p>${yogaApp.groupedSessions[i]['atmosphere']}</p>
-                            <p>Rating:</p>
-                            <p>4.8*</p>
+                            <p class='normal-paragraph'>Lead: </p>
+                            <p class='normal-paragraph'>${yogaApp.groupedSessions[i]['name']} </p>
+                            <p class='normal-paragraph'>Cost: </p>
+                            <p class='normal-paragraph'>$10 </p>
+                            <p class='normal-paragraph'>Where:</p>
+                            <p class='normal-paragraph'>${yogaApp.groupedSessions[i]['city']}</p>
+                            <p class='normal-paragraph'>Type:</p>
+                            <p class='normal-paragraph'>${yogaApp.groupedSessions[i]['yoga']}</p>
+                            <p class='normal-paragraph'>Area: </p>
+                            <p class='normal-paragraph'>${yogaApp.groupedSessions[i]['atmosphere']}</p>
+                            <p class='normal-paragraph'>Rating:</p>
+                            <p class='normal-paragraph'>4.8*</p>
                         </div>
                     </section>
                 </div>
                 </section>
-                `)                
+                `)  
+            if (checker % 2 === 0) {
+                console.log(checker)
+                // $('.option').removeClass('option-one')
+                $('.option').toggleClass('option-one');
+                $('.normal-paragraph').toggleClass('alt-text');
+                $('.image').toggleClass('box-shadow');
+            } else {
+                $('.normal-paragraph').toggleClass('alt-text')
+                $('.option').toggleClass('option-one')
+                $('.image').toggleClass('box-shadow');
+            }
         } 
+        
+
+        
+        
 
     }  
     
@@ -852,15 +868,17 @@ yogaApp.events = function() {
 
         // then put them in one larger array of arrays
         let allChoices = [];
-        allChoices.unshift(dayChoicesArray);
-        allChoices.splice(1, 0, expChoicesArray);
-        allChoices.splice(2, 1, atmosChoicesArray);
-        allChoices[3] = cityChoicesArray;
+        allChoices[0] = cityChoicesArray;
+        allChoices[1] = expChoicesArray;
+        allChoices[2] = atmosChoicesArray;
+        allChoices[3] = dayChoicesArray;
+        console.log(allChoices)
 
         // collate all harder user choices into a final array
         yogaApp.saveUserToLocalStorage(allChoices);
-        yogaApp.appendHeader();
+        // yogaApp.appendHeader();
         yogaApp.appendToPage(allChoices);
+        
 
 
 
@@ -998,14 +1016,12 @@ yogaApp.pageLoad = function () {
     if (window.location.href.indexOf('explore.html') > -1) {
 
         let userInput = yogaApp.pullAndConvertFromLocalStorage();
-        console.log(userInput)
 
         if (userInput.length === 0 || userInput[0][0] === '') {
             userInput = yogaApp.userTickedOptions
         } 
         
-
-        yogaApp.appendHeader();
+        // yogaApp.appendHeader();
          
         yogaApp.appendToPage(userInput); 
         

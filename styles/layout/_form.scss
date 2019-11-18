@@ -117,7 +117,7 @@ form .question-form div, form select  {
 
 
 
-form select[name='date'], form input[name='name'], form input[name='email'], form select[name='yoga-style'], form input[type='number'] {
+.large-form select[name='date'], .large-form input[name='name'], .large-form input[name='email'], form select[name='yoga-style'], .large-form  input[type='number'] {
     width: 80%;
     color: $dark-colour;
     margin: 0 3px;
@@ -127,11 +127,11 @@ form select[name='date'], form input[name='name'], form input[name='email'], for
 
 }
 
-form input[name='name'], form input[name='email'], form input[type='number'] {
+.large-form  input[name='name'], .large-form  input[name='email'], .large-form  input[type='number'] {
     color: $dark-colour-two;
 }
 
-form select[name='date'], form select[name='yoga-style'] {
+.large-form  select[name='date'], .large-form  select[name='yoga-style'] {
     border-radius: 10%;
 }
 
