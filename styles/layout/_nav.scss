@@ -149,12 +149,15 @@ nav i {
     height: 200px;
     flex-direction: column;
     background: $light-colour;
-    width: 50%;
+    width: 60%;
     text-align: left;
     padding: 20px;
     padding-left: 20px;
     border-radius: 5%;
     opacity: 0.9;
+    @include mq-large-phone {
+        width: 50%;
+    } 
 
 }
 

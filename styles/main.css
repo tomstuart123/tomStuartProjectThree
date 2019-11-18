@@ -535,12 +535,18 @@ nav i {
       -ms-flex-direction: column;
           flex-direction: column;
   background: #F5F5F5;
-  width: 50%;
+  width: 60%;
   text-align: left;
   padding: 20px;
   padding-left: 20px;
   border-radius: 5%;
   opacity: 0.9;
+}
+
+@media (min-width: 400px) {
+  .dropdown {
+    width: 50%;
+  }
 }
 
 .dropdown-start {
