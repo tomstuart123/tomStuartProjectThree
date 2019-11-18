@@ -90,16 +90,7 @@ nav a:hover{
     font-weight: bold;
 }
 
-nav .nav-item a:hover::before {
-      content: '';
-      width: 90%;
-      height: 10%;
-      background: $mid-color;
-      position: absolute;
-      bottom: 0;
-      left: 5%;
-      transition: width 2s;
-}
+
 
 
 .fa {
@@ -145,7 +136,6 @@ nav i {
 
 
 .dropdown {
-    
     position: absolute;
     top: 10px;
     right: 0px;
@@ -156,7 +146,7 @@ nav i {
     width: 50%;
     text-align: left;
     padding: 20px;
-    padding-left: 15px;
+    padding-left: 20px;
     border-radius: 5%;
     opacity: 0.9;
 
@@ -164,6 +154,7 @@ nav i {
 
 .dropdown-start {
     display: none;
+    padding-left: 20px;
 }
 
 .dropdown li {

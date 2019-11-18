@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Profile Page</title>
     <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Libre+Baskerville|Libre+Franklin|Merriweather&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e9b96cf6dd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
@@ -13,71 +16,85 @@
         <section class='wrapper'>
             <nav>
                 <ul>
-                    <li class='logo'> <a href="index.html">HomeYogi</a> </li>
+                    <li class='logo'> <a href="index.html">Yama5</a> </li>
                 </ul>
     
-                <ul>
-                    <li class='nav-item'><a href="guest.html">Find Classes</a></li>
-                    <li class='nav-item'><a href="host.html">Host Classes </a></li>
-                    <li class='nav-item'><a href="explore.html">Explore</a></li>
-                    <li class='nav-item'><a href="profile.html">Account</a></li>
-                </ul>
                 <button class="hamburger hamburger--vortex " type="button">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                     </span>
                 </button>
             </nav>
-    
-            <section class="hero-text profile-hero-text">
-    
-                <h1 class='landing-title profile-title'> Profile page! </h1>
-    
-            </section>
+    <ul class="dropdown dropdown-start">
+        <li><a href="guest.html">Find Class</a></li>
+        <li><a href="host.html">Host Class</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="profile.html">Account</a></li>
+    </ul>
+    <section class="wrapper landing-wrapper-two">
+        <section class='landing-text-section'>
+            <h1 class='landing-title'> </h1>
+            <div class='guest-buttons'>
+                <a href="#landing-footer">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <a href="#landing-footer">
+                    <p class="join-button">Here's your profile!</p>
+                </a>
+            </div>
+        </section>
+    </section>
         </section>
     </header>
     <section class='no-account'>
         
     </section>
     <section class='profile'>
-        <section class='profile-header-section'>
-            <div class='profile-images'>
-                <!-- <img src="assets/option-visuals/zen-bear-yoga-UPt9yQmMgMk-unsplash.jpg" alt="Profile Pic of Yogi"> -->
-            </div>
-            <div class='name-profile'>
-                <h2 class='profile-sub profile-name'>yogiName </h1>
-                <p class='profile-sub profile-email'>Email</p>
-                <button class='profile-button button-top'>Update</p>
-            </div>
-            <div class='profile-cost'>
-                <p class='profile-price'>$/hr</p>
-            </div>
-        </section>
-        <section class='profile-details-section'>
-            <div class='profile-details'>
-                <h2 class='profile-sub'>Your Choices</h2>
-                <ul class='profile-detail-list'>
-                    <li class='detail-item profile-atmosphere'>Location</li>
-                    <li class='detail-item profile-experience'>Level</li>
-                    <li class='detail-item profile-city'>City</li>
-                    <li class='detail-item profile-yoga'>Yoga</li>
-                    <li class='detail-item profile-day'>Time Of Day</li>
-                </ul>
-                <button class='profile-button button-mid'>Update</p>
-            </div>
-            <div class='profile-description'>
-                <h2 class='profile-sub'>About </h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda error perferendis esse magni veritatis, reprehenderit minus libero nisi veniam tenetur saepe quibusdam culpa quas tempore natus consequuntur deleniti nam eius!</p>
-            </div>
-            <div class='profile-description'>
-                <h2 class='profile-sub'>See other classes!</h1>
-                <button class='profile-button button-mid'>Go to Explore Page</p>    
-            </div>
-        </section>
-        <section class='profile-image-section'>
-            <div class='image-container'>
-                <img src="assets/option-visuals/max-rovensky-fGUmhLROnPc-unsplash.jpg" alt="Photo of Class">
-            </div>
+        <section class='wrapper'>
+            <section class='profile-section profile-header-section'>
+                <div class=' profile-images'>
+                    <section class='image-container'>
+                        <img src="assets/zen-bear-yoga-UPt9yQmMgMk-unsplash.jpg" alt="Profile Pic of Yogi">
+                    </section>
+                </div>
+                <div class='name-profile'>
+                    <h2 class='profile-sub profile-name'>yogiName </h1>
+                    <p class='profile-sub profile-email'>Email</p>
+                    <button class='profile-button button-top'>Update (WIP)</p>
+                </div>
+                <div class='profile-cost'>
+                    <p class='profile-price'>$/hr</p>
+                </div>
+            </section>
+            <section class='profile-section  profile-details-section'>
+                <div class='profile-details'>
+                    <h2 class='profile-sub'>Your Choices</h2>
+                    <ul class='profile-detail-list'>
+                        <li class='detail-item profile-atmosphere'>Location</li>
+                        <li class='detail-item profile-experience'>Level</li>
+                        <li class='detail-item profile-city'>City</li>
+                        <li class='detail-item profile-yoga'>Yoga</li>
+                        <li class='detail-item profile-day'>Time Of Day</li>
+                    </ul>
+                    <button class='profile-button button-mid'>Update (WIP)</p>
+                </div>
+                <div class='profile-description'>
+                    <h2 class='profile-sub'>About </h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda error perferendis esse magni veritatis, reprehenderit minus libero nisi veniam tenetur saepe quibusdam culpa quas tempore natus consequuntur deleniti nam eius!</p>
+                </div>
+                <div class='profile-description'>
+                    <h2 class='profile-sub'>See Others!</h1>
+                    <a href='explore.html'>
+                        <button class='profile-button button-mid'>Explore Page</button>
+                    </a>
+                      
+                </div>
+            </section>
+            <section class='profile-section profile-image-section'>
+                <div class='image-container'>
+                    <img src="assets/option-visuals/max-rovensky-fGUmhLROnPc-unsplash.jpg" alt="Photo of Class">
+                </div>
+            </section>
         </section>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>

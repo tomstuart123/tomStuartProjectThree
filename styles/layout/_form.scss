@@ -24,16 +24,16 @@
 }
 
 .large-form legend {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bold;
-    margin: 15px 0;
+    margin: 0px 0;
     width: 100%;
     @include mq-tablet {
-       font-size: 1.8rem;
-       margin-bottom: 30px;
+       font-size: 1.6rem;
+       margin-bottom: 25px;
     }
     @include mq-desktop {
-       font-size: 2rem;
+       font-size: 1.8rem;
     }
 }
 
@@ -42,17 +42,17 @@
 }
 
 form .title {
-    font-size: 2rem;
-    margin: 20px 0;
+    font-size: 1.8rem;
+    margin: 30px 0;
     margin-top: 50px;
     width: 100%;
     text-align: left;
 
     @include mq-tablet {
-       font-size: 2.2rem;
+       font-size: 2rem;
     }
     @include mq-desktop {
-       font-size: 2.5rem;
+       font-size: 2.3rem;
     }
 } 
 
@@ -103,15 +103,15 @@ form .title {
 }
 
 form .question-form div, form select  { 
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     width: 100%;
-    margin: 10px 0;
+    margin: 20px 0;
     
     @include mq-tablet {
-       font-size: 1.8rem;
+       font-size: 1.6rem;
     }
     @include mq-desktop {
-       font-size: 2rem;
+       font-size: 1.8rem;
     }
 }
 
@@ -171,7 +171,7 @@ form .small-font{
 
 form .submit-form { 
     width: 100%;
-    padding-top: 40px;
+    padding-top: 3s0px;
 }
 
 
@@ -187,16 +187,13 @@ form .submit-form {
 }
 
 form .submit-form button:hover {  
-    font-size: 1.8rem;
+
     background: $light-colour;
     color: $dark-colour;
     @include mq-tablet {
-        height: 60px;
-        font-size: 2.2rem;
+   
     }
     @include mq-desktop {
-        font-size: 2.4rem;
-        height: 75px;
 
     }
 }

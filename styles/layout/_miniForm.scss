@@ -58,19 +58,20 @@
 }
 
 .mini-form .mini-submit-form button {  
-    height: 26px;
+    height: 40px;
     line-height: 0px;
     width: 90%;
     color: $light-color;
-    margin: 22px 10px;
+    margin: 20px 10px;
     background: $dark-color;
     font-weight: bold;
     border: none;
     font-size: 1.5rem;
     transition: font-size 0.5s;
     @include mq-tablet { 
+        height: 25px;
         font-size: 1.8rem;
-        margin: 22px 10px;
+        margin: 20px 10px;
         width: 90%;
     }
     @include mq-desktop {

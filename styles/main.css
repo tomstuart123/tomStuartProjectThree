@@ -458,18 +458,6 @@ nav a:hover {
   font-weight: bold;
 }
 
-nav .nav-item a:hover::before {
-  content: '';
-  width: 90%;
-  height: 10%;
-  background: #7395ae;
-  position: absolute;
-  bottom: 0;
-  left: 5%;
-  -webkit-transition: width 2s;
-  transition: width 2s;
-}
-
 .fa {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -538,13 +526,14 @@ nav i {
   width: 50%;
   text-align: left;
   padding: 20px;
-  padding-left: 15px;
+  padding-left: 20px;
   border-radius: 5%;
   opacity: 0.9;
 }
 
 .dropdown-start {
   display: none;
+  padding-left: 20px;
 }
 
 .dropdown li {
@@ -788,22 +777,22 @@ nav i {
 }
 
 .large-form legend {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  margin: 15px 0;
+  margin: 0px 0;
   width: 100%;
 }
 
 @media (min-width: 700px) {
   .large-form legend {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
   }
 }
 
 @media (min-width: 950px) {
   .large-form legend {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -812,8 +801,8 @@ nav i {
 }
 
 form .title {
-  font-size: 2rem;
-  margin: 20px 0;
+  font-size: 1.8rem;
+  margin: 30px 0;
   margin-top: 50px;
   width: 100%;
   text-align: left;
@@ -821,13 +810,13 @@ form .title {
 
 @media (min-width: 700px) {
   form .title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 }
 
 @media (min-width: 950px) {
   form .title {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
 }
 
@@ -900,20 +889,20 @@ form .title {
 }
 
 form .question-form div, form select {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   width: 100%;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 @media (min-width: 700px) {
   form .question-form div, form select {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 
 @media (min-width: 950px) {
   form .question-form div, form select {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -982,7 +971,7 @@ form .small-font {
 
 form .submit-form {
   width: 100%;
-  padding-top: 40px;
+  padding-top: 3s0px;
 }
 
 .large-form button {
@@ -997,23 +986,8 @@ form .submit-form {
 }
 
 form .submit-form button:hover {
-  font-size: 1.8rem;
   background: #F5F5F5;
   color: #75748d;
-}
-
-@media (min-width: 700px) {
-  form .submit-form button:hover {
-    height: 60px;
-    font-size: 2.2rem;
-  }
-}
-
-@media (min-width: 950px) {
-  form .submit-form button:hover {
-    font-size: 2.4rem;
-    height: 75px;
-  }
 }
 
 .no-input, .no-data {
@@ -1130,11 +1104,11 @@ form .submit-form button:hover {
 }
 
 .mini-form .mini-submit-form button {
-  height: 26px;
+  height: 40px;
   line-height: 0px;
   width: 90%;
   color: #e2e0e4;
-  margin: 22px 10px;
+  margin: 20px 10px;
   background: #667c8c;
   font-weight: bold;
   border: none;
@@ -1145,8 +1119,9 @@ form .submit-form button:hover {
 
 @media (min-width: 700px) {
   .mini-form .mini-submit-form button {
+    height: 25px;
     font-size: 1.8rem;
-    margin: 22px 10px;
+    margin: 20px 10px;
     width: 90%;
   }
 }
@@ -1431,7 +1406,7 @@ img {
 
 @media (min-width: 950px) {
   .landing-wrapper ul:nth-of-type(1) {
-    padding-left: 0;
+    padding-left: 2.5%;
   }
 }
 
@@ -1784,6 +1759,174 @@ img {
   .profile-hero-text h1 {
     font-size: 6.5rem;
   }
+}
+
+.profile, .profile .wrapper {
+  height: 130vh;
+  padding: 15px 0px;
+}
+
+.profile h2 {
+  font-size: 2em;
+  text-align: left;
+}
+
+@media (min-width: 700px) {
+  .profile h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 950px) {
+  .profile h2 {
+    font-size: 2.6rem;
+  }
+}
+
+.profile p, .profile button, .profile-details-section li {
+  font-size: 1.2rem;
+  text-align: left;
+  width: 100%;
+}
+
+@media (min-width: 700px) {
+  .profile p, .profile button, .profile-details-section li {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 950px) {
+  .profile p, .profile button, .profile-details-section li {
+    font-size: 1.6rem;
+  }
+}
+
+.profile button {
+  width: 85%;
+}
+
+.profile a {
+  padding: 0px;
+}
+
+.profile-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 25%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 70px;
+}
+
+.profile-section div {
+  width: 40%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-height: 100%;
+}
+
+@media (min-width: 700px) {
+  .profile-section div {
+    width: 30%;
+  }
+}
+
+@media (min-width: 950px) {
+  .profile-section div {
+    width: 30%;
+  }
+}
+
+.profile-header-section img {
+  max-height: 100%;
+}
+
+.profile .image-container {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 50%;
+  margin-top: 0px;
+}
+
+.profile .profile-sub {
+  margin-bottom: 10px;
+}
+
+.profile-details-section {
+  height: 40%;
+}
+
+.profile-details-section ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile-details-section li {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.profile-image-section .image-container {
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.no-account {
+  background: #c7cece;
+  height: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.no-account-2 {
+  height: 130px;
+}
+
+.no-account button {
+  height: 60px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  color: #F5F5F5;
+  border-radius: 10%;
+  border-color: #F5F5F5;
+  background: #373663;
+  -webkit-transition: font-size 1s, width 1s, height 1s;
+  transition: font-size 1s, width 1s, height 1s;
+}
+
+.no-account button:hover {
+  color: #75748d;
+  background: #F5F5F5;
 }
 
 .class-section {

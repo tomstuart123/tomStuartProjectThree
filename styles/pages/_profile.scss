@@ -1,3 +1,5 @@
+
+
 .profile-hero-image {
     background: url(../assets/farsai-chaikulngamdee-L2wq7Y3h7ag-unsplash.jpg);
     background-size: cover;
@@ -49,4 +51,143 @@
         font-size: 6.5rem;
     }
 
+}
+
+.profile, .profile .wrapper {
+    height: 130vh;
+    padding: 15px 0px;
+}
+
+.profile h2 {
+    font-size: 2em;
+    text-align: left;
+    @include mq-tablet {
+        font-size: 2.2rem;
+    }
+    @include mq-desktop {
+       font-size: 2.6rem;
+    }
+}
+
+.profile p, .profile button, .profile-details-section li {
+    font-size: 1.2rem;
+    text-align: left;
+    width: 100%;
+
+    @include mq-tablet {
+        font-size: 1.4rem;
+    }
+    @include mq-desktop {
+       font-size: 1.6rem;
+    }
+}
+
+.profile button {
+    width: 85%;
+
+} 
+
+.profile a {
+    padding: 0px;
+} 
+
+
+.profile-section {
+    display: flex;
+    height: 25%;
+    flex-wrap: wrap;
+    justify-content: space-between;   
+    margin-top: 70px;
+   
+    }
+
+// .profile-header-section {
+    
+// }
+
+.profile-section div  {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 100%;
+    @include mq-tablet {
+        width: 30%;
+    }
+    @include mq-desktop {
+        width: 30%;
+    }
+}
+
+.profile-header-section img  {
+    max-height: 100%;
+}
+
+.profile .image-container {
+    object-fit: cover;
+    height: 100%;
+    width: 50%;
+    margin-top: 0px;
+   
+
+}
+.profile .profile-sub {
+    margin-bottom: 10px;
+
+}
+
+.profile-details-section  {
+    height: 40%;
+}
+
+.profile-details-section ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-details-section li {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.profile-image-section .image-container {
+    object-fit: cover;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 100%;
+
+}
+
+.no-account {
+    background: $mid-colour;
+    height: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-account-2 {
+    height: 130px;
+}
+
+.no-account button {
+    height: 60px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    color: $light-colour;
+    border-radius: 10%;
+    border-color: $light-colour;
+    background: $dark-colour-two;
+    transition: font-size 1s, width 1s, height 1s;
+    
+}
+
+
+
+.no-account button:hover {
+    color: $dark-colour;
+    background: $light-colour;
+    
 }

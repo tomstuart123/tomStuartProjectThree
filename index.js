@@ -1027,17 +1027,22 @@ yogaApp.pageLoad = function () {
         
         
     } else if (window.location.href.indexOf('profile.html') > -1) {
+        console.log(localStorage.hostName)
+
         // if they don't have a profile, return, build a profile
         if (localStorage.hostName === undefined) {
+            $('.no-account').addClass('no-account-2');
             $('.profile').addClass('hide');
-            $('.profile-title').text(`Sorry, you don't have a host account yet!`);
-            $('.no-account').html(`<button>Go to Host Class Page to Set Up an Account</button>`);
-
+            $('.join-button').text(`Sorry, you don't have a host account yet!`);
+            $('.fas').addClass('hide');
+            $('.no-account').html(`<a href='host.html'> <button>Go to Host Class Page to Set Up an Account</button></a>`);
+            console.log('helo')
 
         } // if they do have a profile, build out their page 
         else {
-        $('.no-account').html(``);
-        $('.profile').removeClass('hide');
+        $('.fas').removeClass('hide');
+        $('.no-account').removeClass('no-account-2');
+        // $('.profile').removeClass('hide');
         // yogaApp.pullAndConvertHostFromLocalStorage();
         yogaApp.appendProfile();
 
