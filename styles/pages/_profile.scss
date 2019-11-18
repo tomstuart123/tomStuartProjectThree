@@ -11,12 +11,6 @@
 
     @include mq-large-phone {
         height: 60vh;
-    //     height: 700px;
-    //     background: url(../assets/host-visual-two.jpg);
-    //     background-size: cover;
-    //     background-position: center;
-    //     background-color: rgb(40, 39, 39);
-    //     background-blend-mode: screen;
     }
 
     @include mq-tablet {

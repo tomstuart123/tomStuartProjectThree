@@ -1,6 +1,3 @@
-// * {
-//     border: red 1px solid;
-// }
 
 .large-form{ 
     background-size: cover;
@@ -13,16 +10,6 @@
 
     }
 
-    // @include mq-large-phone {
-    //     height: 775px;
-    // }
-    // @include mq-tablet {
-    //     height: 800px;
-    // }
-
-    // @include mq-desktop {
-    //    height: 875px;
-    // }
 }
 
 .large-form legend {
@@ -92,7 +79,6 @@ form .title {
     @include mq-tablet {
        display: flex;
     }
-    // align-items: space-evenly;
 }
 
 .large-form-host .form-side-one {
@@ -101,7 +87,6 @@ form .title {
 }
 
 .form-side-one .image-container {
-    // margin: 20vh 0px;
     margin: 120px 0;
 }
 
