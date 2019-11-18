@@ -1,10 +1,5 @@
-// TO DO - fun stuff
-    // design (PM)
-    // make responsive
-    // create a host class actually builds a JS object
- 
-
 // TO DO - clean up to do
+    // remove console.logs / add semi-colons
     // remove clickable options
     // on profile page, remove clickable options
     // store all jquery as variables
@@ -754,9 +749,9 @@ yogaApp.appendToPage = function(userInputArrays) {
                 <div class='option'>
                     <section class='wrapper'>
                         <div class='option-image'>
-                            <a href="default.asp">
+                            
                                 <img alt='yoga-class-visual' class='image' src='${yogaApp.groupedSessions[i]['imageURL']}'>
-                            </a>
+                            
                         </div>
                         <div class='option-text'>
                             <p class='normal-paragraph'>Lead: </p>

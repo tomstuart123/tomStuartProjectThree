@@ -54,8 +54,12 @@
 }
 
 .profile, .profile .wrapper {
-    height: 130vh;
+    height: 180vh;
     padding: 15px 0px;
+    
+    @include mq-tablet {
+        
+    }
 }
 
 .profile h2 {
@@ -94,7 +98,7 @@
 
 .profile-section {
     display: flex;
-    height: 25%;
+    height: 15%;
     flex-wrap: wrap;
     justify-content: space-between;   
     margin-top: 70px;
@@ -109,14 +113,25 @@
     width: 40%;
     height: 100%;
     display: flex;
+    text-align: center;
     flex-direction: column;
     justify-content: space-between;
     max-height: 100%;
+    @include mq-large-phone {
+        width: 45%;
+    }
     @include mq-tablet {
         width: 30%;
     }
     @include mq-desktop {
         width: 30%;
+    }
+}
+
+#profile-explore {
+    display: none;
+    @include mq-tablet {
+        display: flex;
     }
 }
 
@@ -138,7 +153,7 @@
 }
 
 .profile-details-section  {
-    height: 40%;
+    height: 20%;
 }
 
 .profile-details-section ul {
@@ -156,6 +171,16 @@
     margin: 0 auto;
     margin-top: 30px;
     width: 100%;
+
+
+}
+
+.profile-image-section .image-container img {
+    object-fit: cover;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 100%;
+    max-height: 425px;
 
 }
 

@@ -909,7 +909,6 @@ form .question-form div, form select {
 .large-form select[name='date'], .large-form input[name='name'], .large-form input[name='email'], form select[name='yoga-style'], .large-form input[type='number'] {
   width: 80%;
   color: #75748d;
-  margin: 0 3px;
   background: transparent;
   border: 1px #d3d2d2 solid;
   padding-left: 4px;
@@ -1762,7 +1761,7 @@ img {
 }
 
 .profile, .profile .wrapper {
-  height: 130vh;
+  height: 180vh;
   padding: 15px 0px;
 }
 
@@ -1813,7 +1812,7 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 25%;
+  height: 15%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: justify;
@@ -1828,6 +1827,7 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1836,6 +1836,12 @@ img {
       -ms-flex-pack: justify;
           justify-content: space-between;
   max-height: 100%;
+}
+
+@media (min-width: 400px) {
+  .profile-section div {
+    width: 45%;
+  }
 }
 
 @media (min-width: 700px) {
@@ -1847,6 +1853,18 @@ img {
 @media (min-width: 950px) {
   .profile-section div {
     width: 30%;
+  }
+}
+
+#profile-explore {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  #profile-explore {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -1867,7 +1885,7 @@ img {
 }
 
 .profile-details-section {
-  height: 40%;
+  height: 20%;
 }
 
 .profile-details-section ul {
@@ -1891,6 +1909,15 @@ img {
   margin: 0 auto;
   margin-top: 30px;
   width: 100%;
+}
+
+.profile-image-section .image-container img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 100%;
+  max-height: 425px;
 }
 
 .no-account {
