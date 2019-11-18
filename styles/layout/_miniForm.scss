@@ -21,7 +21,7 @@
         font-size: 1.5rem;
     }
     @include mq-tablet {
-       smargin: 20px 0px;
+       margin: 20px 0px;
        width: 100%;
        font-size: 1.5rem;
        padding: 5px;
@@ -61,9 +61,9 @@
     height: 40px;
     line-height: 0px;
     width: 90%;
-    color: $light-color;
+    color: $dark-colour-two;
     margin: 20px 10px;
-    background: $dark-color;
+    background: $mid-colour;
     font-weight: bold;
     border: none;
     font-size: 1.5rem;
@@ -79,5 +79,11 @@
         height: 30px;
 
     }
+}
+
+.mini-form .mini-submit-form button:hover { 
+    background: $light-colour;
+    color: $dark-colour-two;
+    border: 1px solid $dark-colour-two;
 }
 

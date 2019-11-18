@@ -28,7 +28,20 @@
 
 }
 
+.form-side-one .box-shadow-bright {     
+    box-shadow: 10px 10px $mid-colour-two;
+}
 
+.large-form-host button {
+    height: 60px;
+    width: 100%;
+    color: $dark-colour-two;
+    border-radius: 10%;
+    border-color: $dark-colour-two;
+    background: $mid-colour-two;
+    transition: font-size 1s, width 1s, height 1s;
+    
+}
 
 
 // .large-form-host .form-fieldset div:nth-of-type(7) {
