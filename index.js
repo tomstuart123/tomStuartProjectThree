@@ -1,7 +1,6 @@
 
 
 // TO DO
-    // action on click
     // LONG SHOT -- > firebase / profile page
 
 
@@ -18,7 +17,7 @@ const yogaApp = {};
 
 // create class for iteration of session to hold yoga sessions. Inside the class use a static function to allow easy creation of new session classes. This future proofs us so that its easy for users to create new classes once we have firebase set up long-term.
 yogaApp.Session = class Session {
-    constructor({ city, day, experience, yoga, atmosphere, imageURL, name, rating, cost}) {
+    constructor({ city, day, experience, yoga, atmosphere, imageURL, name, email, rating, cost}) {
         this.city = city;
         this.day = day;
         this.experience = experience;
@@ -26,13 +25,14 @@ yogaApp.Session = class Session {
         this.atmosphere = atmosphere;
         this.imageURL = imageURL;
         this.name = name;
+        this.email = email;
         this.rating = rating;
         this.cost = cost;
     }
 
-    static createSession({ city, day, experience, yoga, atmosphere, imageURL, name, rating, cost}) {
+    static createSession({ city, day, experience, yoga, atmosphere, imageURL, name, email, rating, cost}) {
         return new this({
-            city, day, experience, yoga, atmosphere, imageURL, name, rating, cost,
+            city, day, experience, yoga, atmosphere, imageURL, name, email, rating, cost,
         })
     }
 }
@@ -49,6 +49,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/artem-beliaikin-nKCtkaW4JU4-unsplash.jpg',
         name: 'yogiTom',
+        email: 'tomstuart123@hotmail.co.uk',
         rating: 4.5,
         cost: 10
     }),
@@ -62,6 +63,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'home',
         imageURL: 'assets/option-visuals/jonathan-borba-5IjWRNGbkYI-unsplash.jpg',
         name: 'yogiAlex',
+        email: 'alex@gmail.com',
         rating: 4.2,
         cost: 12
         
@@ -75,6 +77,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'home',
         imageURL: 'assets/option-visuals/patrick-kool-zTwmxau8DlQ-unsplash.jpg',
         name: 'yogiSofia',
+        email: 'sofia@gmail.com',
         rating: 4.3,
         cost: 8
     }),
@@ -88,6 +91,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/rima-kruciene-Tq9Ln3gpiG4-unsplash.jpg',
         name: 'yogiZac',
+        email: 'zac@gmail.com',
         rating: 4.3,
         cost: 7
     }),
@@ -101,6 +105,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'home',
         imageURL: 'assets/option-visuals/nate-johnston-2gBpsNuHcyA-unsplash.jpg',
         name: 'yogiSandy',
+        email: 'sandy@gmail.com',
         rating: 4.8,
         cost: 19
     }),
@@ -114,6 +119,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'studio',
         imageURL: 'assets/option-visuals/simon-raeker.jpg',
         name: 'yogiJames',
+        email: 'james@gmail.com',
         rating: 4.4,
         cost: 8
     }),
@@ -127,6 +133,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/scott-broome-cuOHHP5tx5g-unsplash.jpg',
         name: 'yogiJohn',
+        email: 'john@gmail.com',
         rating: 4.3,
         cost: 6
 
@@ -141,6 +148,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/ruslan-zh-i_DN1jo1iTU-unsplash.jpg',
         name: 'yogiSam',
+        email: 'sam@gmail.com',
         rating: 4.2,
         cost: 8
 
@@ -155,6 +163,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'studio',
         imageURL: 'assets/option-visuals/kike-vega-F2qh3yjz6Jk-unsplash.jpg',
         name: 'yogiElise',
+        email: 'elise@gmail.com',
         rating: 5.0,
         cost: 18
     }),
@@ -168,6 +177,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/mark-zamora-7fcSXSU-zhY-unsplash.jpg',
         name: 'yogiBella',
+        email: 'bella@gmail.com',
         rating: 4.7,
         cost: 17
     }),
@@ -181,6 +191,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'home',
         imageURL: 'assets/option-visuals/ashes-sitoula--8ZESyFapTk-unsplash.jpg',
         name: 'yogiSean',
+        email: 'sean@gmail.com',
         rating: 4.3,
         cost: 20
     }),
@@ -194,6 +205,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'studio',
         imageURL: 'assets/option-visuals/dane-wetton-t1NEMSm1rgI-unsplash.jpg',
         name: 'yogiRachita',
+        email: 'rachita@gmail.com',
         rating: 4.5,
         cost: 6
     }),
@@ -207,6 +219,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/isabell-winter-lzYZEDJ8fbo-unsplash.jpg',
         name: 'yogiPaul',
+        email: 'paul@gmail.com',
         rating: 4.6,
         cost: 16
     }),
@@ -220,6 +233,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'home',
         imageURL: 'assets/option-visuals/form-w0YIvob3LlI-unsplash.jpg',
         name: 'yogiCatri',
+        email: 'catri@gmail.com',
         rating: 4.9,
         cost: 30
     }),
@@ -233,6 +247,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'studio',
         imageURL: 'assets/option-visuals/wesley-tingey-57wo9F-r2-A-unsplash.jpg',
         name: 'yogiLucy',
+        email: 'lucy@gmail.com',
         rating: 3.6,
         cost: 5
     }),
@@ -246,6 +261,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/samuel-austin-0tTA6cewPr8-unsplash.jpg',
         name: 'yogiDom',
+        email: 'dom@gmail.com',
         rating: 3.7,
         cost: 16
 
@@ -260,6 +276,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'home',
         imageURL: 'assets/option-visuals/zoltan-tasi-vHnVtLK8rCc-unsplash.jpg',
         name: 'yogiGenene',
+        email: 'genene@gmail.com',
         rating: 4.9,
         cost: 12
 
@@ -274,6 +291,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/mark-zamora-Y9jpiiiAAOQ-unsplash.jpg',
         name: 'yogiSarah',
+        email: 'sarah@gmail.com',
         rating: 4.8,
         cost: 16
     }),
@@ -287,6 +305,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'studio',
         imageURL: 'assets/option-visuals/carl-newton-iX7WedkjpUY-unsplash.jpg',
         name: 'yogiJack',
+        email: 'jack@gmail.com',
         rating: 4.6,
         cost: 13
 
@@ -302,6 +321,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'home',
         imageURL: 'assets/option-visuals/farsai-chaikulngamdee-L2wq7Y3h7ag-unsplash.jpg',
         name: 'yogiGeorgia',
+        email: 'georgia@gmail.com',
         rating: 4.4,
         cost: 9
 
@@ -317,6 +337,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'home',
         imageURL: 'assets/option-visuals/max-rovensky-fGUmhLROnPc-unsplash.jpg',
         name: 'yogiSally',
+        email: 'sally@gmail.com',
         rating: 4.2,
         cost: 14
     }),
@@ -331,6 +352,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'studio',
         imageURL: 'assets/option-visuals/chris-ensey-16QrjudiZnE-unsplash.jpg',
         name: 'yogiRussell',
+        email: 'russell@gmail.com',
         rating: 4.3,
         cost: 13
 
@@ -345,6 +367,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/alexander-mils-bpoSU5kmUfo-unsplash.jpg',
         name: 'yogiJanet',
+        email: 'janet@gmail.com',
         rating: 4.7,
         cost: 12
 
@@ -360,6 +383,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'studio',
         imageURL: 'assets/option-visuals/william-farlow-IevaZPwq0mw-unsplash.jpg',
         name: 'yogiTara',
+        email: 'tara@gmail.com',
         rating: 4.8,
         cost: 12
     }),
@@ -374,6 +398,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'studio',
         imageURL: 'assets/option-visuals/fabian-moller-gI7zgb80QWY-unsplash.jpg',
         name: 'yogiTim',
+        email: 'tim@gmail.com',
         rating: 5.0,
         cost: 14
 
@@ -388,6 +413,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'home',
         imageURL: 'assets/option-visuals/steve-halama-tyCVZ1Aaqxo-unsplash.jpg',
         name: 'yogiPaula',
+        email: 'paula@gmail.com',
         rating: 4.8,
         cost: 16
 
@@ -403,6 +429,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'studio',
         imageURL: 'assets/option-visuals/bekir-donmez-eofm5R5f9Kw-unsplash.jpg',
         name: 'yogiBonnie',
+        email: 'bonnie@gmail.com',
         rating: 4.4,
         cost: 17
     }),
@@ -417,6 +444,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'studio',
         imageURL: 'assets/option-visuals/patrick-malleret-p-v1DBkTrgo-unsplash.jpg',
         name: 'yogiIdris',
+        email: 'idris@gmail.com',
         rating: 4.6,
         cost: 18
 
@@ -431,6 +459,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'studio',
         imageURL: 'assets/option-visuals/mark-adriane-muS2RraYRuQ-unsplash.jpg',
         name: 'yogiHarry',
+        email: 'harry@gmail.com',
         rating: 4.9,
         cost: 18
 
@@ -446,6 +475,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'home',
         imageURL: 'assets/option-visuals/annie-spratt-8mqOw4DBBSg-unsplash.jpg',
         name: 'yogiHolly',
+        email: 'holly@gmail.com',
         rating: 3.9,
         cost: 18
     }),
@@ -458,6 +488,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/jay-castor-7AcMUSYRZpU-unsplash.jpg',
         name: 'yogiChris',
+        email: 'chris@gmail.com',
         rating: 4.5,
         cost: 40
     }),
@@ -469,6 +500,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/wesley-tingey-dlxNvA7pVwU-unsplash.jpg',
         name: 'yogiStar',
+        email: 'Star@gmail.com',
         rating: 3.9,
         cost: 14
     }),
@@ -483,6 +515,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'home',
         imageURL: 'assets/option-visuals/ksenia-makagonova-V-TIPBoC_2M-unsplash.jpg',
         name: 'yogiJosh',
+        email: 'josh@gmail.com',
         rating: 4.5,
         cost: 6
     }),
@@ -497,6 +530,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'home',
         imageURL: 'assets/option-visuals/bruce-mars-pFyKRmDiWEA-unsplash(1).jpg',
         name: 'yogiCharlotte',
+        email: 'charlotte@gmail.com',
         rating: 4.8,
         cost: 6
     }),
@@ -511,6 +545,7 @@ yogaApp.groupedSessions = {
         atmosphere: 'outdoor',
         imageURL: 'assets/option-visuals/natalie-grainger-8uB5kFKWWkk-unsplash.jpg',
         name: 'yogiCres',
+        email: 'cres@gmail.com',
         rating: 4.7,
         cost: 18
     }),
@@ -772,7 +807,7 @@ yogaApp.appendToPage = function(userInputArrays) {
                         <div class='option-text'>
                             <p class='normal-paragraph'>Lead: </p>
                             <p class='normal-paragraph'>${yogaApp.groupedSessions[i]['name']} </p>
-                            <p class='normal-paragraph'>Cost: </p>
+                            <p class='normal-paragraph'>Cost/hr: </p>
                             <p class='normal-paragraph'>$${yogaApp.groupedSessions[i]['cost']} </p>
                             <p class='normal-paragraph'>Where:</p>
                             <p class='normal-paragraph'>${yogaApp.groupedSessions[i]['city']}</p>
@@ -782,6 +817,7 @@ yogaApp.appendToPage = function(userInputArrays) {
                             <p class='normal-paragraph'>${yogaApp.groupedSessions[i]['atmosphere']}</p>
                             <p class='normal-paragraph'>Rating:</p>
                             <p class='normal-paragraph'>${yogaApp.groupedSessions[i]['rating']}*</p>
+                            <a href='mailto:${yogaApp.groupedSessions[i]['email']}' class='optionContact'>Email them to Join the Class</a>
                         </div>
                     </section>
                 </div>

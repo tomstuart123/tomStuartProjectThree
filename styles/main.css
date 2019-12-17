@@ -216,7 +216,7 @@ html {
   font-size: 62.5%;
 }
 
-h1, h2, h3, p, li, form, button {
+h1, h2, h3, p, li, form, button, a {
   font-family: 'Merriweather', serif;
   letter-spacing: 2px;
   font-weight: 400;
@@ -1328,7 +1328,7 @@ form .submit-form button:hover {
   }
 }
 
-.option-text p {
+.option-text p, .optionContact {
   font-size: 1.2rem;
   height: 10px;
   line-height: 30px;
@@ -1336,20 +1336,20 @@ form .submit-form button:hover {
 }
 
 @media (min-width: 400px) {
-  .option-text p {
+  .option-text p, .optionContact {
     font-size: 1.4rem;
   }
 }
 
 @media (min-width: 700px) {
-  .option-text p {
+  .option-text p, .optionContact {
     font-size: 1.5rem;
     margin: 0px 0;
   }
 }
 
 @media (min-width: 950px) {
-  .option-text p {
+  .option-text p, .optionContact {
     font-size: 1.8rem;
     margin: 5px 0;
   }
@@ -1359,8 +1359,37 @@ form .submit-form button:hover {
   color: #373663;
 }
 
-.option-text .alt-text {
+.option-text .alt-text, .option-text .alt-text {
   color: #75748d;
+}
+
+.optionContact {
+  cursor: pointer;
+  margin-top: 30px;
+  -webkit-transition: font-size 0.5s;
+  transition: font-size 0.5s;
+}
+
+.optionContact:hover {
+  font-size: 1.3rem;
+}
+
+@media (min-width: 400px) {
+  .optionContact:hover {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .optionContact:hover {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 950px) {
+  .optionContact:hover {
+    font-size: 1.9rem;
+  }
 }
 
 .option-text p:nth-of-type(1), .option-text p:nth-of-type(3), .option-text p:nth-of-type(5), .option-text p:nth-of-type(7), .option-text p:nth-of-type(9), .option-text p:nth-of-type(11) {
@@ -1704,13 +1733,13 @@ img {
 }
 
 .choice-1 {
-  background: #e7ecef;
+  background: #dae2e6;
   border: 0.5px solid #c6c4c4;
   border-style: none;
 }
 
 .choice-2 {
-  background: #e6e6ed;
+  background: #dbdbe6;
   border: 0.5px solid #8f8f8f;
   border-style: none;
 }
@@ -1785,7 +1814,7 @@ img {
 }
 
 .profile-hero-image {
-  background: url(../assets/farsai-chaikulngamdee-L2wq7Y3h7ag-unsplash.jpg);
+  background: url(../assets/two-yoga-water-crop.png);
   background-size: cover;
   background-position: center;
   width: 100%;
