@@ -165,24 +165,37 @@ form .submit-form {
 .large-form button {
     height: 60px;
     width: 100%;
-    color: $light-colour;
-    border-radius: 10%;
-    border-color: $dark-colour-two;
-    background: $dark-colour;
+    color: $dark-colour-two;
+    border-radius: 5%;
+    border: 1px solid rgb(145, 144, 174);
+    background: rgb(231, 236, 239);
     transition: font-size 1s, width 1s, height 1s;
     
 }
 
+.large-form-host button {
+    height: 60px;
+    width: 100%;
+    border-radius: 5%;
+    border: 1px solid rgb(145, 144, 174);
+    background: rgb(230, 230, 237);
+    transition: font-size 1s, width 1s, height 1s;
+    
+}
+
+
+
 form .submit-form button:hover {  
 
-    background: $light-colour;
-    color: $dark-colour;
-    @include mq-tablet {
-   
-    }
-    @include mq-desktop {
+    background: #B9D2DC;
+    // color: $light-colour;
+}
 
-    }
+.large-form-host .submit-form button:hover {  
+
+    color: $light-colour;
+    background: rgb(138, 138, 171);
+    // color: $light-colour;
 }
 
 .no-input, .no-data {

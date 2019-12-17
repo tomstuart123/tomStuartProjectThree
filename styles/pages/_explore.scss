@@ -3,8 +3,9 @@
 } 
 
 .explore-hero-image {
-    background: url(../assets/man-and-woman-doing-yoga-1882004.jpg);
-    height: 85vh;
+    // background: url(../assets/man-and-woman-doing-yoga-1882004.jpg);
+    background: linear-gradient( rgba(120, 120, 120, 0.5), rgba(0, 0, 0, 0.5) ), url(../assets/man-and-woman-doing-yoga-1882004.jpg);
+    height: 675px;
     background-size: cover;
     background-position: center;
     width: 100%;

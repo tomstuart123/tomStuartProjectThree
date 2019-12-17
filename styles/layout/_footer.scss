@@ -1,11 +1,12 @@
 .footer-to-explore {
-    background: url(../assets/farsai-chaikulngamdee-L2wq7Y3h7ag-unsplash.jpg);
+    // background: url(../assets/option-visuals/zoltan-tasi-vHnVtLK8rCc-unsplash.jpg);
+    background: linear-gradient( rgba(155, 155, 155, 0.5), rgba(0, 0, 0, 0.5) ), url(../assets/option-visuals/zoltan-tasi-vHnVtLK8rCc-unsplash.jpg);
     background-size: cover;
     background-position: center;
-    background-color: rgb(148, 147, 147);
+    // background-color: rgb(148, 147, 147);
     background-blend-mode: screen;
     width: 100%;
-    height: 40vh;
+    height: 300px;
    
 }
 
@@ -18,35 +19,39 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 
 }
 
 .footer-to-explore button {
-    color: rgb(32, 32, 32);
+    color: white;
     font-size: 2.2rem;
     text-decoration: none;
     height: 50%;
     font-weight: bold;
     background: none;
     border: none;
+    width: 100%;
     line-height: 50px;
+    margin-top: 50px;
     transition: font-size 0.5s;
 
     @include mq-tablet {
         font-size: 2.4rem;
+        width: 70%;
     }
     @include mq-desktop {
         font-size: 2.8rem;
+        width: 45%;
     }
 }
 
 .footer-to-explore button:hover {
     @include mq-large-phone {
-        font-size: 2.4rem;
+        font-size: 2.3rem;
     }
     @include mq-tablet {
-        font-size: 2.6rem;
+        font-size: 2.5rem;
     }
     @include mq-desktop {
         font-size: 3rem;

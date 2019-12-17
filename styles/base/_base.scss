@@ -6,14 +6,6 @@
     width: 85%;
     margin: 0px auto;
     height: 100%;
-    @include mq-tablet {
-        max-width: 1080px;
-        width: 85%;
-        margin: 0px auto;
-    } 
-    @include mq-large-phone {
-        width: 85%;
-    } 
 }
 
 fieldset {
@@ -49,5 +41,14 @@ p {
 html {
     scroll-behavior: smooth;
 }
-    
+
+.visuallyHidden:not(:focus):not(:active) { 
+	  position: absolute !important;
+	  height: 1px; 
+	  width: 1px;
+	  overflow: hidden;
+	  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	  clip: rect(1px, 1px, 1px, 1px);
+	  white-space: nowrap; /* added line */
+}   
 

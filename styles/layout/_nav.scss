@@ -149,14 +149,19 @@ nav i {
     height: 200px;
     flex-direction: column;
     background: $light-colour;
-    width: 60%;
+    width: 100%;
     text-align: left;
     padding: 20px;
     padding-left: 20px;
     border-radius: 5%;
     opacity: 0.9;
-    @include mq-large-phone {
+    @include mq-tablet {
         width: 50%;
+    } 
+    @include mq-desktop {
+        width: 35%;
+        height: 250px;
+        
     } 
 
 }
@@ -168,10 +173,20 @@ nav i {
 
 .dropdown li {
     font-size: 1.8rem;
+    margin: 0 auto;
     margin-bottom: 15px;
     margin-top: 5px;
     list-style-type: none;
     transition: font-size 0.5s;
+    @include mq-tablet {
+       margin-left: 1px;
+    } 
+    
+     @include mq-desktop {
+       font-size: 2rem;
+       margin-bottom: 20px;
+        margin-top: 10px;
+    } 
 
 }
 
@@ -184,4 +199,7 @@ nav i {
 
 .dropdown li:hover {
     font-size: 2rem;
+    @include mq-desktop {
+       font-size: 2.2rem;
+    } 
 }

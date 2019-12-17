@@ -1,10 +1,17 @@
 
 
-// Note to Reader - this is a WIP project for 2020
-    // Next Steps:
+// TO DO
+    // action on click
+    // LONG SHOT -- > firebase / profile page
+
+
+
+// LONG TERM STEPS:
     // sub out local.storage for firebase to allow the classes set up on host.html to be the classes users see on explore.html. 
     // add user verification / profiles / passwords
-    // beautify the site further with more explore options 
+    // add mapbox to find the class nearest you
+    // Add chat functionality
+    // beautify the site further with more explore options (i.e. go outdoor visual) 
 
 // create the yogaApp to store all JS
 const yogaApp = {};
@@ -443,7 +450,17 @@ yogaApp.groupedSessions = {
         cost: 18
     }),
     // unsplash credit to wesley tingey
-
+    yogiChris: yogaApp.Session.createSession({
+        city: 'toronto',
+        day: 'evening',
+        experience: 'advanced',
+        yoga: 'vinyasa',
+        atmosphere: 'outdoor',
+        imageURL: 'assets/option-visuals/jay-castor-7AcMUSYRZpU-unsplash.jpg',
+        name: 'yogiChris',
+        rating: 4.5,
+        cost: 40
+    }),
     yogiStar: yogaApp.Session.createSession({
         city: 'toronto',
         day: 'morning',
@@ -500,17 +517,7 @@ yogaApp.groupedSessions = {
 
     // unsplash credit to jay castor
 
-    yogiChris: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'evening',
-        experience: 'advanced',
-        yoga: 'vinyasa',
-        atmosphere: 'outdoor',
-        imageURL: 'assets/option-visuals/jay-castor-7AcMUSYRZpU-unsplash.jpg',
-        name: 'yogiChris',
-        rating: 4.5,
-        cost: 40
-    }),
+    
 
 }
 

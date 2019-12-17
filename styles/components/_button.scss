@@ -1,26 +1,38 @@
 // This file contains all styles related to the button component.
 .choice button {
-    height: 60px;
-    width: 200px;
+    height: 80px;
+    width: 120px;
     margin: 0 auto;
-    color: $light-colour;
+    color: $dark-colour-two;
+    border: 1px solid none;
     border-radius: 10%;
-    border-color: $light-colour;
-    background: none;
-    transition: font-size 1s, width 1s, height 1s;
-    
+    background: rgb(244, 244, 244);
+    transition: font-size 0.5s, width 0.5s, height 0.5s;
+    border: 1px solid rgb(145, 144, 174);
+     @include mq-large-phone {
+         width: 180px;
+         height: 60px;
+     }
 }
 
 .choice-2 button {
     color: $dark-colour-two;
-    border-color: $light-colour;
+    border: 1px solid rgb(145, 144, 174);
 }
+
 
 .choice button:hover {
     font-size: 2rem;
-    height: 70px;
-    width: 220px;
+    height: 65px;
+    width: 190px;
+    background: #B9D2DC;
     color: $dark-colour-two;
-    background: $light-colour;
     
+    border: 1px solid $dark-colour-two;
+}
+
+.choice-2 button:hover {
+    
+    color: $light-colour;
+    background: rgb(138, 138, 171);
 }

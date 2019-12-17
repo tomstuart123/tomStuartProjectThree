@@ -159,20 +159,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   height: 100%;
 }
 
-@media (min-width: 700px) {
-  .wrapper {
-    max-width: 1080px;
-    width: 85%;
-    margin: 0px auto;
-  }
-}
-
-@media (min-width: 400px) {
-  .wrapper {
-    width: 85%;
-  }
-}
-
 fieldset {
   border: 0px;
   margin: 0px;
@@ -212,6 +198,18 @@ p {
 
 html {
   scroll-behavior: smooth;
+}
+
+.visuallyHidden:not(:focus):not(:active) {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  /* added line */
 }
 
 html {
@@ -535,7 +533,7 @@ nav i {
       -ms-flex-direction: column;
           flex-direction: column;
   background: #F5F5F5;
-  width: 60%;
+  width: 100%;
   text-align: left;
   padding: 20px;
   padding-left: 20px;
@@ -543,9 +541,16 @@ nav i {
   opacity: 0.9;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 700px) {
   .dropdown {
     width: 50%;
+  }
+}
+
+@media (min-width: 950px) {
+  .dropdown {
+    width: 35%;
+    height: 250px;
   }
 }
 
@@ -556,11 +561,26 @@ nav i {
 
 .dropdown li {
   font-size: 1.8rem;
+  margin: 0 auto;
   margin-bottom: 15px;
   margin-top: 5px;
   list-style-type: none;
   -webkit-transition: font-size 0.5s;
   transition: font-size 0.5s;
+}
+
+@media (min-width: 700px) {
+  .dropdown li {
+    margin-left: 1px;
+  }
+}
+
+@media (min-width: 950px) {
+  .dropdown li {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
 }
 
 .dropdown a {
@@ -572,6 +592,12 @@ nav i {
 
 .dropdown li:hover {
   font-size: 2rem;
+}
+
+@media (min-width: 950px) {
+  .dropdown li:hover {
+    font-size: 2.2rem;
+  }
 }
 
 .hamburger {
@@ -638,7 +664,7 @@ nav i {
           transition-timing-function: ease;
 }
 
-.landing-image .hamburger-inner, .landing-image .hamburger-inner::before, .landing-image .hamburger-inner::after {
+.hamburger-inner2, .hamburger-inner2::before, .hamburger-inner2::after {
   background-color: #F5F5F5;
 }
 
@@ -711,13 +737,13 @@ nav i {
 }
 
 .footer-to-explore {
-  background: url(../assets/farsai-chaikulngamdee-L2wq7Y3h7ag-unsplash.jpg);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(155, 155, 155, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../assets/option-visuals/zoltan-tasi-vHnVtLK8rCc-unsplash.jpg);
+  background: linear-gradient(rgba(155, 155, 155, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/option-visuals/zoltan-tasi-vHnVtLK8rCc-unsplash.jpg);
   background-size: cover;
   background-position: center;
-  background-color: #949393;
   background-blend-mode: screen;
   width: 100%;
-  height: 40vh;
+  height: 300px;
 }
 
 .footer-to-explore .image-section-explore {
@@ -734,20 +760,22 @@ nav i {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .footer-to-explore button {
-  color: #202020;
+  color: white;
   font-size: 2.2rem;
   text-decoration: none;
   height: 50%;
   font-weight: bold;
   background: none;
   border: none;
+  width: 100%;
   line-height: 50px;
+  margin-top: 50px;
   -webkit-transition: font-size 0.5s;
   transition: font-size 0.5s;
 }
@@ -755,24 +783,26 @@ nav i {
 @media (min-width: 700px) {
   .footer-to-explore button {
     font-size: 2.4rem;
+    width: 70%;
   }
 }
 
 @media (min-width: 950px) {
   .footer-to-explore button {
     font-size: 2.8rem;
+    width: 45%;
   }
 }
 
 @media (min-width: 400px) {
   .footer-to-explore button:hover {
-    font-size: 2.4rem;
+    font-size: 2.3rem;
   }
 }
 
 @media (min-width: 700px) {
   .footer-to-explore button:hover {
-    font-size: 2.6rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -999,17 +1029,31 @@ form .submit-form {
 .large-form button {
   height: 60px;
   width: 100%;
-  color: #F5F5F5;
-  border-radius: 10%;
-  border-color: #373663;
-  background: #75748d;
+  color: #373663;
+  border-radius: 5%;
+  border: 1px solid #9190ae;
+  background: #e7ecef;
+  -webkit-transition: font-size 1s, width 1s, height 1s;
+  transition: font-size 1s, width 1s, height 1s;
+}
+
+.large-form-host button {
+  height: 60px;
+  width: 100%;
+  border-radius: 5%;
+  border: 1px solid #9190ae;
+  background: #e6e6ed;
   -webkit-transition: font-size 1s, width 1s, height 1s;
   transition: font-size 1s, width 1s, height 1s;
 }
 
 form .submit-form button:hover {
-  background: #F5F5F5;
-  color: #75748d;
+  background: #B9D2DC;
+}
+
+.large-form-host .submit-form button:hover {
+  color: #F5F5F5;
+  background: #8a8aab;
 }
 
 .no-input, .no-data {
@@ -1176,7 +1220,7 @@ form .submit-form button:hover {
 
 .option {
   padding: 30px 0;
-  background-color: #B9D2DC;
+  background-color: #dae5eb;
 }
 
 .option .wrapper {
@@ -1196,7 +1240,7 @@ form .submit-form button:hover {
 }
 
 .option-two {
-  background-color: #B9D2DC;
+  background-color: #dae5eb;
 }
 
 .option-image {
@@ -1342,28 +1386,42 @@ form .submit-form button:hover {
 }
 
 .choice button {
-  height: 60px;
-  width: 200px;
+  height: 80px;
+  width: 120px;
   margin: 0 auto;
-  color: #F5F5F5;
+  color: #373663;
+  border: 1px solid none;
   border-radius: 10%;
-  border-color: #F5F5F5;
-  background: none;
-  -webkit-transition: font-size 1s, width 1s, height 1s;
-  transition: font-size 1s, width 1s, height 1s;
+  background: #f4f4f4;
+  -webkit-transition: font-size 0.5s, width 0.5s, height 0.5s;
+  transition: font-size 0.5s, width 0.5s, height 0.5s;
+  border: 1px solid #9190ae;
+}
+
+@media (min-width: 400px) {
+  .choice button {
+    width: 180px;
+    height: 60px;
+  }
 }
 
 .choice-2 button {
   color: #373663;
-  border-color: #F5F5F5;
+  border: 1px solid #9190ae;
 }
 
 .choice button:hover {
   font-size: 2rem;
-  height: 70px;
-  width: 220px;
+  height: 65px;
+  width: 190px;
+  background: #B9D2DC;
   color: #373663;
-  background: #F5F5F5;
+  border: 1px solid #373663;
+}
+
+.choice-2 button:hover {
+  color: #F5F5F5;
+  background: #8a8aab;
 }
 
 .image-container {
@@ -1380,8 +1438,8 @@ img {
 
 .box-shadow {
   width: 100%;
-  -webkit-box-shadow: 10px 10px #B9D2DC;
-          box-shadow: 10px 10px #B9D2DC;
+  -webkit-box-shadow: 10px 10px #bfced5;
+          box-shadow: 10px 10px #bfced5;
 }
 
 .alt-shadow-image {
@@ -1394,7 +1452,7 @@ img {
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 650px;
+  height: 675px;
 }
 
 @media (min-width: 700px) {
@@ -1535,8 +1593,6 @@ img {
   width: 100%;
   font-weight: bold;
   font-size: 1.5rem;
-  -webkit-transition: font-size 0.5s, line-height 0.5s;
-  transition: font-size 0.5s, line-height 0.5s;
 }
 
 @media (min-width: 700px) {
@@ -1548,22 +1604,6 @@ img {
 @media (min-width: 950px) {
   .guest-buttons p {
     font-size: 1.8rem;
-  }
-}
-
-.guest-buttons p:hover {
-  font-size: 1.7rem;
-}
-
-@media (min-width: 700px) {
-  .guest-buttons p:hover {
-    font-size: 2rem;
-  }
-}
-
-@media (min-width: 950px) {
-  .guest-buttons p:hover {
-    font-size: 2rem;
   }
 }
 
@@ -1626,7 +1666,7 @@ img {
 }
 
 .choice-section {
-  height: 195px;
+  height: 250px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1664,11 +1704,15 @@ img {
 }
 
 .choice-1 {
-  background: #75748d;
+  background: #e7ecef;
+  border: 0.5px solid #c6c4c4;
+  border-style: none;
 }
 
 .choice-2 {
-  background: #B9D2DC;
+  background: #e6e6ed;
+  border: 0.5px solid #8f8f8f;
+  border-style: none;
 }
 
 .host-hero-image {
@@ -1676,17 +1720,17 @@ img {
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 650px;
+  height: 675px;
   background-color: #282727;
   background-blend-mode: screen;
 }
 
 @media (min-width: 400px) {
   .host-hero-image {
-    background: url(../assets/host-visual-two.jpg);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(159, 159, 159, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../assets/host-visual-two-cropped.png);
+    background: linear-gradient(rgba(159, 159, 159, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/host-visual-two-cropped.png);
     background-size: cover;
     background-position: center;
-    background-color: #282727;
     background-blend-mode: screen;
   }
 }
@@ -1714,23 +1758,12 @@ img {
           box-shadow: 10px 10px #B9D2DC;
 }
 
-.large-form-host button {
-  height: 60px;
-  width: 100%;
-  color: #373663;
-  border-radius: 10%;
-  border-color: #373663;
-  background: #B9D2DC;
-  -webkit-transition: font-size 1s, width 1s, height 1s;
-  transition: font-size 1s, width 1s, height 1s;
-}
-
 .guest-hero-image {
   background: url(../assets/group-of-women-lying-on-yoga-mat-under-blue-sky-1375883.jpg);
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 100vh;
+  height: 675px;
 }
 
 @media (min-width: 700px) {
@@ -2022,8 +2055,9 @@ img {
 }
 
 .explore-hero-image {
-  background: url(../assets/man-and-woman-doing-yoga-1882004.jpg);
-  height: 85vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(120, 120, 120, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../assets/man-and-woman-doing-yoga-1882004.jpg);
+  background: linear-gradient(rgba(120, 120, 120, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/man-and-woman-doing-yoga-1882004.jpg);
+  height: 675px;
   background-size: cover;
   background-position: center;
   width: 100%;
