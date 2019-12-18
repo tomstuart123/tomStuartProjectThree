@@ -1,10 +1,3 @@
-
-
-// TO DO
-    // LONG SHOT -- > firebase / profile page
-
-
-
 // LONG TERM STEPS:
     // sub out local.storage for firebase to allow the classes set up on host.html to be the classes users see on explore.html. 
     // add user verification / profiles / passwords
