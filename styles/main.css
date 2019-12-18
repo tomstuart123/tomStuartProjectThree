@@ -1525,7 +1525,7 @@ img {
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 675px;
+  height: 100vh;
 }
 
 @media (min-width: 700px) {
@@ -1793,7 +1793,7 @@ img {
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 675px;
+  height: 100vh;
   background-color: #282727;
   background-blend-mode: screen;
 }
@@ -1836,7 +1836,7 @@ img {
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 675px;
+  height: 100vh;
 }
 
 @media (min-width: 700px) {
@@ -2130,7 +2130,7 @@ img {
 .explore-hero-image {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(120, 120, 120, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../assets/man-and-woman-doing-yoga-1882004.jpg);
   background: linear-gradient(rgba(120, 120, 120, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/man-and-woman-doing-yoga-1882004.jpg);
-  height: 675px;
+  height: 100vh;
   background-size: cover;
   background-position: center;
   width: 100%;
