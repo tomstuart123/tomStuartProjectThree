@@ -124,7 +124,7 @@ form option {
 
 
 
-.large-form select[name='date'], .large-form input[name='name'], .large-form input[name='email'], form select[name='yoga-style'], .large-form  input[type='number'] {
+.large-form select[name='date'], .large-form input[name='name'], .large-form input[name='email'], form select[name='yoga-style'], .large-form  input[type='number'], .large-form  input[type='text'] {
     width: 80%;
     color: $dark-colour;
     background: transparent;
@@ -140,6 +140,8 @@ form option {
 .large-form  select[name='date'], .large-form  select[name='yoga-style'] {
     border-radius: 10%;
 }
+
+
 
 form .question-form label { 
     margin: 5px;
@@ -242,3 +244,6 @@ form .submit-form button:hover {
     display:none;
 }
 
+form .question-form-image, form .question-form-image input {
+    width: 100%;
+}

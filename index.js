@@ -1,553 +1,13 @@
 // LONG TERM STEPS:
-    // sub out local.storage for firebase to allow the classes set up on host.html to be the classes users see on explore.html. 
-    // add user verification / profiles / passwords
     // add mapbox to find the class nearest you
     // Add chat functionality
     // beautify the site further with more explore options (i.e. go outdoor visual) 
 
+
 // create the yogaApp to store all JS
 const yogaApp = {};
 
-// create class for iteration of session to hold yoga sessions. Inside the class use a static function to allow easy creation of new session classes. This future proofs us so that its easy for users to create new classes once we have firebase set up long-term.
-yogaApp.Session = class Session {
-    constructor({ city, day, experience, yoga, atmosphere, imageURL, name, email, rating, cost}) {
-        this.city = city;
-        this.day = day;
-        this.experience = experience;
-        this.yoga = yoga;
-        this.atmosphere = atmosphere;
-        this.imageURL = imageURL;
-        this.name = name;
-        this.email = email;
-        this.rating = rating;
-        this.cost = cost;
-    }
-
-    static createSession({ city, day, experience, yoga, atmosphere, imageURL, name, email, rating, cost}) {
-        return new this({
-            city, day, experience, yoga, atmosphere, imageURL, name, email, rating, cost,
-        })
-    }
-}
-
-// for now, create some dummy data to represent the yoga classes. This will be subbed in for real user profiles once we include firebase
-// store these profiles in larger grouped sessions object for easy access when pulling data to put on the page (see appendToPage function)
- // unsplash credit to artem-beliaikin
-yogaApp.groupedSessions = {
-    yogiTom: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'evening',
-        experience: 'beginner',
-        yoga: 'restorative',
-        atmosphere: 'outdoor',
-        imageURL: 'assets/option-visuals/artem-beliaikin-nKCtkaW4JU4-unsplash.jpg',
-        name: 'yogiTom',
-        email: 'tomstuart123@hotmail.co.uk',
-        rating: 4.5,
-        cost: 10
-    }),
-    // unsplash credit to jonathan-borba
-
-    yogiAlex: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'morning',
-        experience: 'intermediate',
-        yoga: 'ashtanga', 
-        atmosphere: 'home',
-        imageURL: 'assets/option-visuals/jonathan-borba-5IjWRNGbkYI-unsplash.jpg',
-        name: 'yogiAlex',
-        email: 'alex@gmail.com',
-        rating: 4.2,
-        cost: 12
-        
-    }),
-    // unsplash credit to patrick kool
-    yogiSofia: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'weekend',
-        experience: 'advanced',
-        yoga: 'vinyasa',
-        atmosphere: 'home',
-        imageURL: 'assets/option-visuals/patrick-kool-zTwmxau8DlQ-unsplash.jpg',
-        name: 'yogiSofia',
-        email: 'sofia@gmail.com',
-        rating: 4.3,
-        cost: 8
-    }),
-
-    // unsplash credit to rima kruciene
-    yogiZac: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'evening',
-        experience: 'intermediate',
-        yoga: 'restorative',
-        atmosphere: 'outdoor',
-        imageURL: 'assets/option-visuals/rima-kruciene-Tq9Ln3gpiG4-unsplash.jpg',
-        name: 'yogiZac',
-        email: 'zac@gmail.com',
-        rating: 4.3,
-        cost: 7
-    }),
-
-    // unsplash credit to nate johnston
-    yogiSandy: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'morning',
-        experience: 'intermediate',
-        yoga: 'ashtanga',
-        atmosphere: 'home',
-        imageURL: 'assets/option-visuals/nate-johnston-2gBpsNuHcyA-unsplash.jpg',
-        name: 'yogiSandy',
-        email: 'sandy@gmail.com',
-        rating: 4.8,
-        cost: 19
-    }),
-
-    // unsplash credit to simon raeker
-    yogiJames: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'morning',
-        experience: 'advanced',
-        yoga: 'vinyasa',
-        atmosphere: 'studio',
-        imageURL: 'assets/option-visuals/simon-raeker.jpg',
-        name: 'yogiJames',
-        email: 'james@gmail.com',
-        rating: 4.4,
-        cost: 8
-    }),
-    // unsplash credit to scott broome
-
-    yogiJohn: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'evening',
-        experience: 'beginner',
-        yoga: 'restorative',
-        atmosphere: 'outdoor',
-        imageURL: 'assets/option-visuals/scott-broome-cuOHHP5tx5g-unsplash.jpg',
-        name: 'yogiJohn',
-        email: 'john@gmail.com',
-        rating: 4.3,
-        cost: 6
-
-    }),
-
-     // unsplash credit to ruslan
-    yogiSam: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'morning',
-        experience: 'intermediate',
-        yoga: 'ashtanga',
-        atmosphere: 'outdoor',
-        imageURL: 'assets/option-visuals/ruslan-zh-i_DN1jo1iTU-unsplash.jpg',
-        name: 'yogiSam',
-        email: 'sam@gmail.com',
-        rating: 4.2,
-        cost: 8
-
-    }),
-
-    // unsplash credit to kike vega
-    yogiElise: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'weekend',
-        experience: 'advanced',
-        yoga: 'vinyasa',
-        atmosphere: 'studio',
-        imageURL: 'assets/option-visuals/kike-vega-F2qh3yjz6Jk-unsplash.jpg',
-        name: 'yogiElise',
-        email: 'elise@gmail.com',
-        rating: 5.0,
-        cost: 18
-    }),
-
-    // unsplash credit to mark zamore
-    yogiBella: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'evening',
-        experience: 'beginner',
-        yoga: 'restorative',
-        atmosphere: 'outdoor',
-        imageURL: 'assets/option-visuals/mark-zamora-7fcSXSU-zhY-unsplash.jpg',
-        name: 'yogiBella',
-        email: 'bella@gmail.com',
-        rating: 4.7,
-        cost: 17
-    }),
-
-        // unsplash credit to ashes sitoula
-    yogiSean: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'morning',
-        experience: 'intermediate',
-        yoga: 'ashtanga',
-        atmosphere: 'home',
-        imageURL: 'assets/option-visuals/ashes-sitoula--8ZESyFapTk-unsplash.jpg',
-        name: 'yogiSean',
-        email: 'sean@gmail.com',
-        rating: 4.3,
-        cost: 20
-    }),
-    // unsplash credit to dane wetton
-
-    yogiRachita: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'weekend',
-        experience: 'advanced',
-        yoga: 'vinyasa',
-        atmosphere: 'studio',
-        imageURL: 'assets/option-visuals/dane-wetton-t1NEMSm1rgI-unsplash.jpg',
-        name: 'yogiRachita',
-        email: 'rachita@gmail.com',
-        rating: 4.5,
-        cost: 6
-    }),
-    // unsplash credit to isabell winter
-
-    yogiPaul: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'evening',
-        experience: 'beginner',
-        yoga: 'restorative',
-        atmosphere: 'outdoor',
-        imageURL: 'assets/option-visuals/isabell-winter-lzYZEDJ8fbo-unsplash.jpg',
-        name: 'yogiPaul',
-        email: 'paul@gmail.com',
-        rating: 4.6,
-        cost: 16
-    }),
-    // unsplash credit to form fitness
-
-    yogiCatri: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'morning',
-        experience: 'intermediate',
-        yoga: 'ashtanga',
-        atmosphere: 'home',
-        imageURL: 'assets/option-visuals/form-w0YIvob3LlI-unsplash.jpg',
-        name: 'yogiCatri',
-        email: 'catri@gmail.com',
-        rating: 4.9,
-        cost: 30
-    }),
-        // unsplash credit to wesley tingey
-
-    yogiLucy: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'weekend',
-        experience: 'advanced',
-        yoga: 'vinyasa',
-        atmosphere: 'studio',
-        imageURL: 'assets/option-visuals/wesley-tingey-57wo9F-r2-A-unsplash.jpg',
-        name: 'yogiLucy',
-        email: 'lucy@gmail.com',
-        rating: 3.6,
-        cost: 5
-    }),
-    // unsplash credit to samuel austin
-
-    yogiDom: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'weekend',
-        experience: 'beginner',
-        yoga: 'restorative',
-        atmosphere: 'outdoor',
-        imageURL: 'assets/option-visuals/samuel-austin-0tTA6cewPr8-unsplash.jpg',
-        name: 'yogiDom',
-        email: 'dom@gmail.com',
-        rating: 3.7,
-        cost: 16
-
-    }),
-    // unsplash credit to zoltan tasi
-
-    yogiGenene: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'weekend',
-        experience: 'intermediate',
-        yoga: 'ashtanga',
-        atmosphere: 'home',
-        imageURL: 'assets/option-visuals/zoltan-tasi-vHnVtLK8rCc-unsplash.jpg',
-        name: 'yogiGenene',
-        email: 'genene@gmail.com',
-        rating: 4.9,
-        cost: 12
-
-    }),
-    // unsplash credit to mark zamora
-
-    yogiSarah: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'weekend',
-        experience: 'advanced',
-        yoga: 'vinyasa',
-        atmosphere: 'outdoor',
-        imageURL: 'assets/option-visuals/mark-zamora-Y9jpiiiAAOQ-unsplash.jpg',
-        name: 'yogiSarah',
-        email: 'sarah@gmail.com',
-        rating: 4.8,
-        cost: 16
-    }),
-    // unsplash credit to carl newton
-
-    yogiJack: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'evening',
-        experience: 'advanced',
-        yoga: 'restorative',
-        atmosphere: 'studio',
-        imageURL: 'assets/option-visuals/carl-newton-iX7WedkjpUY-unsplash.jpg',
-        name: 'yogiJack',
-        email: 'jack@gmail.com',
-        rating: 4.6,
-        cost: 13
-
-    }),
-
-    // unsplash credit to farsai chaikukl
-
-    yogiGeorgia: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'evening',
-        experience: 'beginner',
-        yoga: 'ashtanga',
-        atmosphere: 'home',
-        imageURL: 'assets/option-visuals/farsai-chaikulngamdee-L2wq7Y3h7ag-unsplash.jpg',
-        name: 'yogiGeorgia',
-        email: 'georgia@gmail.com',
-        rating: 4.4,
-        cost: 9
-
-    }),
-
-    // unsplash credit to max rovensky
-
-    yogiSally: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'evening',
-        experience: 'intermediate',
-        yoga: 'vinyasa',
-        atmosphere: 'home',
-        imageURL: 'assets/option-visuals/max-rovensky-fGUmhLROnPc-unsplash.jpg',
-        name: 'yogiSally',
-        email: 'sally@gmail.com',
-        rating: 4.2,
-        cost: 14
-    }),
-
-    // unsplash credit to chris ensey
-
-    yogiRussell: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'morning',
-        experience: 'intermediate',
-        yoga: 'restorative',
-        atmosphere: 'studio',
-        imageURL: 'assets/option-visuals/chris-ensey-16QrjudiZnE-unsplash.jpg',
-        name: 'yogiRussell',
-        email: 'russell@gmail.com',
-        rating: 4.3,
-        cost: 13
-
-    }),
-    // unsplash credit to alexander mills
-
-    yogiJanet: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'morning',
-        experience: 'advanced',
-        yoga: 'ashtanga',
-        atmosphere: 'outdoor',
-        imageURL: 'assets/option-visuals/alexander-mils-bpoSU5kmUfo-unsplash.jpg',
-        name: 'yogiJanet',
-        email: 'janet@gmail.com',
-        rating: 4.7,
-        cost: 12
-
-    }),
-
-    // unsplash credit to william farlow
-
-    yogiTara: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'morning',
-        experience: 'beginner',
-        yoga: 'vinyasa',
-        atmosphere: 'studio',
-        imageURL: 'assets/option-visuals/william-farlow-IevaZPwq0mw-unsplash.jpg',
-        name: 'yogiTara',
-        email: 'tara@gmail.com',
-        rating: 4.8,
-        cost: 12
-    }),
-
-    // unsplash credit to fabian moller
-
-    yogiTim: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'weekend',
-        experience: 'intermediate',
-        yoga: 'restorative',
-        atmosphere: 'studio',
-        imageURL: 'assets/option-visuals/fabian-moller-gI7zgb80QWY-unsplash.jpg',
-        name: 'yogiTim',
-        email: 'tim@gmail.com',
-        rating: 5.0,
-        cost: 14
-
-    }),
-    // unsplash credit to steve halama
-
-    yogiPaula: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'weekend',
-        experience: 'beginner',
-        yoga: 'ashtanga',
-        atmosphere: 'home',
-        imageURL: 'assets/option-visuals/steve-halama-tyCVZ1Aaqxo-unsplash.jpg',
-        name: 'yogiPaula',
-        email: 'paula@gmail.com',
-        rating: 4.8,
-        cost: 16
-
-    }),
-
-    // unsplash credit to bekir donmez
-
-    yogiBonnie: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'weekend',
-        experience: 'beginner',
-        yoga: 'vinyasa',
-        atmosphere: 'studio',
-        imageURL: 'assets/option-visuals/bekir-donmez-eofm5R5f9Kw-unsplash.jpg',
-        name: 'yogiBonnie',
-        email: 'bonnie@gmail.com',
-        rating: 4.4,
-        cost: 17
-    }),
-
-    // unsplash credit to patrick malleret
-
-    yogiIdris: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'evening',
-        experience: 'beginner',
-        yoga: 'restorative',
-        atmosphere: 'studio',
-        imageURL: 'assets/option-visuals/patrick-malleret-p-v1DBkTrgo-unsplash.jpg',
-        name: 'yogiIdris',
-        email: 'idris@gmail.com',
-        rating: 4.6,
-        cost: 18
-
-    }),
-    // unsplash credit to mark adriane
-
-    yogiHarry: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'evening',
-        experience: 'intermediate',
-        yoga: 'ashtanga',
-        atmosphere: 'studio',
-        imageURL: 'assets/option-visuals/mark-adriane-muS2RraYRuQ-unsplash.jpg',
-        name: 'yogiHarry',
-        email: 'harry@gmail.com',
-        rating: 4.9,
-        cost: 18
-
-    }),
-
-    // unsplash credit to aniie spraat
-
-    yogiHolly: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'evening',
-        experience: 'advanced',
-        yoga: 'vinyasa',
-        atmosphere: 'home',
-        imageURL: 'assets/option-visuals/annie-spratt-8mqOw4DBBSg-unsplash.jpg',
-        name: 'yogiHolly',
-        email: 'holly@gmail.com',
-        rating: 3.9,
-        cost: 18
-    }),
-    // unsplash credit to wesley tingey
-    yogiChris: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'evening',
-        experience: 'advanced',
-        yoga: 'vinyasa',
-        atmosphere: 'outdoor',
-        imageURL: 'assets/option-visuals/jay-castor-7AcMUSYRZpU-unsplash.jpg',
-        name: 'yogiChris',
-        email: 'chris@gmail.com',
-        rating: 4.5,
-        cost: 40
-    }),
-    yogiStar: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'morning',
-        experience: 'beginner',
-        yoga: 'vinyasa',
-        atmosphere: 'outdoor',
-        imageURL: 'assets/option-visuals/wesley-tingey-dlxNvA7pVwU-unsplash.jpg',
-        name: 'yogiStar',
-        email: 'Star@gmail.com',
-        rating: 3.9,
-        cost: 14
-    }),
-
-    // unsplash credit to ksenia makagonova
-
-    yogiJosh: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'morning',
-        experience: 'beginner',
-        yoga: 'vinyasa',
-        atmosphere: 'home',
-        imageURL: 'assets/option-visuals/ksenia-makagonova-V-TIPBoC_2M-unsplash.jpg',
-        name: 'yogiJosh',
-        email: 'josh@gmail.com',
-        rating: 4.5,
-        cost: 6
-    }),
-
-    // unsplash credit to bruce mars
-
-    yogiCharlotte: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'morning',
-        experience: 'advanced',
-        yoga: 'vinyasa',
-        atmosphere: 'home',
-        imageURL: 'assets/option-visuals/bruce-mars-pFyKRmDiWEA-unsplash(1).jpg',
-        name: 'yogiCharlotte',
-        email: 'charlotte@gmail.com',
-        rating: 4.8,
-        cost: 6
-    }),
-
-     // unsplash credit to natalie grainger
-
-    yogiCres: yogaApp.Session.createSession({
-        city: 'toronto',
-        day: 'weekend',
-        experience: 'intermediate',
-        yoga: 'vinyasa',
-        atmosphere: 'outdoor',
-        imageURL: 'assets/option-visuals/natalie-grainger-8uB5kFKWWkk-unsplash.jpg',
-        name: 'yogiCres',
-        email: 'cres@gmail.com',
-        rating: 4.7,
-        cost: 18
-    }),
-
-    // unsplash credit to jay castor
-
-    
-
-}
+yogaApp.dbRef = firebase.database();
 
 // set some dummy data for if we want to show data on explore.html even if the user hasn't selected anything on guest.html
 yogaApp.userTickedOptions = [['toronto'], ['beginner', 'intermediate', 'advanced'], ['studio', 'home', 'outdoor'], ['any']];
@@ -626,10 +86,8 @@ yogaApp.checkForAnyDay = function (incomingArray, outgoingArray) {
 yogaApp.saveUserToLocalStorage = function(userInputArrays) {
         // counter allows tracking of which user input we are up to
         let counter = 0;
-
         userInputArrays.forEach(function (choice) {
             counter = counter + 1;
-
             if (counter === 1) {
                 localStorage.setItem('city', `${choice}`)
             } 
@@ -647,34 +105,25 @@ yogaApp.saveUserToLocalStorage = function(userInputArrays) {
 }
 
 // same as the above function (to save to local storage object for access on subsequetn pages) but for host.html instead of guest.html
-yogaApp.saveHostToLocalStorage = function (userInputArrays) {
-    let counter = 0;
-    
-    userInputArrays.forEach(function (choice) {
-        counter = counter + 1;
-
-        if (counter === 1) {
-            localStorage.setItem('hostCity', `${choice}`)
-        }
-        else if (counter === 2) {
-            localStorage.setItem('hostExperience', `${choice}`)
-        }
-        else if (counter === 3) {
-            localStorage.setItem('hostAtmosphere', `${choice}`)
-        } else if (counter === 4) {
-            localStorage.setItem('hostName', `${choice}`)
-        } else if (counter === 5) {
-            localStorage.setItem('hostEmail', `${choice}`)
-        } else if (counter === 6) {
-            localStorage.setItem('hostYoga', `${choice}`)
-        } else if (counter === 7) {
-            localStorage.setItem('hostDay', `${choice}`)
-        } else if (counter === 8) {
-            localStorage.setItem('hostPrice', `${choice}`)
-        }
-    })
-
+yogaApp.saveHostToFirebase = function (userInputArrays) {
+    // console.log(userInputArrays)
+    const classObject = {
+        "city": userInputArrays[1][0],
+        "day": userInputArrays[0][0],
+        "experience": userInputArrays[2][0],
+        "yoga": userInputArrays[6][0],
+        "atmosphere": userInputArrays[3][0],
+        "imageURL": userInputArrays[9][0],
+        "name": 'yogi' + userInputArrays[4][0],
+        "email": userInputArrays[5][0],
+        "rating": 4.3,
+        "cost": userInputArrays[8][0],
+    }
+    const classesRef = yogaApp.dbRef.ref('classes');
+    classesRef.push(classObject)
+    console.log(classObject)
 }
+
 
 // function that allows us to take the data from local storage and convert it into a form that is easy to run the appendToPage function
 // Key note - Make sure it is using the right order for appendToPage
@@ -724,129 +173,122 @@ yogaApp.appendToPage = function(userInputArrays) {
     let checker = 0;
     // remove current appended data if it exists
     yogaApp.removeCurrentData('.results');
-    
-    // loop through the yoga instructor JS classes 
-    for (i in yogaApp.groupedSessions) {        
-        // loop through the array and compare array city item to object city item. Return only those that are the same
-        let sameCity;
-        let sameExperience;
-        let sameAtmosphere;
-        let sameDay;
 
-        sameCity = userInputArrays[0].filter(function (option) {
-            return option === yogaApp.groupedSessions[i]['city'];
-        })
 
-        sameExperience = userInputArrays[1].filter(function (option) {
-                return option === yogaApp.groupedSessions[i]['experience'];
-        })
+    const classesRef = yogaApp.dbRef.ref('classes');
 
-        sameAtmosphere = userInputArrays[2].filter(function (option) {
-            return option === yogaApp.groupedSessions[i]['atmosphere'];
-        })
+    classesRef.on("value", function (snapshot) {
+        // console.log(snapshot.val())
+        snapshot.forEach(function (i) {
+            // var key = childSnapshot.key();
+            var childData = i.val();
+            // console.log(key)
+            let sameCity;
+            let sameExperience;
+            let sameAtmosphere;
+            let sameDay;
+            sameCity = userInputArrays[0].filter(function (option) {
+                return option === childData.city;
+            })
+            sameExperience = userInputArrays[1].filter(function (option) {
+                // console.log(yogaApp.groupedSessions[i]['experience']);
+                return option === childData.experience;
 
-        sameDay = userInputArrays[3].filter(function (option) {
-            return option === yogaApp.groupedSessions[i]['day'];
-        })
-        
-        sameAnyCity = userInputArrays[0].filter(function (option) {
+            })
+
+            sameAtmosphere = userInputArrays[2].filter(function (option) {
+                return option === childData.atmosphere;
+            })
+
+            sameDay = userInputArrays[3].filter(function (option) {
+                return option === childData.day;
+            })
+
+            sameAnyCity = userInputArrays[0].filter(function (option) {
                 return option === 'any';
-        })
+            })
 
-        sameAnyExperience = userInputArrays[1].filter(function (option) {
-            return option === 'any';
-        })
+            sameAnyExperience = userInputArrays[1].filter(function (option) {
+                return option === 'any';
+            })
 
-        sameAnyAtmosphere = userInputArrays[2].filter(function (option) {
-            return option === 'any';
-        })
-
-
-        sameAnyDay = userInputArrays[3].filter(function (option) {
-            return option === 'any';
-        })
+            sameAnyAtmosphere = userInputArrays[2].filter(function (option) {
+                return option === 'any';
+            })
 
 
-        // use if function to remove any undefined or replicated items of each user input (city, experience and atmosphere)
-        // then collate the accurate items into one single array called sameItems
-        yogaApp.cleanSimilarItems(sameCity, sameItems)
-        yogaApp.cleanSimilarItems(sameExperience, sameItems)
-        yogaApp.cleanSimilarItems(sameAtmosphere, sameItems)
-        yogaApp.cleanSimilarItems(sameDay, sameItems)
-        yogaApp.checkForAnyCity(sameAnyCity, sameItems)
-        yogaApp.checkForAnyExperience(sameAnyExperience, sameItems)
-        yogaApp.checkForAnyAtmosphere(sameAnyAtmosphere, sameItems)
-        
-        yogaApp.checkForAnyDay(sameAnyDay, sameItems);
+            sameAnyDay = userInputArrays[3].filter(function (option) {
+                return option === 'any';
+            })
+            yogaApp.cleanSimilarItems(sameCity, sameItems)
+            yogaApp.cleanSimilarItems(sameExperience, sameItems)
+            yogaApp.cleanSimilarItems(sameAtmosphere, sameItems)
+            yogaApp.cleanSimilarItems(sameDay, sameItems)
+            yogaApp.checkForAnyCity(sameAnyCity, sameItems)
+            yogaApp.checkForAnyExperience(sameAnyExperience, sameItems)
+            yogaApp.checkForAnyAtmosphere(sameAnyAtmosphere, sameItems)
 
-        // if all the similarities that the user has specified come out as accurate, then append to page with relevant data from the JS classes at the top. then add to checker counter
-        if (sameItems.includes(yogaApp.groupedSessions[i]['city']) && sameItems.includes(yogaApp.groupedSessions[i]['atmosphere']) && sameItems.includes(yogaApp.groupedSessions[i]['experience']) && sameItems.includes(yogaApp.groupedSessions[i]['day']) || sameItems.includes(yogaApp.groupedSessions[i]['any'])) {
-            checker = checker + 1;
-            const $revealData = $('.reveal-data');
-            $revealData.addClass('reveal-data-style');
+            yogaApp.checkForAnyDay(sameAnyDay, sameItems);
 
-            $revealData.append(
-                
-                `
+            // console.log(sameItems)
+
+            // if all the similarities that the user has specified come out as accurate, then append to page with relevant data from the JS classes at the top. then add to checker counter
+            if (sameItems.includes(childData.city) && sameItems.includes(childData.atmosphere) && sameItems.includes(childData.experience) && sameItems.includes(childData.day) || sameItems.includes(childData.any)) {
+                checker = checker + 1;
+                const $revealData = $('.reveal-data');
+                $revealData.addClass('reveal-data-style');
+
+                $revealData.append(
+
+                    `
                 <section class='results'>
                 
                 <div class='option'>
                     <section class='wrapper'>
                         <div class='option-image'>
                             
-                                <img alt='yoga-class-visual' class='image' src='${yogaApp.groupedSessions[i]['imageURL']}'>
+                                <img alt='yoga-class-visual' class='image' src='${childData.imageURL}'>
                             
                         </div>
                         <div class='option-text'>
                             <p class='normal-paragraph'>Lead: </p>
-                            <p class='normal-paragraph'>${yogaApp.groupedSessions[i]['name']} </p>
+                            <p class='normal-paragraph'>${childData.name} </p>
                             <p class='normal-paragraph'>Cost/hr: </p>
-                            <p class='normal-paragraph'>$${yogaApp.groupedSessions[i]['cost']} </p>
+                            <p class='normal-paragraph'>$${childData.cost} </p>
                             <p class='normal-paragraph'>Where:</p>
-                            <p class='normal-paragraph'>${yogaApp.groupedSessions[i]['city']}</p>
+                            <p class='normal-paragraph'>${childData.city}</p>
                             <p class='normal-paragraph'>Type:</p>
-                            <p class='normal-paragraph'>${yogaApp.groupedSessions[i]['yoga']}</p>
+                            <p class='normal-paragraph'>${childData.yoga}</p>
                             <p class='normal-paragraph'>Area: </p>
-                            <p class='normal-paragraph'>${yogaApp.groupedSessions[i]['atmosphere']}</p>
+                            <p class='normal-paragraph'>${childData.atmosphere}</p>
                             <p class='normal-paragraph'>Rating:</p>
-                            <p class='normal-paragraph'>${yogaApp.groupedSessions[i]['rating']}*</p>
-                            <a href='mailto:${yogaApp.groupedSessions[i]['email']}' class='optionContact'>Email them to Join the Class</a>
+                            <p class='normal-paragraph'>${childData.rating}*</p>
+                            <a href='mailto:${childData.email}' class='optionContact'>Email them to Join the Class</a>
                         </div>
                     </section>
                 </div>
                 </section>
-                `)  
-            // toggle different styling for alternate appending. One is a darker background, the other lighter
-            const $option = $('.option');
-            const $normalPara = $('.normal-paragraph');
-            const $image = $('.image');
-            if (checker % 2 === 0) {
-                $option.toggleClass('option-one');
-                $normalPara.toggleClass('alt-text');
-                $image .toggleClass('box-shadow');
-            } else {
-                $normalPara.toggleClass('alt-text')
-                $option.toggleClass('option-one')
-                $image .toggleClass('box-shadow');
-            }
-        } 
-    }  
-}
-
-// similar to the above but instead for host.html.
-// this takes the data input and builds the user a localStorage profile for now
-// long-term - will create new JS classes and store them in firebase
-yogaApp.appendProfile = function () {
-    $('.profile-name').text(`yogi${localStorage.hostName}`)
-    $('.profile-email').text(`${localStorage.hostEmail}`)
-    $('.profile-price').text(`$${localStorage.hostPrice} per class`)
-    $('.profile-experience').text(`${localStorage.hostExperience}`)
-    $('.profile-city').text(`${localStorage.hostCity}`)
-    $('.profile-atmosphere').text(`${localStorage.hostAtmosphere}`)
-    $('.profile-yoga').text(`${localStorage.hostYoga}`)
-    $('.profile-day').text(`${localStorage.hostDay}`)
+                `)
+                // toggle different styling for alternate appending. One is a darker background, the other lighter
+                const $option = $('.option');
+                const $normalPara = $('.normal-paragraph');
+                const $image = $('.image');
+                if (checker % 2 === 0) {
+                    $option.toggleClass('option-one');
+                    $normalPara.toggleClass('alt-text');
+                    $image.toggleClass('box-shadow');
+                } else {
+                    $normalPara.toggleClass('alt-text')
+                    $option.toggleClass('option-one')
+                    $image.toggleClass('box-shadow');
+                }
+            } 
+        });
+    })
 
 }
+
+
 
 // The event function that kicks off everything. This runs all the functions aboves
 yogaApp.events = function() {
@@ -889,6 +331,7 @@ yogaApp.events = function() {
         allChoices[1] = expChoicesArray;
         allChoices[2] = atmosChoicesArray;
         allChoices[3] = dayChoicesArray;
+   
 
         // collate all harder user choices into a final array and save to local storage. This makes sure that it doesn't clash with the save to storage on guest.html
         yogaApp.saveUserToLocalStorage(allChoices);
@@ -899,7 +342,7 @@ yogaApp.events = function() {
      // then sends user to explore.html for appending of the data to the page 
      // also blocks the user in case any form field is missed
 
-    const $formGuest = $('.form-guest')
+    const $formGuest = $('#form-guest')
     $formGuest.on('submit', function (event) {
  
         const $dayChoice = $('select[name=date]').val();
@@ -948,18 +391,23 @@ const $formHost = $('.form-host')
 $formHost.on('submit', function (event) {
 
     // store jquery form selectors of user choices
-    const $nameChoice = $('input[type=text]').val();
+    const $nameChoice = $('input[name=name]').val();
     const $emailChoice = $('input[type=email]').val();
     const $yogaChoice = $('select[name=yoga-style]').val();
-    const $dayChoice = $('select[name=date]').val();
+    // const $dayChoice = $('select[name=date]').val();
+    const $dayChoiceObject = $('input[name=date]:checked');
     const $cityChoiceObject = $('input[name=city]:checked');
     const $expChoiceObject = $('input[name=experience]:checked');
     const $atmosChoiceObject = $('input[name=atmosphere]:checked');
     const $priceChoice = $('input[name=price]').val();
+    const $imageChoice = $('input[name=imgURL]').val();
+    console.log($imageChoice)
+    
 
 
     // // find the user input data for the single answer form items, collate them into one array called subChoices
     let nameChoiceArray = [];
+    let imageChoiceArray = [];
     let emailChoiceArray = [];
     let dayChoicesArray = [];
     let yogaChoicesArray = [];
@@ -967,9 +415,11 @@ $formHost.on('submit', function (event) {
     let subChoices = [];
     nameChoiceArray.push($nameChoice);
     emailChoiceArray.push($emailChoice);
-    dayChoicesArray.push($dayChoice);
     yogaChoicesArray.push($yogaChoice);
     priceChoicesArray.push($priceChoice)
+    imageChoiceArray.push($imageChoice);
+    
+
 
 
     subChoices.push(nameChoiceArray);
@@ -977,33 +427,44 @@ $formHost.on('submit', function (event) {
     subChoices.push(yogaChoicesArray);
     subChoices.push(dayChoicesArray);
     subChoices.push(priceChoicesArray);
+    subChoices.push(imageChoiceArray);
+    
 
 
     // set an object to collect all the harder form items (needed cleaning) user's answers
     let allChoices = [];
 
     // collate all user choices that have multiple options into a final array
+    yogaApp.findChoicesItems($dayChoiceObject, allChoices);
     yogaApp.findChoicesItems($cityChoiceObject, allChoices);
     yogaApp.findChoicesItems($expChoiceObject, allChoices);
     yogaApp.findChoicesItems($atmosChoiceObject, allChoices);
 
+
     // collate into allChoices all user input including harder and easier items
     allChoices = allChoices.concat(subChoices);
-
-    // loop through choices in the array with .filter. If true that city (example) = (example)
-    // If these choices are in the dummy data, pull that object and put its info on the page
-
-    yogaApp.saveHostToLocalStorage(allChoices);
-
     // make sure that if no data selected the user isn't sent to the explore html and the error message is shown
-    if (allChoices[0].length === 0 || allChoices[0].includes('toronto') === false || allChoices[1].length === 0 || allChoices[2].length === 0 || allChoices[3][0] === '' || allChoices[4][0] === '' || allChoices[5].length === 0 || allChoices[6].length === 0 || allChoices[7][0] === '' ) {
-        console.log('fire')
+    if (allChoices[0].length === 0 || allChoices[1].includes('toronto') === false || allChoices[1].length === 0 || allChoices[2].length === 0 || allChoices[3].length === 0 || allChoices[4][0] === '' || allChoices[5][0] === '' || allChoices[6].length === 0 || allChoices[8][0] === '' || allChoices[9][0] === '') {
         event.preventDefault();
         $('.reveal-data').toggleClass('reveal-data-style2')
         $('.header-wrapper').toggleClass('hide')
         // $('.title5').toggleClass('hide')
+
+    } else {
+        event.preventDefault();
+        alert("Great news, your class has been created and you and users can find it on the explore page. Lets go have a look now")
+
+       
+        yogaApp.saveHostToFirebase(allChoices);
+        let cleanFilter = [["any"], ["any"], ["any"], ["any"]]
+        yogaApp.saveUserToLocalStorage(cleanFilter);
         
+       
     }
+    // reset filters on explore page to any
+    
+    // loop through choices in the array with .filter. If true that city (example) = (example)
+    // If these choices are in the dummy data, pull that object and put its info on the page
 
 })
 
@@ -1012,10 +473,11 @@ $formHost.on('submit', function (event) {
      // append it to the page
      // back-up options in case of no user input (for explore.html append everything to the page / for profile.html, highlight that they don't have an accoutn and push them to host.html)
 yogaApp.pageLoad = function () {
+
     window.onload = function () {
     // if explore page do this
     if (window.location.href.indexOf('explore.html') > -1) {
-
+        
         let userInput = yogaApp.pullAndConvertFromLocalStorage();
 
         if (userInput.length === 0 || userInput[0][0] === '') {
@@ -1027,25 +489,6 @@ yogaApp.pageLoad = function () {
         yogaApp.appendToPage(userInput); 
         
         
-    } else if (window.location.href.indexOf('profile.html') > -1) {
-
-        // if they don't have a profile, return, build a profile
-        if (localStorage.hostName === undefined) {
-            $('.no-account').addClass('no-account-2');
-            $('.profile').addClass('hide');
-            $('.join-button').text(`Sorry, you don't have a host account yet!`);
-            $('.fas').addClass('hide');
-            $('.no-account').html(`<a href='host.html'> <button>Go to Host Class Page to Set Up an Account</button></a>`);
-
-        } // if they do have a profile, build out their page 
-        else {
-        $('.fas').removeClass('hide');
-        $('.no-account').removeClass('no-account-2');
-        // $('.profile').removeClass('hide');
-        // yogaApp.pullAndConvertHostFromLocalStorage();
-        yogaApp.appendProfile();
-
-        }
     } 
     }
 }
@@ -1054,7 +497,7 @@ yogaApp.pageLoad = function () {
 // initial function that kicks off the two main categories of programming i) on load (= explore.html / profile.html) and ii) on click (=guest.html, host.html, explore.html)
 yogaApp.init = function () {
     yogaApp.events();
-    yogaApp.pageLoad();
+    yogaApp.pageLoad();    
 }
 
 // run init in jquery

@@ -55,7 +55,7 @@
     <section class='form-section large-form large-form-host' id='large-form-host'>
         <div class='wrapper'>
             <section class='form-side form-side-two'>
-                <form class='form-guest form-host' action="profile.html">
+                <form class='form-guest form-host' action="explore.html">
                     <section class='form-fieldset'>
                         <legend class='title'> Start creating your perfect class!</legend>
         
@@ -78,21 +78,36 @@
                         <div class='question-form'>
                             <legend>CITY?</legend>
                             <div>
-                                <input type="checkbox" name="city" value="London" id="london">
+                                <input type="radio" name="city" value="London" id="london">
                                 <label for='london'>London (n/a) </label>
                             </div>
                             <div>
-                                <input type="checkbox" name="city" value="Toronto" id="toronto">
+                                <input type="radio" name="city" value="Toronto" id="toronto">
                                 <label for='toronto'>Toronto</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="city" value="New York" id="new-york">
+                                <input type="radio" name="city" value="New York" id="new-york">
                                 <label for='new-york'>New York (n/a) </label>
                             </div>
                         </div>
-                        
-        
+
                         <div class='question-form'>
+                            <legend>TIME? </legend>
+                            <div>
+                                <input type="radio" name="date" value="Early Morning" id="morning">
+                                <label for='morning'>Early Morning</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="date" value="Evening" id="evening">
+                                <label for='evening'>Evening</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="date" value="Weekend" id="weekend">
+                                <label for='weekend'>Weekend</label>
+                            </div>
+                        </div>
+        
+                        <!-- <div class='question-form'>
                             <legend>TIME OF DAY?</legend>
                             <select name="date" id="date" placeholder="Any" class="date">
                                 <option value="any">Any</option>
@@ -101,28 +116,27 @@
                                 <option value="weekend">Weekend</option>
                                 <label class="visuallyHidden" for="date">Date</label>
                             </select>
-                        </div>
+                        </div> -->
         
                         <div class='question-form'>
                             <legend>LEVEL? </legend>
                             <div>
-                                <input type="checkbox" name="experience" value="Beginner" id="beginner">
+                                <input type="radio" name="experience" value="Beginner" id="beginner">
                                 <label for='beginner'>Beginner</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="experience" value="Intermediate" id="intermediate">
+                                <input type="radio" name="experience" value="Intermediate" id="intermediate">
                                 <label for='intermediate'>Intermediate</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="experience" value="Advanced" id="advanced">
+                                <input type="radio" name="experience" value="Advanced" id="advanced">
                                 <label for='advanced'>Advanced</label>
                             </div>
                         </div>
         
                         <div class='question-form'>
                             <legend>TYPE? </legend>
-                            <select name="yoga-style" id="yoga-style" placeholder="Any" class="yoga-style">
-                                <option value="any">Any</option>
+                            <select name="yoga-style" id="yoga-style" placeholder="style" class="yoga-style">
                                 <option value="vinyasa">Vinyasa</option>
                                 <option value="ashtanga">Ashtanga</option>
                                 <option value="slow-flow">Slow flow</option>
@@ -137,15 +151,15 @@
                         <div class='question-form'>
                             <legend>LOCATION?</legend>
                             <div>
-                                <input type="checkbox" name="atmosphere" value="Studio" id="studio">
+                                <input type="radio" name="atmosphere" value="Studio" id="studio">
                                 <label for='studio'>Studio</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="atmosphere" value="Home" id="home">
+                                <input type="radio" name="atmosphere" value="Home" id="home">
                                 <label for='home'>Home</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="atmosphere" value="Outdoor" id="outdoor">
+                                <input type="radio" name="atmosphere" value="Outdoor" id="outdoor">
                                 <label for='outdoor'>Outdoor</label>
                             </div>
                         </div>
@@ -153,7 +167,14 @@
                             <legend>PRICE ($) / CLASS?</legend>
                             <div>
                                 <input type="number" name="price" id="price" placeholder="Amount ($)">
-                                <label class='visuallyHidden' for="name">YOUR NAME?</label>
+                                <label class='visuallyHidden' for="price">PRICE</label>
+                            </div>
+                        </div>
+                        <div class='question-form question-form-image'>
+                            <legend>ADD AN IMAGE TO YOUR CLASS? </legend>
+                            <div>
+                                <input type="text" name="imgURL" id="imgURL" placeholder="Paste your image URL link here!">
+                                <label class='visuallyHidden' for="imgURL">Your imageURL?</label>
                             </div>
                         </div>
                         <div class='question-form submit-form'>
@@ -187,6 +208,23 @@
         </section>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+    
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBHQlKYjKz9E69WzEGuZ7W5EEDRfRgjYv4",
+            authDomain: "yoga-app-23a37.firebaseapp.com",
+            databaseURL: "https://yoga-app-23a37.firebaseio.com",
+            projectId: "yoga-app-23a37",
+            storageBucket: "yoga-app-23a37.appspot.com",
+            messagingSenderId: "163852608014",
+            appId: "1:163852608014:web:58b3bb4a582de64bccd25f"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
     <script src="index.js"></script>
 </body>
 

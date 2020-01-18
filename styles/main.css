@@ -981,7 +981,7 @@ form option {
   }
 }
 
-.large-form select[name='date'], .large-form input[name='name'], .large-form input[name='email'], form select[name='yoga-style'], .large-form input[type='number'] {
+.large-form select[name='date'], .large-form input[name='name'], .large-form input[name='email'], form select[name='yoga-style'], .large-form input[type='number'], .large-form input[type='text'] {
   width: 80%;
   color: #75748d;
   background: transparent;
@@ -1107,6 +1107,10 @@ form .submit-form button:hover {
 
 .hide {
   display: none;
+}
+
+form .question-form-image, form .question-form-image input {
+  width: 100%;
 }
 
 .mini-form {
@@ -1823,7 +1827,7 @@ img {
 }
 
 .large-form-host {
-  height: 1050px;
+  height: 1200px;
 }
 
 .form-side-one .box-shadow-bright {
